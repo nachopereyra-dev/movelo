@@ -32,7 +32,7 @@ Mi nombre es Lautaro Almirón, tengo 22 años y actualmente vivo en Buenos Aires
 🟢 **_Nacho Pereyra_**
 Uruguayo, 26 años. Licenciado en direccion de empresas y estudiante de maestria en tecnologias de la informacion. Me gustan los deportes y la naturaleza. Creo en la tecnologia como un medio para mejorar la calidad de vida de las personas.
 
-**Buscar inspiración en referentes del mercado**
+## 🌎 **Buscar inspiración en referentes del mercado**
 
 https://grabr.io/es/
 
