@@ -2,7 +2,7 @@
 
 ## **📜Definir la temática del marketplace**
 
-Marketplace de logística
+### 🛍️Marketplace de logística
 
 ### **🤔¿Qué productos o servicios brindará nuestro sitio?**
 
@@ -26,7 +26,7 @@ A través de una plataforma interactiva donde los usuarios oferentes puedan mone
 🟠 **_Alejandro Robles_**
 Argentino, 29 años. Soy tecnico quimico y trabajo como asistente contable. En mis ratos libres me gusta hacer produccion musica
 
-🔵 **_Lauti Almirón_**
+🔵 **_Lautaro Almirón_**
 Mi nombre es Lautaro Almirón, tengo 22 años y actualmente vivo en Buenos Aires. En estos momentos estudió la licenciatura de Imagen Y Sonido en la UBA. Adicional soy una persona que siempre le fascinó la computación y el diseño gráfico.
 
 🟢 **_Nacho Pereyra_**
