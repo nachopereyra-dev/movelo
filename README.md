@@ -29,12 +29,13 @@ Argentino, 29 años. Soy tecnico quimico y trabajo como asistente contable. En m
 _Lauti_
 Mi nombre es Lautaro Almirón, tengo 22 años y actualmente vivo en Buenos Aires. En estos momentos estudió la licenciatura de Imagen Y Sonido en la UBA. Adicional soy una persona que siempre le fascinó la computación y el diseño gráfico.
 
-_Nacho
-_
+_Nacho_
 Uruguayo, 26 años. Licenciado en direccion de empresas y estudiante de maestria en tecnologias de la informacion. Me gustan los deportes y la naturaleza. Creo en la tecnologia como un medio para mejorar la calidad de vida de las personas.
 
 **Buscar inspiración en referentes del mercado**
 
 https://grabr.io/es/
+
 https://envios.mercadolibre.com.uy/mercado-envios-flex
+
 https://www.ontruck.com/es/blog/previsiones-para-las-tendencias-tecnologicas-en-logistica-de-2019
