@@ -39,3 +39,6 @@ https://grabr.io/es/
 https://envios.mercadolibre.com.uy/mercado-envios-flex
 
 https://www.ontruck.com/es/blog/previsiones-para-las-tendencias-tecnologicas-en-logistica-de-2019
+
+## 📝 Link de Trello:
+https://trello.com/invite/b/d67zVH1d/306e116bc9389faa5b982440a8780de7/movelo-dh
