@@ -24,12 +24,14 @@ header .sub-nav-mobile {
 }
 
 .sub-nav-mobile .logo p {
-    margin: 0px;
     font-size: 24px;
     font-weight: 400;
+    display: block;
+    align-items: center;
+
 }
 
-.sub-nav-mobile .menu-hamburguesa {
+.menu-hamburguesa {
     background-color: black;
     color: white;
     font-size: 20px;
@@ -37,6 +39,9 @@ header .sub-nav-mobile {
     padding: 10px 12px;
     margin-right: 10px;
     display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 40px;
 }
 
 nav {
@@ -108,6 +113,7 @@ footer {
     color: white;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 footer .logos {
@@ -129,4 +135,153 @@ footer p {
     text-align: center;
 }
 
+/*------------TABLET--------------*/
 
+@media (min-width: 480px) {
+
+/*--------HEADER-TABLET---------*/
+
+    header {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        justify-content: center;
+    }
+
+    .sub-nav-mobile .logo p {
+        font-size: 24px;
+    }
+
+    .menu-hamburguesa{
+        display: none;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: row;
+        width: 75%;
+        justify-content: end;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        justify-content: end;
+        margin-right: 15px;
+    }
+
+    header nav ul li {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        font-size: 10px;
+        color: black;
+        display: block;
+        align-items: center;
+    }
+
+    .botones-nav {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .botones-nav .boton-a {
+        text-decoration: none;
+        font-size: 10px;
+        background-color: transparent;
+        color: black;
+        padding: 10px;
+        border: solid 1px black;
+        border-radius: 25px;
+        width: 85px;
+        text-align: center;
+    }
+
+    .botones-nav .boton-b {
+        text-decoration: none;
+        font-size: 10px;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border: solid 1px black;
+        border-radius: 25px;
+        width: 85px;
+        text-align: center;
+    }
+
+    
+
+/*--------MAIN_HOME-TABLET---------*/
+
+main .titulo-1 {
+    margin-bottom: 0px;
+}
+
+main .titulo-2 {
+    display: block;
+    color: lightgray;
+    margin-top: 10px;
+}
+
+main .botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+main .boton-1 {
+    margin-bottom: 0px;
+    margin-right: 5px;
+}
+
+main .boton-2 {
+    margin-left: 5px;
+}
+
+}
+
+/*-----------DESKTOP------------*/
+
+@media (min-width: 760px) {
+
+/*--------HEADER-DESKTOP---------*/
+
+    header {
+        width: 75%;
+        margin: auto;
+    }
+
+    header nav {
+        width: 90%;
+    }
+
+    .sub-nav-mobile .logo p {
+        font-size: 24px;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    header nav ul li a:hover {
+        text-decoration-line: underline;
+    }
+
+    .botones-nav .boton-a {
+        font-size: 14px;
+        width: 110px;
+    }
+
+    .botones-nav .boton-b {
+        font-size: 14px;
+        width: 110px;
+    }
+
+}
