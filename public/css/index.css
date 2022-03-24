@@ -28,10 +28,9 @@ header .sub-nav-mobile {
     font-weight: 400;
     display: block;
     align-items: center;
-
 }
 
-.menu-hamburguesa {
+.sub-nav-mobile .menu-hamburguesa {
     background-color: black;
     color: white;
     font-size: 20px;
@@ -107,6 +106,9 @@ main .boton-2 {
     width: 160px;
     text-align: center;
 }
+
+/*--------FOOTER-HOME---------*/
+
 
 footer {
     background-color: black;
