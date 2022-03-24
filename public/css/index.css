@@ -30,7 +30,7 @@ header .sub-nav-mobile {
     align-items: center;
 }
 
-.sub-nav-mobile .menu-hamburguesa {
+.menu-hamburguesa {
     background-color: black;
     color: white;
     font-size: 20px;
@@ -255,12 +255,12 @@ main .boton-2 {
 /*--------HEADER-DESKTOP---------*/
 
     header {
-        width: 75%;
+        width: 85%;
         margin: auto;
     }
 
     header nav {
-        width: 90%;
+        width: 85%;
     }
 
     .sub-nav-mobile .logo p {
