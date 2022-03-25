@@ -342,78 +342,78 @@ footer p {
 
 /*--------HEADER-TABLET---------*/
 
-    header {
-        display: flex;
-        flex-direction: row;
-        width: 100vw;
-        justify-content: center;
-    }
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+}
 
-    .sub-nav-mobile .logo p {
-        font-size: 24px;
-    }
+.sub-nav-mobile .logo p {
+    font-size: 24px;
+}
 
-    .menu-hamburguesa{
-        display: none;
-    }
+.menu-hamburguesa{
+    display: none;
+}
 
-    header nav {
-        display: flex;
-        flex-direction: row;
-        width: 75%;
-        justify-content: end;
-    }
+header nav {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    justify-content: end;
+}
 
-    header nav ul {
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        justify-content: end;
-        margin-right: 15px;
-    }
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: end;
+    margin-right: 15px;
+}
 
-    header nav ul li {
-        display: flex;
-        align-items: center;
-        padding: 5px;
-    }
+header nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
 
-    header nav ul li a {
-        text-decoration: none;
-        font-size: 10px;
-        color: black;
-        display: block;
-        align-items: center;
-    }
+header nav ul li a {
+    text-decoration: none;
+    font-size: 10px;
+    color: black;
+    display: block;
+    align-items: center;
+}
 
-    .botones-nav {
-        display: flex;
-        flex-direction: row;
-    }
+.botones-nav {
+    display: flex;
+    flex-direction: row;
+}
 
-    .botones-nav .boton-a {
-        text-decoration: none;
-        font-size: 10px;
-        background-color: transparent;
-        color: black;
-        padding: 10px;
-        border: solid 1px black;
-        border-radius: 25px;
-        width: 85px;
-        text-align: center;
-    }
+.botones-nav .boton-a {
+    text-decoration: none;
+    font-size: 10px;
+    background-color: transparent;
+    color: black;
+    padding: 10px;
+    border: solid 1px black;
+    border-radius: 25px;
+    width: 85px;
+    text-align: center;
+}
 
-    .botones-nav .boton-b {
-        text-decoration: none;
-        font-size: 10px;
-        background-color: black;
-        color: white;
-        padding: 10px;
-        border: solid 1px black;
-        border-radius: 25px;
-        width: 85px;
-        text-align: center;
-    }
+.botones-nav .boton-b {
+    text-decoration: none;
+    font-size: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: solid 1px black;
+    border-radius: 25px;
+    width: 85px;
+    text-align: center;
+}
 
 /*--------MAIN_PRODUCTDETAIL-TABLET---------*/
 
@@ -482,7 +482,7 @@ footer p {
 
 
 .servicios .articulos .articulo-desktop {
-    display: block;
+    display: flex;
 }
 
 .servicios .articulos {
@@ -528,127 +528,127 @@ footer p {
 
 @media (min-width: 830px) {
 
-    /*--------HEADER-DESKTOP---------*/
-    
-        header {
-            width: 85%;
-            margin: auto;
-        }
-    
-        header nav {
-            width: 85%;
-        }
-    
-        .sub-nav-mobile .logo p {
-            font-size: 24px;
-        }
-    
-        header nav ul li a {
-            font-size: 14px;
-            padding: 10px;
-        }
-    
-        header nav ul li a:hover {
-            text-decoration-line: underline;
-        }
-    
-        .botones-nav .boton-a {
-            font-size: 14px;
-            width: 110px;
-        }
-    
-        .botones-nav .boton-b {
-            font-size: 14px;
-            width: 110px;
-        }
+/*--------HEADER-DESKTOP---------*/
 
-    /*--------MAIN_PRODUCTDETAIL-DESKTOP---------*/
+header {
+    width: 85%;
+    margin: auto;
+}
 
-    .origen input:hover {
-        border: solid 2px black;
-    }
-    
-    .destino input:hover {
-        border: solid 2px black;
-    }
+header nav {
+    width: 85%;
+}
 
-    .filtros .filtros-mobile {
-        display: none;
-    }
+.sub-nav-mobile .logo p {
+    font-size: 24px;
+}
 
-    
-    .filtros .filtros-desktop {
-        display: flex;
-        flex-direction: row;
-        padding: 10px;
-        width: 90%;
-        margin: auto;
-    }
-    
-    .filtros-desktop .filtro {
-        display: flex;
-        flex-direction: row;
-        margin: auto;
-        font-size: 12px;
-    }
-    
-    .filtro a {
-        text-decoration: none;
-        color: black;
-    }
+header nav ul li a {
+    font-size: 14px;
+    padding: 10px;
+}
 
-    .filtro a:hover {
-        text-decoration: underline;
-    }
-    
-    .filtro i {
-        margin-left: 5px;
-    }
+header nav ul li a:hover {
+    text-decoration-line: underline;
+}
 
-    .servicios {
-        width: 85%;
-        margin: auto;
-    }
+.botones-nav .boton-a {
+    font-size: 14px;
+    width: 110px;
+}
 
-    .articulo:hover {
-        border: solid 2px black;
-    }
+.botones-nav .boton-b {
+    font-size: 14px;
+    width: 110px;
+}
 
-    .articulo .flechas i {
-        transition: 1000ms;
-    }
+/*--------MAIN_PRODUCTDETAIL-DESKTOP---------*/
 
-    .articulo .flechas i:hover {
-        transform: rotateZ(180deg);
-    }
+.origen input:hover {
+    border: solid 2px black;
+}
 
-    .articulos .articulo {
-        width: 30%;
-    }
-    
-    .sub-iconos .review {
-        padding: 5px;
-    }
-    
-    .sub-iconos .review i {
-        font-size: 9px;
-    }
-    
-    .sub-iconos .review a {
-        font-size: 9px;
-        margin-left: 1px;
-    }
-    
-    .sub-iconos .comprar i {
-        font-size: 16px;
-    }
-    
-    .sub-iconos .comprar a {
-        font-size: 9px;
-    }
-    
-    .boton-ver-mas a:hover {
-        text-decoration: underline;
-    }
+.destino input:hover {
+    border: solid 2px black;
+}
 
-    }
+.filtros .filtros-mobile {
+    display: none;
+}
+
+
+.filtros .filtros-desktop {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+}
+
+.filtros-desktop .filtro {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    font-size: 12px;
+}
+
+.filtro a {
+    text-decoration: none;
+    color: black;
+}
+
+.filtro a:hover {
+    text-decoration: underline;
+}
+
+.filtro i {
+    margin-left: 5px;
+}
+
+.servicios {
+    width: 85%;
+    margin: auto;
+}
+
+.articulo:hover {
+    border: solid 2px black;
+}
+
+.articulo .flechas i {
+    transition: 1000ms;
+}
+
+.articulo .flechas i:hover {
+    transform: rotateZ(180deg);
+}
+
+.articulos .articulo {
+    width: 30%;
+}
+
+.sub-iconos .review {
+    padding: 5px;
+}
+
+.sub-iconos .review i {
+    font-size: 9px;
+}
+
+.sub-iconos .review a {
+    font-size: 9px;
+    margin-left: 1px;
+}
+
+.sub-iconos .comprar i {
+    font-size: 16px;
+}
+
+.sub-iconos .comprar a {
+    font-size: 9px;
+}
+
+.boton-ver-mas a:hover {
+    text-decoration: underline;
+}
+
+}
