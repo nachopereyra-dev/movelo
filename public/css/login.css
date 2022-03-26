@@ -54,58 +54,41 @@ nav {
 
 main {
     width: 100wv;
-}
-
-main .textos {
-    margin-bottom: 80px;
-}
-
-main .titulos {
-    font-size: 28px;
-    font-weight: 400;
-    margin: 70px;
-    text-align: center;
-}
-
-main .titulo-2 {
-    display: none;
-}
-
-main .sub-titulo {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 50px;
-    text-align: center;
-}
-
-main .botones {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin-bottom: 105px;
 }
 
-main .boton-1 {
-    text-decoration: none;
-    background-color: transparent;
+main section {
+    position: relative;
+    text-align: center;
+    margin: 25px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px black solid;
+    border-radius: 30px;
+    max-width: 85%;
+    justify-content: center;
+}
+
+main section .Candado {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: -45px;
+}
+
+main section .botonCancelar {
+    font-size: 2.5em;
+    position: absolute;
     color: black;
-    padding: 10px;
-    border: solid 1px black;
-    border-radius: 25px;
-    width: 160px;
-    text-align: center;
-    margin-bottom: 15px;
+    right: 10px;
 }
 
-main .boton-2 {
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border: solid 1px black;
-    border-radius: 25px;
-    width: 160px;
-    text-align: center;
+main section h2 {
+    margin-top: 70px;
+    font-family: 'noto sans';
 }
 
 /*--------FOOTER-HOME---------*/
@@ -221,31 +204,6 @@ footer p {
 
 /*--------MAIN_HOME-TABLET---------*/
 
-main .titulo-1 {
-    margin-bottom: 0px;
-}
-
-main .titulo-2 {
-    display: block;
-    color: lightgray;
-    margin-top: 10px;
-}
-
-main .botones {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 150px;
-}
-
-main .boton-1 {
-    margin-bottom: 0px;
-    margin-right: 5px;
-}
-
-main .boton-2 {
-    margin-left: 5px;
-}
 
 }
 
