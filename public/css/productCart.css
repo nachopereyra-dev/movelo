@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 /*--------BODY---------*/
@@ -49,14 +49,90 @@ nav {
 main iframe {
   display: none;
 }
+main .detalles_carrito {
+  background-color: white;
+  box-shadow: 10px 5px 5px rgb(197, 197, 197);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  border: solid 1px rgb(66, 66, 66);
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.flechas i {
+  text-align: center;
+  font-size: 50px;
+  transition: 1000ms;
+}
+main .caja_contenido {
+  display: flex;
+}
+.flechas i:hover {
+  transform: rotateZ(180deg);
+}
 main .navbar_carrito {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .navbar_carrito .flecha {
+  display: inline;
+  font-size: 2px;
+  margin-right: 2vh;
+}
+main .navbar_carrito .carrito {
   display: none;
 }
-main .detalles_carrito {
-  background-color: gray;
+main .articulo .viaje {
+  text-align: center;
+}
+main .articulo .viaje p {
+  font-weight: bold;
+}
+
+main .detalles_carrito h1,
+main .detalles_carrito p {
+  text-align: center;
 }
 main article {
-  background-color: gray;
+  width: 90%;
+  margin: auto;
+  padding: 1vw 1vh;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: rgb(230, 230, 230);
+}
+.precio_producto .precio_line p {
+  display: inline-block;
+}
+.precio_producto .precio_line p:first-child {
+  font-weight: bold;
+}
+
+.precio_producto .precio_line p:nth-child(2n-2) {
+  font-weight: lighter;
+}
+button {
+  text-decoration: none;
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: solid 1px black;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.link_comprar :hover {
+  background-color: rgb(48, 48, 48);
+  box-shadow: 5px 5px rgb(197 197 197);
+}
+button :active {
+  color: brown;
+  background-color: rgb(17, 4, 4);
 }
 /*--------FOOTER-HOME---------*/
 
@@ -164,34 +240,6 @@ footer p {
     width: 85px;
     text-align: center;
   }
-
-  /*--------MAIN_HOME-TABLET---------*/
-
-  main .titulo-1 {
-    margin-bottom: 0px;
-  }
-
-  main .titulo-2 {
-    display: block;
-    color: lightgray;
-    margin-top: 10px;
-  }
-
-  main .botones {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 150px;
-  }
-
-  main .boton-1 {
-    margin-bottom: 0px;
-    margin-right: 5px;
-  }
-
-  main .boton-2 {
-    margin-left: 5px;
-  }
 }
 
 /*-----------DESKTOP------------*/
@@ -231,15 +279,28 @@ footer p {
     width: 110px;
   }
   /*--------MAIN-DESKTOP---------*/
+
+  main .navbar_carrito .carrito {
+    display: inline;
+    font-size: 80px;
+    margin-right: 2vh;
+  }
+
   main .navbar_carrito {
-    display: block;
+    justify-content: flex-start;
+  }
+  main .navbar_carrito .flecha {
+    display: none;
+  }
+  main .detalles_carrito {
+    width: 50%;
   }
   main iframe {
-    display: block;
+    display: flex;
+    width: 50vw;
+    margin: 1vw;
   }
   main {
-    display: flex;
-    flex-direction: row;
     width: 80%;
     margin: auto;
   }
