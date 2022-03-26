@@ -9,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         rel="stylesheet">
     <link rel="stylesheet" href="css/productCart.css">
+    <link rel="stylesheet" href="F:\LAUTI\Documents\Digital House\grupo_6_movelo\public\css\productCart.css">
     <title>Movelo</title>
 </head>
 <body>
@@ -22,18 +23,54 @@
 
             <div class="main-navbar">
                 <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Servicios</a></li>
-                    <li><a href=""><img src="/img/icons/Shop_Empty.svg" alt=""></a></li>
-                    <li><a href="">Iniciar sesion</a></li>
-                    <li><a href="">Registrate</a></li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/servicios">Servicios</a></li>
+                    <li><a href="/shop"><img src="/img/icons/Shop_Empty.svg" alt=""></a></li>
+                    <div class="botones-nav">
+                    <li><a class="boton-a" href="/login">Iniciar sesion</a></li>
+                    <li><a class="boton-b" href="/registro">Registrate</a></li>
+                    </div>
                 </ul>
             </div>
 
         </nav>
     </header>
     <main>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3392026.6498744045!2d-59.83310539459852!3d-33.87610402093655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!3m2!1d-34.6036844!2d-58.3815591!4m5!1s0x959f80ffc63bf7d3%3A0x6b321b2e355bec99!2sMontevideo%20Departamento%20de%20Montevideo%2C%20Uruguay!3m2!1d-34.9011127!2d-56.164531399999994!5e0!3m2!1ses-419!2sar!4v1648317693231!5m2!1ses-419!2sar" width="600" height="450" style="border-radius:16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="navbar_carrito"><img src="/img/icons/Shop_Empty.svg" alt=""></div><img src="/img/icons/flecha.svg"><h2>CARRITO DE COMPRAS</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3392026.6498744045!2d-59.83310539459852!3d-33.87610402093655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!3m2!1d-34.6036844!2d-58.3815591!4m5!1s0x959f80ffc63bf7d3%3A0x6b321b2e355bec99!2sMontevideo%20Departamento%20de%20Montevideo%2C%20Uruguay!3m2!1d-34.9011127!2d-56.164531399999994!5e0!3m2!1ses-419!2sar!4v1648317693231!5m2!1ses-419!2sar" width="600" height="450" style="border-radius:16px; border: 0; box-shadow: 2em gray; opacity: 60%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="googlemaps"></iframe>
+        <div class="detalles_carrito">
+            <h1>$423.000</h1>
+            <p>Marzo 7, 2022 - 3:45 PM</p>
+            <p>Pedido #123</p>
+            <article class="articulo">
+                    <p class="ciudad-origen">Buenos Aires</p>
+                    <div class="flechas">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <p class="ciudad-destino">Mar del plata</p>
+                    <div class="precio_Producto">
+                        <p>Precio del envio</p>
+                        <p>$...</p>
+                        <p>Impuestos</p>
+                        <p>$...</p>
+                        <p>Recompensa por traslado</p>
+                        <p>$...</p>
+                        <p>Comisión por servicio</p>
+                        <p>$...</p>
+                        <hr>
+                        <p>Total:</p>
+                        <p>$....</p>
+                    </div>
+        </article>
+    </div>
     </main>
+    <footer>
+        <div class="logos">
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-facebook"></i></a>
+        <a href="https://es-la.facebook.com/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>Todos los derechos reservados para Movelo (2022)</p>
+    </footer>
 </body>
 </html>
