@@ -66,6 +66,7 @@ main section {
     margin-right: auto;
     border: 2px black solid;
     border-radius: 30px;
+    width: 300px;
     max-width: 85%;
     justify-content: center;
 }
@@ -86,10 +87,47 @@ main section .botonCancelar {
     right: 10px;
 }
 
-main section h2 {
+main section h1 {
     margin-top: 70px;
-    font-family: 'Nunito Sans';
+    margin-bottom: auto;
 }
+
+main section .nuevo-usuario {
+    margin: auto;
+    margin-top: 10px;
+}
+
+main section .registrate{
+    text-decoration: none;
+    
+}
+
+main section form {
+    text-align: center;
+    margin: 40px 0px;
+}
+
+main section form .casilla {
+    width: 220px;
+    max-width: 95%;
+    margin: 40px auto;
+    display: block;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;    
+}
+
+main section form .checkbox {    
+    width: fit-content;
+    margin: -20px 14% 40px;
+}
+
+main section form .boton-iniciarSesion {
+    display: block;
+    text-decoration: none;
+    margin: 20px 0px;
+}
+
 
 /*--------FOOTER-HOME---------*/
 
