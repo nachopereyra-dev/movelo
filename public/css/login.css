@@ -54,152 +54,154 @@ main {
   display: flex;
   align-items: center;
 }
+main {
+  width: 85%;
+  margin: auto;
+}
 
-    main section {
-        position: relative;
-        text-align: center;
-        margin: 60px 0px;
-        margin-left: auto;
-        margin-right: auto;
-        border: 2px black solid;
-        border-radius: 30px;
-        width: 300px;
-        max-width: 85%;
-        justify-content: center;
-    }
+main section {
+  position: relative;
+  text-align: center;
+  margin: 60px 0px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px black solid;
+  border-radius: 30px;
+  width: 300px;
+  max-width: 85%;
+  justify-content: center;
+}
 
-        main section .Candado {
-        position: absolute;
-        margin: auto;
-        left: 0;
-        right: 0;
-        text-align: center;
-        top: -45px;
-        }
+main section .Candado {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: -45px;
+}
 
-        main section .botonCancelar {
-        font-size: 2.5em;
-        position: absolute;
-        color: black;
-        right: 10px;
-        }
+main section .botonCancelar {
+  font-size: 2.5em;
+  position: absolute;
+  color: black;
+  right: 10px;
+}
 
-        main section h1 {
-            margin-top: 70px;
-            margin-bottom: auto;
-        }
+main section h1 {
+  margin-top: 70px;
+  margin-bottom: auto;
+}
 
-        main section .nuevo-usuario {
-            margin: auto;
-            margin-top: 10px;
-        }
+main section .nuevo-usuario {
+  margin: auto;
+  margin-top: 10px;
+}
 
-        main section .registrate{
-            text-decoration: none;
-            
-        }
+main section .registrate {
+  text-decoration: none;
+}
 
-        main section form {
-            text-align: center;
-            margin: 40px 0px;
-        }
+main section form {
+  text-align: center;
+  margin: 40px 0px;
+}
 
-            main section form .casilla {
-                width: 220px;
-                outline: none;
-                max-width: 95%;
-                margin: 40px auto;
-                display: block;
-                background: none;
-                border: none;
-                border-bottom: 1px solid black;
-                transition: 100ms;    
-            }
+main section form .casilla {
+  width: 220px;
+  outline: none;
+  max-width: 95%;
+  margin: 40px auto;
+  display: block;
+  background: none;
+  border: none;
+  border-bottom: 1px solid black;
+  transition: 100ms;
+}
 
-                main section form .casilla:focus{
-                    border-bottom: 2px solid black;
-                    font-weight: bold;
-                }
+main section form .casilla:focus {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
 
-            main section form .checkbox {    
-                width: fit-content;
-                margin: -20px 14% 40px;
-            }
+main section form .checkbox {
+  width: fit-content;
+  margin: -20px 14% 40px;
+}
 
-                main section form .checkbox-box {    
-                    margin-right: 5px;
-                }
+main section form .checkbox-box {
+  margin-right: 5px;
+}
 
-                main section form .checkbox-box:checked {    
-                    background-color: black;
-                }
+main section form .checkbox-box:checked {
+  background-color: black;
+}
 
-            main section form .boton-iniciarSesion {
-                display: flex;
-                width: 220px;
-                max-width: 95%;
-                height: 35px;
-                justify-content: center;
-                align-items:center;
-                text-decoration: none;
-                margin: 20px auto;
-                background-color: black;
-                color: white;
-                border-radius: 25px;
-            }
+main section form .boton-iniciarSesion {
+  display: flex;
+  width: 220px;
+  max-width: 95%;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 20px auto;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+}
 
-        main section .iniciarSesionCon-mobile {
-            display: block;
-        }
-        
-            main section .iniciarSesionCon-mobile .iniciar-sesion-con{
-                display: flex;
-                padding-top: 10px;
-            }
+main section .iniciarSesionCon-mobile {
+  display: block;
+}
 
-                main section .iniciarSesionCon-mobile .iniciar-sesion-con::before, .iniciar-sesion-con::after{
-                    content:'';
-                    flex:1;
-                    border-bottom:solid 1px;
-                    margin:auto 5px;
-                }
-                main section .iniciarSesionCon-mobile .iniciar-sesion-con::before {
-                    margin-left: 15px;
-                }
-                main section .iniciarSesionCon-mobile .iniciar-sesion-con::after {
-                    margin-right: 15px;
-                }
-            
-        main section .iniciarSesionCon-mobile .boton-iniciarSesionGoogle {
-            display: flex;
-            width: 170px;
-            max-width: 95%;
-            height: 30px;
-            justify-content: center;
-            align-items:center;
-            text-decoration: none;
-            margin: 20px auto 60px;
-            background-color: black;
-            color: white;
-            border-radius: 25px;
-        }
-        
-        main section .recuperoContraseña {
-            display: block;
-            text-decoration: underline;
-            color: black;
-            margin: 30px 0px;
-        }
+main section .iniciarSesionCon-mobile .iniciar-sesion-con {
+  display: flex;
+  padding-top: 10px;
+}
 
-    main .iniciarSesionCon-desktop {
-        display: none;
-    }
+main section .iniciarSesionCon-mobile .iniciar-sesion-con::before,
+.iniciar-sesion-con::after {
+  content: "";
+  flex: 1;
+  border-bottom: solid 1px;
+  margin: auto 5px;
+}
+main section .iniciarSesionCon-mobile .iniciar-sesion-con::before {
+  margin-left: 15px;
+}
+main section .iniciarSesionCon-mobile .iniciar-sesion-con::after {
+  margin-right: 15px;
+}
 
-    main .CharacterIMG{
-        display: none;
-    }
+main section .iniciarSesionCon-mobile .boton-iniciarSesionGoogle {
+  display: flex;
+  width: 170px;
+  max-width: 95%;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 20px auto 60px;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+}
 
-            
+main section .recuperoContraseña {
+  display: block;
+  text-decoration: underline;
+  color: black;
+  margin: 30px 0px;
+}
+
+main .iniciarSesionCon-desktop {
+  display: none;
+}
+
+main .CharacterIMG {
+  display: none;
+}
 
 /*--------FOOTER-HOME---------*/
 
@@ -311,9 +313,8 @@ footer p {
 
 /*--------MAIN-TABLET---------*/
 main .iniciarSesionCon-desktop {
-    display: none;
+  display: none;
 }
-
 
 /*-----------DESKTOP------------*/
 
@@ -352,79 +353,75 @@ main .iniciarSesionCon-desktop {
     width: 110px;
   }
 
-
   /*--------MAIN-DESKTOP---------*/
 
-
   main {
-      justify-content: space-between;
+    justify-content: space-between;
   }
 
-    main section {
-        position: relative;
-        text-align: center;
-        margin: 20px 0px;
-        margin-left: 5%;
-        margin-right: 30px;
-        border: 2px black solid;
-        border-radius: 30px;
-        width: 400px;
-        max-width: 85%;
-        justify-content: center;
-        }
+  main section {
+    position: relative;
+    text-align: center;
+    margin: 20px 0px;
+    margin-left: 5%;
+    margin-right: 30px;
+    border: 2px black solid;
+    border-radius: 30px;
+    width: 400px;
+    max-width: 85%;
+    justify-content: center;
+  }
 
-    main section .iniciarSesionCon-mobile {
-        display: none;
-    }
+  main section .iniciarSesionCon-mobile {
+    display: none;
+  }
 
-    main section form .checkbox {    
-        width: 220px;
-        margin: -20px auto 40px;
-        text-align: left;
-    }
+  main section form .checkbox {
+    width: 220px;
+    margin: -20px auto 40px;
+    text-align: left;
+  }
 
-    main .iniciarSesionCon-desktop {
-        display: block;
-        width: 400px;
-    }
+  main .iniciarSesionCon-desktop {
+    display: block;
+    width: 400px;
+  }
 
-        main .iniciarSesionCon-desktop .iniciar-sesion-con{
-            display: flex;
-            padding-top: 10px;
-        }
+  main .iniciarSesionCon-desktop .iniciar-sesion-con {
+    display: flex;
+    padding-top: 10px;
+  }
 
-            main .iniciarSesionCon-desktop .iniciar-sesion-con::before, .iniciar-sesion-con::after{
-                content:'';
-                flex:1;
-                border-bottom:solid 1px;
-                margin:auto 5px;
-            }
-            main .iniciarSesionCon-desktop .iniciar-sesion-con::before {
-                margin-left: 15px;
-            }
-            main .iniciarSesionCon-desktop .iniciar-sesion-con::after {
-                margin-right: 15px;
-            }
+  main .iniciarSesionCon-desktop .iniciar-sesion-con::before,
+  .iniciar-sesion-con::after {
+    content: "";
+    flex: 1;
+    border-bottom: solid 1px;
+    margin: auto 5px;
+  }
+  main .iniciarSesionCon-desktop .iniciar-sesion-con::before {
+    margin-left: 15px;
+  }
+  main .iniciarSesionCon-desktop .iniciar-sesion-con::after {
+    margin-right: 15px;
+  }
 
-        main .iniciarSesionCon-desktop .boton-iniciarSesionGoogle {
-        display: flex;
-        width: 170px;
-        max-width: 95%;
-        height: 30px;
-        justify-content: center;
-        align-items:center;
-        text-decoration: none;
-        margin: 20px auto 60px;
-        background-color: black;
-        color: white;
-        border-radius: 25px;
-        }
-    main .CharacterIMG{
-        display: flex;
-        margin-right: 5%;
-        align-self: flex-end;
-    }
+  main .iniciarSesionCon-desktop .boton-iniciarSesionGoogle {
+    display: flex;
+    width: 170px;
+    max-width: 95%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 20px auto 60px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+  }
+  main .CharacterIMG {
+    display: flex;
+    margin-right: 5%;
+    align-self: flex-end;
+  }
 }
-
-
-
