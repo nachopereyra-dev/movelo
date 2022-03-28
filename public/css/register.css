@@ -130,6 +130,7 @@ main section form .formulario-fecha {
 main section form .formulario-fecha .fecha {
   border: none;
   margin-top: 5px;
+  background-color: none;
 }
 
 main section form .form-genero {
@@ -140,6 +141,7 @@ main section form .form-genero {
 
 main section form .form-genero .genero {
   border: none;
+  background-color: none;
 }
 
 main section form .boton-registrarse {
