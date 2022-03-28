@@ -126,6 +126,14 @@ main {
                 margin: -20px 14% 40px;
             }
 
+                main section form .checkbox-box {    
+                    margin-right: 5px;
+                }
+
+                main section form .checkbox-box:checked {    
+                    background-color: black;
+                }
+
             main section form .boton-iniciarSesion {
                 display: flex;
                 width: 220px;
@@ -139,26 +147,30 @@ main {
                 color: white;
                 border-radius: 25px;
             }
-        
-        main section .iniciar-sesion-con{
-            display: flex;
-            padding-top: 10px;
-        }
 
-            main section .iniciar-sesion-con::before, .iniciar-sesion-con::after{
-                content:'';
-                flex:1;
-                border-bottom:solid 1px;
-                margin:auto 5px;
-            }
-            main section .iniciar-sesion-con::before {
-                margin-left: 15px;
-            }
-            main section .iniciar-sesion-con::after {
-                margin-right: 15px;
-            }
+        main section .iniciarSesionCon-mobile {
+            display: block;
+        }
         
-        main section .boton-iniciarSesionGoogle {
+            main section .iniciarSesionCon-mobile .iniciar-sesion-con{
+                display: flex;
+                padding-top: 10px;
+            }
+
+                main section .iniciarSesionCon-mobile .iniciar-sesion-con::before, .iniciar-sesion-con::after{
+                    content:'';
+                    flex:1;
+                    border-bottom:solid 1px;
+                    margin:auto 5px;
+                }
+                main section .iniciarSesionCon-mobile .iniciar-sesion-con::before {
+                    margin-left: 15px;
+                }
+                main section .iniciarSesionCon-mobile .iniciar-sesion-con::after {
+                    margin-right: 15px;
+                }
+            
+        main section .iniciarSesionCon-mobile .boton-iniciarSesionGoogle {
             display: flex;
             width: 170px;
             max-width: 95%;
@@ -178,6 +190,15 @@ main {
             color: black;
             margin: 30px 0px;
         }
+
+    main .iniciarSesionCon-desktop {
+        display: none;
+    }
+
+    main .CharacterIMG{
+        display: none;
+    }
+
             
 
 /*--------FOOTER-HOME---------*/
@@ -288,7 +309,11 @@ footer p {
   }
 }
 
-/*--------MAIN_HOME-TABLET---------*/
+/*--------MAIN-TABLET---------*/
+main .iniciarSesionCon-desktop {
+    display: none;
+}
+
 
 /*-----------DESKTOP------------*/
 
@@ -326,4 +351,80 @@ footer p {
     font-size: 14px;
     width: 110px;
   }
+
+
+  /*--------MAIN-DESKTOP---------*/
+
+
+  main {
+      justify-content: space-between;
+  }
+
+    main section {
+        position: relative;
+        text-align: center;
+        margin: 20px 0px;
+        margin-left: 5%;
+        margin-right: 30px;
+        border: 2px black solid;
+        border-radius: 30px;
+        width: 400px;
+        max-width: 85%;
+        justify-content: center;
+        }
+
+    main section .iniciarSesionCon-mobile {
+        display: none;
+    }
+
+    main section form .checkbox {    
+        width: 220px;
+        margin: -20px auto 40px;
+        text-align: left;
+    }
+
+    main .iniciarSesionCon-desktop {
+        display: block;
+        width: 400px;
+    }
+
+        main .iniciarSesionCon-desktop .iniciar-sesion-con{
+            display: flex;
+            padding-top: 10px;
+        }
+
+            main .iniciarSesionCon-desktop .iniciar-sesion-con::before, .iniciar-sesion-con::after{
+                content:'';
+                flex:1;
+                border-bottom:solid 1px;
+                margin:auto 5px;
+            }
+            main .iniciarSesionCon-desktop .iniciar-sesion-con::before {
+                margin-left: 15px;
+            }
+            main .iniciarSesionCon-desktop .iniciar-sesion-con::after {
+                margin-right: 15px;
+            }
+
+        main .iniciarSesionCon-desktop .boton-iniciarSesionGoogle {
+        display: flex;
+        width: 170px;
+        max-width: 95%;
+        height: 30px;
+        justify-content: center;
+        align-items:center;
+        text-decoration: none;
+        margin: 20px auto 60px;
+        background-color: black;
+        color: white;
+        border-radius: 25px;
+        }
+    main .CharacterIMG{
+        display: flex;
+        margin-right: 5%;
+        align-self: flex-end;
+    }
 }
+
+
+
