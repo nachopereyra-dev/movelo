@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
     <title>Movelo</title>
 </head>
 <body>
@@ -40,7 +40,49 @@
     </header>    
 
     <main>
+        <section>
+            <img src="/img/vectors/Security.svg" class="Candado" width="75" alt="candado">
+            <a href="/" class="botonCancelar"><i class="far fa-times-circle"></i></a>
+            <h1>Registrarse</h1>
+            <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
+            <a href="/login" class="iniciar-sesion">Iniciar sesión</a>
+            <form action="#" method="post" class="formulario-registro">
+                <input type="text" class="casilla" name="Usuario" placeholder="Nombre completo">
+                
+                <input type="email" class="casilla" name="Correo" placeholder="Correo electrónico">
+                
+                <input type="password" class="casilla" name="contraseña-registro" placeholder="Contraseña">
+                
+                <input type="password" class="casilla" name="contraseña-registro" placeholder="Contraseña">
+                
+                <div class="formulario-fecha">
+                    <label for="fecha">Fecha de nacimiento</label><input type="date" class="fecha" name="fecha" placeholder="Fecha de nacimiento">
+                </div>
 
+                <div class="form-genero">
+                    <select name="genero" id="genero" aria-placeholder="Género" class="genero">
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Otrx">Otrx</option>
+                    </select>
+                </div>
+                
+                <a class="boton-registrarse" href="/">Registrarse</a>
+            </form>
+
+            <div class="registrarse-mobile">
+                <p class="registrarse-con">Registrarse con</p>
+                <a class="boton-registrarseGoogle" href="/">Google</a>
+            </div>
+        </section>
+
+        <div class="registrarse-desktop">
+            <p class="registrarse-con">Registrarse con</p>
+            <a class="boton-registrarseGoogle" href="/">Google</a>
+        </div>
+        <div class="CharacterIMG">
+            <img src="/img/vectors/Character-3.svg" class="Character" width="180" alt="Character-3">
+        </div>
     </main>
 
     <footer>
