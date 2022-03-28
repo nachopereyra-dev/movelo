@@ -63,7 +63,7 @@ main .detalles_carrito {
 }
 .flechas i {
   text-align: center;
-  font-size: 50px;
+  font-size: 25px;
   transition: 1000ms;
 }
 main .caja_contenido {
@@ -92,8 +92,12 @@ main .articulo .viaje p {
   font-weight: bold;
 }
 
-main .detalles_carrito h1,
+main .detalles_carrito h2 {
+  padding-top: 5px;
+  text-align: center;
+}
 main .detalles_carrito p {
+  margin: 4px;
   text-align: center;
 }
 main article {
@@ -105,16 +109,18 @@ main article {
   margin-bottom: 15px;
   background-color: rgb(230, 230, 230);
 }
-.precio_producto .precio_line p {
-  display: inline-block;
+.precio_line {
+  position: relative;
+  display: flex;
 }
-.precio_producto .precio_line p:first-child {
+.precio {
+  position: absolute;
+  right: 5px;
+}
+.precio_envio {
   font-weight: bold;
 }
 
-.precio_producto .precio_line p:nth-child(2n-2) {
-  font-weight: lighter;
-}
 main article button {
   text-decoration: none;
   font-size: 15px;
@@ -297,11 +303,11 @@ footer p {
     display: none;
   }
   main .detalles_carrito {
-    width: 50%;
+    width: 55%;
   }
   main iframe {
     display: flex;
-    width: 50vw;
+    width: 45%;
     margin: 1vw;
   }
   main {
