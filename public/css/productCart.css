@@ -115,7 +115,7 @@ main article {
 .precio_producto .precio_line p:nth-child(2n-2) {
   font-weight: lighter;
 }
-button {
+main article button {
   text-decoration: none;
   font-size: 15px;
   background-color: black;
@@ -124,6 +124,10 @@ button {
   border: solid 1px black;
   border-radius: 25px;
   margin: 10px;
+  text-align: center;
+}
+.boton {
+  text-align: center;
 }
 
 .link_comprar :hover {
