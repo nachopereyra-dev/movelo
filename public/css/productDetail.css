@@ -7,6 +7,10 @@
 
 /*--------BODY---------*/
 
+html {
+    min-height: 100%;
+    position: relative;
+}
 
 body {
     background-image: url(/img/vectors/Path\ 230.svg);
@@ -310,11 +314,14 @@ form .destino {
 
 
 footer {
+    position: relative;
     background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    bottom: 0;
+    width: 100%;
 }
 
 footer .logos {
