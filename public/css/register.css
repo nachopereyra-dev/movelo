@@ -7,11 +7,6 @@
 
 /*--------BODY---------*/
 
-html {
-  min-height: 100%;
-  position: relative;
-}
-
 body {
   background-image: url(/img/vectors/Path\ 230.svg);
   width: 100vw;
@@ -353,6 +348,7 @@ main .registrarse-desktop {
   display: none;
 }
 main {
+  min-height: calc(100vh - 115.594px - 151.5px);
   width: 85%;
   margin: auto;
 }

@@ -7,10 +7,6 @@
 
 /*--------BODY---------*/
 
-html {
-  min-height: 100%;
-  position: relative;
-}
 
 body {
   background-image: url(/img/vectors/Path\ 230.svg);
@@ -51,6 +47,11 @@ nav {
 }
 
 /*--------MAIN---------*/
+
+main{
+  min-height: calc(100vh - 115.594px - 151.5px);
+}
+
 main iframe {
   display: none;
 }

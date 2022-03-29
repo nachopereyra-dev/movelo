@@ -7,10 +7,6 @@
 
 /*--------BODY---------*/
 
-html {
-    min-height: 100%;
-    position: relative;
-}
 
 body {
     background-image: url(/img/vectors/Path\ 230.svg);
@@ -53,6 +49,10 @@ nav {
 /*--------MAIN---------*/
 
 /*--------MAIN-PRODUCTDETAIL---------*/
+
+.servicios {
+    min-height: calc(100vh - 115.594px - 151.5px);
+}
 
 main .servicios {
     display: flex;
@@ -315,12 +315,12 @@ form .destino {
 
 footer {
     position: relative;
+    bottom: 0;
     background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    bottom: 0;
     width: 100%;
 }
 

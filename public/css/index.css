@@ -6,10 +6,6 @@
 }
 
 /*--------BODY---------*/
-html {
-    min-height: 100%;
-    position: relative;
-}
 
 body {
     background-image: url(../img/vectors/Path\ 230.svg);
@@ -55,6 +51,7 @@ nav {
 /*--------MAIN-HOME---------*/
 
 main {
+    min-height: calc(100vh - 115.594px - 151.5px);
     width: 100wv;
 }
 
@@ -114,13 +111,11 @@ main .boton-2 {
 
 
 footer {
-    position: relative;
     background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    bottom: 0;
     width: 100%;
 }
 
