@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: "Nunito Sans", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 0 !important;
+}
 
 /*--------BODY---------*/
 
@@ -48,7 +51,7 @@ nav {
 
 /*--------MAIN---------*/
 
-main{
+main {
   min-height: calc(100vh - 115.594px - 151.5px);
 }
 
