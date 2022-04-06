@@ -1,13 +1,7 @@
 
 
 
-
-
-
-const mainController = {
-    inicio: (req, res) => {
-      res.render("inicio", { title: 'Express' });
-    },
+const productsController = {
     servicios: (req, res) => {
         res.render("products/servicios", { title: 'Express' })
     },
@@ -16,6 +10,4 @@ const mainController = {
     }
 }
 
-
-
-module.exports = mainController;
+module.exports = productsController;
