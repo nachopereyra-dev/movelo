@@ -7,7 +7,7 @@ const mainController = require('../controllers/mainController');
 //  res.render('inicio', { title: 'Express' });
 //});
 
-router.get('/', mainController.index);
+router.get('/', mainController.inicio);
 router.get('/servicios', mainController.servicios);
 router.get('/shop', mainController.shop);
 router.get('/login', mainController.login);
