@@ -625,7 +625,7 @@ header nav ul li a:hover {
     transition: 1000ms;
 }
 
-.articulo .flechas i:hover {
+.articulo:hover .flechas i {
     transform: rotateZ(180deg);
 }
 
