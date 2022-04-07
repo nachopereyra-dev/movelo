@@ -71,19 +71,20 @@
           </div>
   
           <div class="articulos">
-             
-              <article class="articulo">
-  
+
+            <% for (let i = 0; i < articulos.length; i++) { %>
+                <article class="articulo" style="background-image: url('/images/products/<%=articulos[i].imagen%>'); background-size: cover;">
+                        
                       <div class="verify">
-                          <p>Usuario verificado</p><i class="fas fa-user-check"></i>
+                          <% if (articulos[i].verificado == true) { %><p>Usuario verificado</p><i class="fas fa-user-check"></i><% } else { %> <p>Usuario no verificado</p><i class="fas fa-user-times"></i> <% } %>
                       </div>
   
-                      <p class="ciudad-origen">Buenos Aires</p>
+                      <p class="ciudad-origen"><%= articulos[i].origen %></p>
                       <div class="flechas">
                           <i class="fas fa-exchange-alt"></i>
                       </div>
-                      <p class="ciudad-destino">Mar del plata</p>
-                      <p class="precio">$$$</p>
+                      <p class="ciudad-destino"><%= articulos[i].destino %></p>
+                      <p class="precio">U$s <%= articulos[i].precio %></p>
   
                       <div class="sub-iconos">
   
@@ -102,167 +103,8 @@
   
                       </div>
   
-          </article>
-  
-          <article class="articulo">    
-  
-                      <div class="verify">
-                          <p>Usuario verificado</p><i class="fas fa-user-check"></i>
-                      </div>
-                      
-                      <p class="ciudad-origen">Palermo</p>
-                      <div class="flechas">
-                          <i class="fas fa-exchange-alt"></i>
-                      </div>
-                      <p class="ciudad-destino">Lanus</p>
-                      <p class="precio">$$$</p>
-  
-                      <div class="sub-iconos">
-  
-                          <div class="review">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="far fa-star"></i>
-                              <a>(4.0)</a>
-                          </div>
-      
-                          <div class="comprar">
-                              <a>Agregar al carrito</a><img src="/images/icons/Shop_Empty.svg" alt="">
-                          </div>
-      
-                      </div>
-  
-          </article>
-  
-          <article class="articulo">
-  
-                      <div class="verify">
-                          <p>Usuario no verificado</p><i class="fas fa-user-times"></i>
-                      </div>
-                      
-                      <p class="ciudad-origen">Buenos Aires</p>
-                      <div class="flechas">
-                          <i class="fas fa-exchange-alt"></i>
-                      </div>
-                      <p class="ciudad-destino">Punta del Este</p>
-                      <p class="precio">$$$</p>
-  
-                      <div class="sub-iconos">
-  
-                          <div class="review">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star-half-alt"></i>
-                              <i class="far fa-star"></i>
-                              <i class="far fa-star"></i>
-                              <a>(2.83)</a>
-                          </div>
-      
-                          <div class="comprar">
-                              <a>Agregar al carrito</a><img src="/images/icons/Shop_Empty.svg" alt="">
-                          </div>
-      
-                      </div>
-  
-          </article>
-  
-              
-          <article class="articulo articulo-desktop">      
-  
-                          <div class="verify">
-                              <p>Usuario verificado</p><i class="fas fa-user-check"></i>
-                          </div>
-                      
-                          <p class="ciudad-origen">Montevideo</p>
-                          <div class="flechas">
-                              <i class="fas fa-exchange-alt"></i>
-                          </div>
-                          <p class="ciudad-destino">Buenos Aires</p>
-                          <p class="precio">$$$</p>
-  
-                          <div class="sub-iconos">
-  
-                              <div class="review">
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star-half-alt"></i>
-                                  <a>(4.93)</a>
-                              </div>
-          
-                              <div class="comprar">
-                                  <a>Agregar al carrito</a><img src="/images/icons/Shop_Empty.svg" alt="">
-                              </div>
-          
-                          </div>
-              </article>
-  
-              <article class="articulo articulo-desktop">
-  
-                          <div class="verify">
-                              <p>Usuario verificado</p><i class="fas fa-user-check"></i>
-                          </div>
-                      
-                          <p class="ciudad-origen">Belgrano</p>
-                          <div class="flechas">
-                              <i class="fas fa-exchange-alt"></i>
-                          </div>
-                          <p class="ciudad-destino">La Plata</p>
-                          <p class="precio">$$$</p>
-  
-                          <div class="sub-iconos">
-  
-                              <div class="review">
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="far fa-star"></i>
-                                  <a>(4.0)</a>
-                              </div>
-          
-                              <div class="comprar">
-                                  <a>Agregar al carrito</a><img src="/images/icons/Shop_Empty.svg" alt="">
-                              </div>
-          
-                          </div>
-  
-              </article>
-  
-              <article class="articulo articulo-desktop">
-                      
-                          <div class="verify">
-                              <p>Usuario no verificado</p><i class="fas fa-user-times"></i>
-                          </div>
-                      
-                          <p class="ciudad-origen">Parque Avellaneda</p>
-                          <div class="flechas">
-                              <i class="fas fa-exchange-alt"></i>
-                          </div>
-                          <p class="ciudad-destino">Puerto Madero</p>
-                          <p class="precio">$$$</p>
-  
-                          <div class="sub-iconos">
-  
-                              <div class="review">
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star"></i>
-                                  <i class="fas fa-star-half-alt"></i>
-                                  <a>(4.93)</a>
-                              </div>
-          
-                              <div class="comprar">
-                                  <a>Agregar al carrito</a><img src="/images/icons/Shop_Empty.svg" alt="">
-                              </div>
-          
-                          </div>
-                          
-              </article>
+                </article>
+            <% } %>
   
           </div>
   
