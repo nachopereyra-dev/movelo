@@ -174,6 +174,11 @@ form .destino {
     font-size: 18px;
 }
 
+.linkDetalle {
+    text-decoration: none;
+    color: black;
+}
+
 .servicios .articulos {
     display: flex;
     flex-direction: column;
