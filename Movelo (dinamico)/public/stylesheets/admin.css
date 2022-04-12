@@ -60,7 +60,92 @@ main {
   margin: auto;
 }
 
+main .formulario-crear-servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
 
+form {
+  width: 90%;
+}
+
+.formulario-crear-servicio h3{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.formulario-crear-servicio .row-crear {
+  display: flex;
+  flex-direction: row;
+}
+
+.row-crear input {
+  margin-right: 25px;
+}
+
+.formulario-crear-servicio .column-crear {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.formulario-crear-servicio input {
+  border-radius: 10px;
+  padding: 2px;
+  border: solid 1px black;
+  margin-top: 5px;
+}
+
+.sub-row-crear input {
+  margin-left: 8px;
+}
+
+.sub-row-crear {
+  margin-top: 10px;
+}
+
+.botones-crear {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.enviar-crear {
+  display: flex;
+  background-color: black;
+  margin: 25px auto;
+  width: 150px;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.enviar-crear input {
+  margin: auto;
+  color: white;
+  background-color: transparent;
+  padding: 5px;
+}
+
+.reset-crear {
+  display: flex;
+  background-color: transparent;
+  border: solid 1px black;
+  margin: 15px auto;
+  width: 150px;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.reset-crear input {
+  margin: auto;
+  color: black;
+  background-color: transparent;
+  padding: 5px;
+  border: none;
+}
 
 /*--------FOOTER-HOME---------*/
 
@@ -217,6 +302,16 @@ footer p {
 
   main {
     justify-content: space-between;
+  }
+
+  form {
+    width: 70%;
+  }
+
+  main .formulario-crear-servicio form .botones-crear {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 
 }

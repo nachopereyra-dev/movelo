@@ -184,9 +184,6 @@ form .destino {
     flex-direction: column;
 }
 
-.servicios .articulos .articulo-desktop {
-    display: none;
-}
 
 .articulos .articulo {
     background-color: white;
@@ -246,14 +243,15 @@ form .destino {
 .articulo .sub-iconos {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .sub-iconos .review {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     padding: 8px;
-    align-self: center;
+    align-items: center;
 }
 
 .sub-iconos .review i {
@@ -270,7 +268,7 @@ form .destino {
 
 .sub-iconos .comprar {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     font-size: 20px;
     align-self: center;
 }
