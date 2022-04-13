@@ -1,5 +1,4 @@
-## 📰 Realizar una breve retrospectiva
-### 🖊️Crear un archivo retro.md en el repositorio y anotar las principales conclusiones de la retro del primer sprint.
+## 📰 Breve retrospectiva Sprint 3
 
 ### 1. Comenzar a hacer.
 
@@ -15,10 +14,11 @@ Planificar la asignación de tareas individuales para aprovechar mejor el tiempo
 - Seguir eligiendo objetivos desafiantes
 - Respetar y escuchar las opiniones de los 3 integrantes
 - Trabajar de forma colaborativa
+- Seguir organizando
 
 ### 4. Hacer menos.
 
-- Atrasarnos en el contenido teórico y práctico del curso
+- Seguir atrasandonos en el contenido teórico y práctico del curso
 
 ### 5. Dejar de hacer.
 
