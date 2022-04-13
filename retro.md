@@ -4,7 +4,7 @@
 
 - Organizar mejor los tiempos
 - Organizar mejor la división de tareas
-
+- Comenzar a hacer las Daily's
 ### 2. Hacer más.
 
 Planificar la asignación de tareas individuales para aprovechar mejor el tiempo de cada uno
