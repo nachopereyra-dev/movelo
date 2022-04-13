@@ -80,6 +80,9 @@ const productsController = {
     },
     carrito: (req, res) => {
         res.render("products/carrito", { articulos: listadoDeProductos })
+    },
+    detalle: (req, res) => {
+        res.render("products/detalle", { articulos: listadoDeProductos })
     }
 }
 

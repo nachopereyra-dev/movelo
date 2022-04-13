@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var multer = require('multer');
 const userController = require('../controllers/usersController');
 
 /* GET users listing. */
