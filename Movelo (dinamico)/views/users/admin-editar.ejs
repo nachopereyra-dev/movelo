@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+  </head>
+  <body>
+    <%- include('../partials/header') %>   <!-----------HEADER----------->
+    
+    <main>
+
+      <div class="formulario-crear-servicio">
+        <h2>Edita un servicio</h2>
+        <form action="" method="">
+
+            <h3 for="Ruta">Ruta de envío</h3>
+          
+          <div class="column-crear">
+            <label for="origen">Orígen</label><input type="text">
+          </div>
+
+          <div class="column-crear">
+            <label for="destino">Destino</label><input type="text">
+          </div>
+            
+          <div class="column-crear">
+            <h3 for="categoria">Tipo de envío</h3>
+              
+            <div class="row-crear">
+              <div class="sub-row-crear">
+                <label for="envio-local">Local</label><input type="radio" name="tipo-envio" id="envio-local">
+              </div>
+
+              <div class="sub-row-crear">
+                  <label for="envio-internacional">Internacional</label><input type="radio" name="tipo-envio" id="envio-internacional">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="column-crear">
+                <h3 for="categoria">Tipo de usuario</h3>
+              
+              <div class="row-crear">
+                <div class="sub-row-crear">
+                  <label for="envio-particular">Particular</label><input type="radio" name="tipo-envio" id="envio-particular">
+                </div>
+                  
+                <div class="sub-row-crear">
+                  <label for="envio-empresa">Empresa</label><input type="radio" name="tipo-envio" id="envio-empresa">
+                </div>
+              </div>
+          </div>
+            
+          <div class="column-crear">
+            <h3 for="frecuencia">Frecuencia de envios</h3>
+            
+            <select name="diario" id="diario">
+              <option value="diario">Diario</option>
+              <option value="diario">Semanal</option>
+              <option value="diario">Mensual</option>
+              <option value="diario">Personalizar...</option>
+            </select>
+          </div>
+          
+          <div class="column-crear">
+            <h3 for="tamaño">Dimensiones del paquete</h3>
+
+              <div class="column-crear">
+                <label for="peso">Peso</label><input type="number" placeholder="Kilogramos">
+              </div>
+
+              <div class="column-crear">
+                <label for="altura">Alto</label><input type="number" placeholder="Centímetros">
+              </div>
+
+              <div class="column-crear">
+                <label for="ancho">Ancho</label><input type="number" placeholder="Centímetros">
+              </div>
+
+              <div class="sub-row-crear">
+                <label for="fragil">Es un paquete frágil</label><input type="checkbox" name="" id="">
+              </div>
+          </div>
+
+          <div class="column-crear">
+            <h3 for="descripcion">Descripción</h3><textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+          </div>  
+
+          <div class="column-crear">
+            <h3 for="precio">Precio base</h3><input type="number">
+          </div>   
+
+          <div class="botones-crear">
+              <div class="enviar-crear">
+                <input type="submit" name="enviar" id="enviar">
+              </div>
+
+              <div class="reset-crear">
+                <input type="reset" name="restablecer" id="restablecer">
+              </div>
+          </div>
+          
+        </form>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+  </body>
+</html>
