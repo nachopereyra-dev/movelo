@@ -61,6 +61,11 @@ main {
   margin: auto;
 }
 
+main .editarCrear {
+  display: flex;
+  justify-items: space-between;
+}
+
 main .formulario-crear-servicio {
   display: flex;
   flex-direction: column;

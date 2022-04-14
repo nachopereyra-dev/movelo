@@ -1,0 +1,74 @@
+[
+ {
+  "id": 1,
+  "verificado": "true",
+  "mensajero": "Juan Perez",
+  "origen": "Buenos Aires",
+  "destino": "Mar del Plata",
+  "categoria": "categoria",
+  "distancia": 20,
+  "peso": 2,
+  "precio": "14,99",
+  "imagen": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1646563.0795013313!2d-59.082578713060435!3d-36.28942042768009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!3m2!1d-34.6036844!2d-58.3815591!4m5!1s0x9584d94d19d34209%3A0xdd9670804bfed126!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-38.0054771!2d-57.542610599999996!5e0!3m2!1ses-419!2sar!4v1649911967394!5m2!1ses-419!2sar"
+ },
+ {
+  "id": 2,
+  "verificado": "true",
+  "mensajero": "Daniel Klein",
+  "origen": "Palermo",
+  "destino": "Lanus",
+  "categoria": "categoria",
+  "distancia": 20,
+  "peso": 2,
+  "precio": "4,60",
+  "imagen": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d105052.76884408487!2d-58.489082362692955!3d-34.631991882300426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x95bcb59c771eb933%3A0x6b3113b596d78c69!2sPalermo%2C%20Buenos%20Aires!3m2!1d-34.5780655!2d-58.4265317!4m5!1s0x95bccd2194f3cfb7%3A0x8c054a901d575260!2sLan%C3%BAs%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-34.701565699999996!2d-58.4014484!5e0!3m2!1ses-419!2sar!4v1649911859200!5m2!1ses-419!2sar"
+ },
+ {
+  "id": 3,
+  "verificado": false,
+  "mensajero": "Carlos Manson",
+  "origen": "Buenos Aires",
+  "destino": "Punta del Este",
+  "categoria": "categoria",
+  "distancia": 20,
+  "peso": 2,
+  "precio": "22,49",
+  "imagen": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1695281.367144658!2d-58.09856948720728!3d-33.91291791428396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!3m2!1d-34.6036844!2d-58.3815591!4m5!1s0x9575059ec8c40bbd%3A0x9bdd0183c2d3cf93!2sPunta%20del%20Este%20Departamento%20de%20Maldonado%2C%20Uruguay!3m2!1d-34.9363205!2d-54.9377826!5e0!3m2!1ses-419!2sar!4v1649911734103!5m2!1ses-419!2sar"
+ },
+ {
+  "id": 4,
+  "verificado": "true",
+  "mensajero": "Julián Suárez",
+  "origen": "Montevideo",
+  "destino": "Buenos Aires",
+  "categoria": "categoria",
+  "distancia": 20,
+  "peso": 2,
+  "precio": "16,20",
+  "imagen": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1695714.3002370948!2d-58.712322951213174!3d-33.891147753458924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x959f80ffc63bf7d3%3A0x6b321b2e355bec99!2sMontevideo%20Departamento%20de%20Montevideo%2C%20Uruguay!3m2!1d-34.9011127!2d-56.164531399999994!4m5!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!3m2!1d-34.6036844!2d-58.3815591!5e0!3m2!1ses-419!2sar!4v1649920927167!5m2!1ses-419!2sar"
+ },
+ {
+  "id": 5,
+  "verificado": false,
+  "mensajero": "Camila Saraceno",
+  "origen": "Belgrano",
+  "destino": "La Plata",
+  "categoria": "categoria",
+  "distancia": 20,
+  "peso": 2,
+  "precio": "7,99",
+  "imagen": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d209760.28836921058!2d-58.32916415503201!3d-34.76807258873833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x95bcca5bdf43b8f1%3A0x28e7d194f49e4172!2sBelgrano%204084%2C%20%2315-07%20The%20Metropolis%20Tower%202%2C%20138589%20wikipedia%2C%20Buenos%20Aires!3m2!1d-34.6158798!2d-58.4231036!4m5!1s0x95a2e62b1f0085a1%3A0xbcfc44f0547312e3!2sLa%20Plata%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-34.9204948!2d-57.9535657!5e0!3m2!1ses-419!2sar!4v1649911594652!5m2!1ses-419!2sar"
+ },
+ {
+  "id": 6,
+  "verificado": "true",
+  "mensajero": "Joel Cohen",
+  "origen": "Rosario",
+  "destino": "Mar del Plata",
+  "categoria": "categoria",
+  "distancia": 20,
+  "peso": 2,
+  "precio": "20,99",
+  "imagen": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3328446.8167978525!2d-61.37596958813908!3d-35.44399046226667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x95b6539335d7d75b%3A0xec4086e90258a557!2sRosario%2C%20Santa%20Fe!3m2!1d-32.9587022!2d-60.693041599999994!4m5!1s0x9584d94d19d34209%3A0xdd9670804bfed126!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-38.0054771!2d-57.542610599999996!5e0!3m2!1ses-419!2sar!4v1649911399463!5m2!1ses-419!2sar"
+ }
+]

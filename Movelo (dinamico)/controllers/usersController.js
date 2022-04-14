@@ -1,4 +1,9 @@
+const fs = require('fs');
+const path = require('path');
+const { render } = require('../app');
 
+const productosFilePath = path.join(__dirname, '../data/productosDataBase.json');
+const listadoDeProductos = JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
 
 
 const userController = {
