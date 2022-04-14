@@ -76,13 +76,14 @@ const listadoDeProductos = [
 
 const productsController = {
     servicios: (req, res) => {
-        res.render("products/servicios", { articulos: listadoDeProductos })
+        res.render("products/servicios", { articulos: listadoDeProductos });
     },
     carrito: (req, res) => {
-        res.render("products/carrito", { articulos: listadoDeProductos })
+        res.render("products/carrito", { articulos: listadoDeProductos });
     },
     detalle: (req, res) => {
-        res.render("products/detalle", { articulos: listadoDeProductos })
+        
+        res.render("products/detalle", { articulos: listadoDeProductos });
     }
 }
 

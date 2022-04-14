@@ -73,8 +73,9 @@
           <div class="articulos">
 
             <% for (let i = 0; i < articulos.length; i++) { %>
-                <article class="articulo" style="background-image: url('/images/products/<%=articulos[i].imagen%>'); background-size:cover;">
-                    <a class="linkDetalle" href="./detalle/<%= articulos[i].id %>">
+                <!-- <article class="articulo" style="background-image: url('/images/products/<%=articulos[i].imagen%>'); background-size:cover;"> -->
+                    <article class="articulo">
+                        <a  class="linkDetalle" href="./<%= articulos[i].id %>/detalle">
                         
                       <div class="verify">
                           <% if (articulos[i].verificado == true) { %><p>Usuario verificado</p><i class="fas fa-user-check"></i><% } else { %> <p>Usuario no verificado</p><i class="fas fa-user-times"></i> <% } %>
@@ -86,7 +87,6 @@
                       </div>
                       <p class="ciudad-destino"><%= articulos[i].destino %></p>
                       <p class="precio">U$s <%= articulos[i].precio %></p>
-  
                       <div class="sub-iconos">
   
                           <div class="review">
@@ -95,16 +95,17 @@
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star"></i>
                               <i class="fas fa-star-half-alt"></i>
-                              <a>(4.93)</a>
+                            <p>(4.93)</p>
                           </div>
   
                           <div class="comprar">
-                              <a>Agregar al carrito</a><img src="/images/icons/Shop_Empty.svg" alt="">
+                              <p>Ver más</p><img src="/images/icons/Shop_Empty.svg" alt=""> 
                           </div>
   
                       </div>
                     </a>
-                </article>
+                    
+                    </article>
                 
             <% } %>
   
