@@ -82,8 +82,9 @@ const productsController = {
         res.render("products/carrito", { articulos: listadoDeProductos });
     },
     detalle: (req, res) => {
-        
-        res.render("products/detalle", { articulos: listadoDeProductos });
+        let id = req.params.id;
+        let artitucloId = listadoDeProductos.find(articulo => id == articulo.id);
+        res.render("products/detalle", { articulo: artitucloId });
     }
 }
 

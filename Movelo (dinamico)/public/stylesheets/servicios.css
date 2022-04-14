@@ -244,7 +244,7 @@ form .destino {
 .articulo .sub-iconos {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .sub-iconos .review {
@@ -253,6 +253,7 @@ form .destino {
     justify-content: flex-start;
     padding: 8px;
     align-items: center;
+    margin-left: 10px;
 }
 
 .sub-iconos .review i {
@@ -272,6 +273,7 @@ form .destino {
     flex-direction: row-reverse;
     font-size: 20px;
     align-self: center;
+    margin-right: 10px;
 }
 
 .sub-iconos .comprar img {
