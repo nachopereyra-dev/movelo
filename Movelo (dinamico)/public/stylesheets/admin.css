@@ -51,6 +51,10 @@ nav {
 
 /*--------MAIN-HOME---------*/
 
+h2 {
+  color: white;
+}
+
 main {
   min-height: calc(100vh - 115.594px - 151.5px);
   width: 100wv;
@@ -59,11 +63,6 @@ main {
   justify-content: center;
   width: 85%;
   margin: auto;
-}
-
-main .editarCrear {
-  display: flex;
-  justify-items: space-between;
 }
 
 main .formulario-crear-servicio {
@@ -79,8 +78,112 @@ main .formulario-crear-servicio {
   border-radius: 60px;
 }
 
+main .formulario {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-top: black solid 2px;
+  z-index: 1;
+}
+
+main .editarCrear {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(238, 238, 238);
+  border-start-start-radius: 60px;
+  border-start-end-radius: 60px;
+  height: fit-content;
+  padding-top: 20px;
+}
+
+
+
+
+/* PRUEBAAAAAAAA */
+
+
+/*   FIN PUREBAAAAAAAAA */
+
+
+
+
+main .editarCrear a{
+  width: 33vw;
+  min-width: 100px;
+  min-height: fit-content;  
+  background-color: #819096;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-start-start-radius: 10px;
+  border-start-end-radius: 10px;
+  color: black;
+  transition: 200ms;
+  text-decoration: none;
+  margin: none;
+}
+
+main .editarCrear a.activo h2{
+  color: black;
+  margin: 10px;
+  font-size: 30px;
+}
+
+main .editarCrear a.inactivo h2 {
+  margin: 10px;
+  transition: 400ms;
+  font-size: 22px;
+}
+main .editarCrear a.inactivo:hover h2 {
+  font-size: 30px;
+  transition: 400ms;
+}
+
+main a:link {
+  color: #000000;
+}
+main a:visited {
+  color: black;
+}
+main .editarCrear a.activo {
+  z-index: 2;
+  background-color: rgb(250, 250, 250);
+  max-width: 428px;
+  border-bottom: rgb(250, 250, 250) 2px;
+  margin-bottom: -2px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+main .editarCrear a.inactivo {
+  max-width: 428px;
+  
+  color: white;
+  box-shadow: inset 0px -30px 20px -35px #ffffff;
+}
+main .editarCrear:hover a.inactivo {
+  transition: 400ms;
+  width: 33vw;
+  box-shadow: inset 0px -35px 30px -35px #ffffff;
+}
+
+main .editarCrear a.inactivo:hover {
+  transition: 200ms;
+  background-color: #041e29;
+}
+
+body:hover .inactivo {
+  width: 27%;
+}
+
+
 form {
   width: 90%;
+  display: inline
 }
 
 .formulario-crear-servicio h3{
@@ -124,7 +227,7 @@ form {
   flex-wrap: wrap;
 }
 
-.enviar-crear {
+.publicar-crear {
   display: flex;
   background-color: black;
   margin: 25px auto;
@@ -133,7 +236,7 @@ form {
   align-self: center;
 }
 
-.enviar-crear input {
+.publicar-crear input {
   margin: auto;
   color: white;
   background-color: transparent;
@@ -267,6 +370,7 @@ footer p {
     width: 85px;
     text-align: center;
   }
+
 }
 
 /*--------MAIN-TABLET---------*/
@@ -325,4 +429,7 @@ footer p {
     justify-content: space-around;
   }
 
+  main .editarCrear a {
+    padding-bottom: 0px;
+  }
 }

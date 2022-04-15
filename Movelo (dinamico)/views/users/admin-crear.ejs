@@ -10,106 +10,110 @@
     <main>
 
       <div class="formulario-crear-servicio">
-        <div class="editarCrear">
-          <h2>Crea nuevo servicio</h2>
-          <a href="/users/admin/editar"><h2>Edita un servicio</h2></a>
-        </div>
-        <form action="/productos/" method="POST">
-
-            <h3 for="Ruta">Ruta de envío</h3>
-          
-          <div class="column-crear">
-            <label for="origen">Orígen</label><input type="text" name="origen" id="origen">
+          <div class="editarCrear">
+            <a class="activo" id="activo"><h2>Crea nuevo servicio</h2></a>
+            <a href="/users/admin/editar" class="inactivo" id="inactivo"><h2>Edita un servicio</h2></a>
           </div>
 
-          <div class="column-crear">
-            <label for="destino">Destino</label><input type="text" name="destino" id="destino">
-          </div>
-            
-          <div class="column-crear">
-            <h3>Tipo de envío</h3>
+          <div class="formulario"></div>
+            <form action="/productos/" method="POST">
+
+                <h3 for="Ruta">Ruta de envío</h3>
               
-            <div class="row-crear">
-              <div class="sub-row-crear">
-                <label for="envio-local">Local</label><input type="radio" name="categoria" id="envio-local" value="Envio local">
-                <label for="envio-internacional">Internacional</label><input type="radio" name="categoria" id="envio-internacional" value="Envio internacional">
+              <div class="column-crear">
+                <label for="origen">Orígen</label><input type="text" name="origen" id="origen">
               </div>
-            </div>
 
-          </div>
-
-          <div class="column-crear">
-                <h3 for="categoria">Tipo de usuario</h3>
-              
-              <div class="row-crear">
-                <div class="sub-row-crear">
-                  <label for="Verificado">Verificado</label><input type="radio" name="verificado" id="verificado" value="Verificado">
-                  <label for="noVerificado">No verificado</label><input type="radio" name="verificado" id="verificado" value="No Verificado">
+              <div class="column-crear">
+                <label for="destino">Destino</label><input type="text" name="destino" id="destino">
+              </div>
+                
+              <div class="column-crear">
+                <h3>Tipo de envío</h3>
+                  
+                <div class="row-crear">
+                  <div class="sub-row-crear">
+                    <label for="envio-local">Local</label><input type="radio" name="categoria" id="envio-local" value="Envio local">
+                    <label for="envio-internacional">Internacional</label><input type="radio" name="categoria" id="envio-internacional" value="Envio internacional">
+                  </div>
                 </div>
-              </div>
-          </div>
-            
-          <div class="column-crear">
-            <h3 for="frecuencia">Frecuencia de envios</h3>
-            
-            <select name="frecuencia" id="frecuencia">
-              <option value="Diario">Diario</option>
-              <option value="Semanal">Semanal</option>
-              <option value="Mensual">Mensual</option>
-              <option value="Personalizar...">Personalizar...</option>
-            </select>
-          </div>
-          
-          <div class="column-crear">
-            <h3 for="tamaño">Dimensiones del paquete</h3>
 
-              <div class="column-crear">
-                <label for="peso">Peso</label>
-                <input type="number" placeholder="Kilogramos" name="peso" id="peso">
               </div>
 
               <div class="column-crear">
-                <label for="altura">Alto</label>
-                <input type="number" placeholder="Centímetros" name="altura" id="altura">
+                    <h3 for="categoria">Tipo de usuario</h3>
+                  
+                  <div class="row-crear">
+                    <div class="sub-row-crear">
+                      <label for="Verificado">Verificado</label><input type="radio" name="verificado" id="verificado" value="Verificado">
+                      <label for="noVerificado">No verificado</label><input type="radio" name="verificado" id="verificado" value="No Verificado">
+                    </div>
+                  </div>
+              </div>
+                
+              <div class="column-crear">
+                <h3 for="frecuencia">Frecuencia de envios</h3>
+                
+                <select name="frecuencia" id="frecuencia">
+                  <option value="Diario">Diario</option>
+                  <option value="Semanal">Semanal</option>
+                  <option value="Mensual">Mensual</option>
+                  <option value="Personalizar...">Personalizar...</option>
+                </select>
+              </div>
+              
+              <div class="column-crear">
+                <h3 for="tamaño">Dimensiones del paquete</h3>
+
+                  <div class="column-crear">
+                    <label for="peso">Peso</label>
+                    <input type="number" placeholder="Kilogramos" name="peso" id="peso">
+                  </div>
+
+                  <div class="column-crear">
+                    <label for="altura">Alto</label>
+                    <input type="number" placeholder="Centímetros" name="altura" id="altura">
+                  </div>
+
+                  <div class="column-crear">
+                    <label for="ancho">Ancho</label>
+                    <input type="number" placeholder="Centímetros" name="ancho" id="ancho">
+                  </div>
+
+                  <div class="sub-row-crear">
+                    <label for="fragil">Es un paquete frágil</label>
+                    <input type="checkbox" name="fragil" id="fragil">
+                  </div>
               </div>
 
               <div class="column-crear">
-                <label for="ancho">Ancho</label>
-                <input type="number" placeholder="Centímetros" name="ancho" id="ancho">
+                <h3><label for="descripcion">Descripción</label></h3>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+              </div>  
+
+              <div class="column-crear">
+                <h3><label for="precio">Precio base</label></h3>
+                <input type="number" name="precio" id="precio">
               </div>
 
-              <div class="sub-row-crear">
-                <label for="fragil">Es un paquete frágil</label>
-                <input type="checkbox" name="fragil" id="fragil">
+              <div class="column-crear">
+                <h3><label for="imagen">Imagen de googlemaps</label></h3>
+                <input type="text" name="imagen" id="imagen">
+              </div> 
+
+              <div class="botones-crear">
+                  <div class="publicar-crear">
+                    <input type="submit" name="publicar" id="publicar" value="publicar">
+                  </div>
+
+                  <div class="reset-crear">
+                    <input type="reset" name="restablecer" id="restablecer" value="restablecer">
+                  </div>
               </div>
+              
+            </form>
           </div>
-
-          <div class="column-crear">
-            <h3><label for="descripcion">Descripción</label></h3>
-            <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
-          </div>  
-
-          <div class="column-crear">
-            <h3><label for="precio">Precio base</label></h3>
-            <input type="number" name="precio" id="precio">
-          </div>
-
-          <div class="column-crear">
-            <h3><label for="imagen">Imagen de googlemaps</label></h3>
-            <input type="text" name="imagen" id="imagen">
-          </div> 
-
-          <div class="botones-crear">
-              <div class="enviar-crear">
-                <input type="submit" name="enviar" id="enviar">
-              </div>
-
-              <div class="reset-crear">
-                <input type="reset" name="restablecer" id="restablecer">
-              </div>
-          </div>
-          
-        </form>
+        </div>
       </div>
     </main>
 
