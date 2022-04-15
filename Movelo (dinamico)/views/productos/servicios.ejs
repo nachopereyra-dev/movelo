@@ -75,7 +75,7 @@
             <% for (let i = 0; i < articulos.length; i++) { %>
                 <!-- <article class="articulo" style="background-image: url('/images/products/<%=articulos[i].imagen%>'); background-size:cover;"> -->
                     <article class="articulo">
-                        <a  class="linkDetalle" href="./<%= articulos[i].id %>/detalle">
+                        <a  class="linkDetalle" href="./productos/<%= articulos[i].id %>/detalle">
                         
                       <div class="verify">
                           <% if (articulos[i].verificado == true) { %><p>Usuario verificado</p><i class="fas fa-user-check"></i><% } else { %> <p>Usuario no verificado</p><i class="fas fa-user-times"></i> <% } %>

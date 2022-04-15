@@ -74,8 +74,8 @@ main .formulario-crear-servicio {
   max-width: 1000px;
   margin: auto;
   margin-bottom: 40px;
-  border: 2px black solid;
-  border-radius: 60px;
+
+  
 }
 
 main .formulario {
@@ -84,7 +84,8 @@ main .formulario {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  border-top: black solid 2px;
+  border: black solid 2px;
+  border-radius: 60px;
   z-index: 1;
 }
 
@@ -93,9 +94,6 @@ main .editarCrear {
   justify-content: space-evenly;
   width: 100%;
   text-align: center;
-  background-color: rgb(238, 238, 238);
-  border-start-start-radius: 60px;
-  border-start-end-radius: 60px;
   height: fit-content;
   padding-top: 20px;
 }
@@ -119,8 +117,8 @@ main .editarCrear a{
   border-top: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;
-  border-start-start-radius: 10px;
-  border-start-end-radius: 10px;
+  border-start-start-radius: 15px;
+  border-start-end-radius: 15px;
   color: black;
   transition: 200ms;
   text-decoration: none;
@@ -134,7 +132,7 @@ main .editarCrear a.activo h2{
 }
 
 main .editarCrear a.inactivo h2 {
-  margin: 10px;
+  margin: auto;
   transition: 400ms;
   font-size: 22px;
 }
@@ -154,14 +152,15 @@ main .editarCrear a.activo {
   background-color: rgb(250, 250, 250);
   max-width: 428px;
   border-bottom: rgb(250, 250, 250) 2px;
-  margin-bottom: -2px;
+  margin-bottom: -3px;
   border-top: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
 main .editarCrear a.inactivo {
+  display: flex;
+  justify-content: center;
   max-width: 428px;
-  
   color: white;
   box-shadow: inset 0px -30px 20px -35px #ffffff;
 }

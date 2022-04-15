@@ -74,23 +74,6 @@
  {
   "id": 7,
   "mensajero": "Admin",
-  "origen": "",
-  "destino": "",
-  "distancia": "???",
-  "peso": "",
-  "precio": "",
-  "imagen": "",
-  "descripcion": ""
- },
- {
-  "id": 8,
-  "mensajero": "Admin",
-  "origen": "",
-  "destino": "",
-  "distancia": "???",
-  "peso": "",
-  "precio": "",
-  "imagen": "",
-  "descripcion": ""
+  "distancia": "???"
  }
 ]

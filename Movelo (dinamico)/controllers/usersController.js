@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const { render } = require('../app');
 
-const productosFilePath = path.join(__dirname, '../data/productosDataBase.json');
-const listadoDeProductos = JSON.parse(fs.readFileSync(productosFilePath, 'utf-8'));
+const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
+const listadoDeUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
 
 const userController = {
@@ -18,7 +18,19 @@ const userController = {
     },
     adminEditar: (req, res) => {
         res.render("users/admin-editar", { title: 'Express' })
-    }
+    },
+    crearUsuario: (req, res) => {
+        let nuevoUsuario = {
+            id: listadoDeUsuarios.length + 1,
+            fisrt_name: req.body.Usuario,
+            last_name: "",
+            email: req.body.Correo,
+        };
+        console.log(req.body.password)
+        // listadoDeUsuarios.push(nuevoUsuario);
+		// fs.writeFileSync(productsFilePath,JSON.stringify(listadoDeUsuarios, null , ' '));
+        res.render("inicio", { title: 'Express' });
+    },
 }
 
 module.exports = userController;

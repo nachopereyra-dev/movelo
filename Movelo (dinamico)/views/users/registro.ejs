@@ -13,15 +13,15 @@
           <a href="/" class="botonCancelar"><i class="far fa-times-circle"></i></a>
           <h1>Registrarse</h1>
           <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
-          <a href="/login" class="iniciar-sesion">Iniciar sesión</a>
-          <form action="#" method="post" class="formulario-registro">
+          <a href="/users/login" class="iniciar-sesion">Iniciar sesión</a>
+          <form action="/users" method="POST"  class="formulario-registro">
               <input type="text" class="casilla" name="Usuario" placeholder="Nombre completo">
               
               <input type="email" class="casilla" name="Correo" placeholder="Correo electrónico">
              
-              <input type="password" class="casilla pass1" name="contraseña-registro" placeholder="Contraseña">
+              <input type="password" class="casilla pass1" name="password" placeholder="Contraseña">
               
-              <input type="password" class="casilla pass2" name="contraseña-registro" placeholder="Contraseña">
+              <input type="password" class="casilla pass2" name="contraseña-registro-check" placeholder="Contraseña">
               
               <div class="formulario-fecha">
                   <label for="fecha">Fecha de nacimiento</label><input type="date" class="fecha" name="fecha" placeholder="Fecha de nacimiento">
@@ -35,7 +35,9 @@
                   </select>
               </div>
               
-              <a class="boton-registrarse" href="/">Registrarse</a>
+              <div class="boton-registrarse">
+                <input type="submit" name="publicar" id="publicar" value="publicar">
+              </div>
           </form>
   
           <div class="registrarse-mobile">
