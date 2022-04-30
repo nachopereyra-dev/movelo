@@ -1,5 +1,6 @@
-var express = require('express');
-var router = express.Router();
+const { Router } = require('express');
+const express = require('express');
+const router = express.Router();
 var multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -16,10 +17,20 @@ const productosController = require('../controllers/productosController');
 
 /**** GETs de Productos ****/
 router.get('/', productosController.servicios);
+
 router.get('/carrito', productosController.carrito);
 router.get('/:id/detalle', productosController.detalle);
 
-/**** POSTs de Productos ****/
-router.post('/', productosController.adminCrearPOST)
+/**** Formulario y Edición de Productos  ****/
+router.get('/:id/editar', productosController.edit)
+router.put('/:id', productosController.update); 
+
+/**** Creación de Productos ****/
+router.post('/', productosController.adminCrearPOST);
+
+/**** Borrado de Productos ****/
+router.delete('/:id', productosController.destroy);
+
+
 
 module.exports = router;

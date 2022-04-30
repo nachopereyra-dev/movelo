@@ -15,16 +15,18 @@
           <a class="activo" id="activo"><h2>Edita un servicio</h2></a>
         </div>
         <div class="formulario">
-          <form action="/productos" method="patch" enctype="multipart/form-data">
+          <form action="/productos/<%= productToEdit.id %>?_method=PUT" method="POST">
 
               <h3 for="Ruta">Ruta de envío</h3>
             
             <div class="column-crear">
-              <label for="origen">Orígen</label><input type="text">
+              <label for="origen">Orígen</label>
+              <input type="text" name="origen" id="origen" placeholder="<%= productToEdit.origen %>">
             </div>
 
             <div class="column-crear">
-              <label for="destino">Destino</label><input type="text">
+              <label for="destino">Destino</label>
+              <input type="text" name="destino" id="destino" placeholder="<%= productToEdit.destino %>">
             </div>
               
             <div class="column-crear">
@@ -32,68 +34,78 @@
                 
               <div class="row-crear">
                 <div class="sub-row-crear">
-                  <label for="envio-local">Local</label><input type="radio" name="tipo-envio" id="envio-local">
-                </div>
-
-                <div class="sub-row-crear">
-                    <label for="envio-internacional">Internacional</label><input type="radio" name="tipo-envio" id="envio-internacional">
+                  <label for="envio-local">Local</label>
+                  <input type="radio" name="tipoEnvio" id="envio-local">
+                  <label for="envio-internacional">Internacional</label>
+                  <input type="radio" name="tipoEnvio" id="envio-internacional">
                 </div>
               </div>
 
             </div>
 
             <div class="column-crear">
-                  <h3 for="categoria">Tipo de usuario</h3>
+              <h3 for="categoria">Tipo de usuario</h3>
                 
-                <div class="row-crear">
-                  <div class="sub-row-crear">
-                    <label for="envio-particular">Particular</label><input type="radio" name="tipo-envio" id="envio-particular">
-                  </div>
-                    
-                  <div class="sub-row-crear">
-                    <label for="envio-empresa">Empresa</label><input type="radio" name="tipo-envio" id="envio-empresa">
-                  </div>
+              <div class="row-crear">
+                <div class="sub-row-crear">
+                  <label for="Verificado">Verificado</label>
+                  <input type="radio" name="verificado" id="verificado" value="Verificado">
+                  <label for="noVerificado">No verificado</label>
+                  <input type="radio" name="verificado" id="noVerificado" value="No Verificado">
                 </div>
+              </div>
             </div>
               
             <div class="column-crear">
               <h3 for="frecuencia">Frecuencia de envios</h3>
               
-              <select name="diario" id="diario">
-                <option value="diario">Diario</option>
-                <option value="diario">Semanal</option>
-                <option value="diario">Mensual</option>
-                <option value="diario">Personalizar...</option>
+              <select name="frecuencia" id="frecuencia">
+                <option value="Diario">Diario</option>
+                <option value="Semanal">Semanal</option>
+                <option value="Mensual">Mensual</option>
+                <option value="Personalizar...">Personalizar...</option>
               </select>
             </div>
             
             <div class="column-crear">
               <h3 for="tamaño">Dimensiones del paquete</h3>
 
-                <div class="column-crear">
-                  <label for="peso">Peso</label><input type="number" placeholder="Kilogramos">
-                </div>
+               <div class="column-crear">
+                    <label for="peso">Peso</label>
+                    <input type="number" placeholder="Kilogramos" name="peso" id="peso">
+                  </div>
 
-                <div class="column-crear">
-                  <label for="altura">Alto</label><input type="number" placeholder="Centímetros">
-                </div>
+                  <div class="column-crear">
+                    <label for="altura">Alto</label>
+                    <input type="number" placeholder="Centímetros" name="altura" id="altura">
+                  </div>
 
-                <div class="column-crear">
-                  <label for="ancho">Ancho</label><input type="number" placeholder="Centímetros">
-                </div>
+                  <div class="column-crear">
+                    <label for="ancho">Ancho</label>
+                    <input type="number" placeholder="Centímetros" name="ancho" id="ancho">
+                  </div>
 
-                <div class="sub-row-crear">
-                  <label for="fragil">Es un paquete frágil</label><input type="checkbox" name="" id="">
-                </div>
+                  <div class="sub-row-crear">
+                    <label for="fragil">Es un paquete frágil</label>
+                    <input type="checkbox" name="fragil" id="fragil">
+                  </div>
+
             </div>
 
             <div class="column-crear">
-              <h3 for="descripcion">Descripción</h3><textarea name="descripcion" id="" cols="30" rows="10"></textarea>
-            </div>  
+                <h3><label for="descripcion">Descripción</label></h3>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+              </div>  
 
-            <div class="column-crear">
-              <h3 for="precio">Precio base</h3><input type="number">
-            </div>   
+              <div class="column-crear">
+                <h3><label for="precio">Precio base</label></h3>
+                <input type="number" name="precio" id="precio" step="any">
+              </div>
+
+              <div class="column-crear">
+                <h3><label for="imagen">Imagen de googlemaps</label></h3>
+                <input type="text" name="imagen" id="imagen">
+              </div>  
 
             <div class="botones-crear">
                 <div class="publicar-crear">
@@ -105,6 +117,9 @@
                 </div>
             </div>
             
+          </form>
+          <form class="boton-eliminar" action="/productos/<%= productToEdit.id%>?_method=DELETE" method="POST">
+            <input type="submit" name="delete" id="delete" value="ELIMINAR">
           </form>
         </div>
       </div>

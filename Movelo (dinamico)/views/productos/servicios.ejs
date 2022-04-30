@@ -76,34 +76,33 @@
                 <!-- <article class="articulo" style="background-image: url('/images/products/<%=articulos[i].imagen%>'); background-size:cover;"> -->
                     <article class="articulo">
                         <a  class="linkDetalle" href="./productos/<%= articulos[i].id %>/detalle">
-                        
-                      <div class="verify">
-                          <% if (articulos[i].verificado == true) { %><p>Usuario verificado</p><i class="fas fa-user-check"></i><% } else { %> <p>Usuario no verificado</p><i class="fas fa-user-times"></i> <% } %>
-                      </div>
-  
-                      <p class="ciudad-origen"><%= articulos[i].origen %></p>
-                      <div class="flechas">
-                          <i class="fas fa-exchange-alt"></i>
-                      </div>
-                      <p class="ciudad-destino"><%= articulos[i].destino %></p>
-                      <p class="precio">U$s <%= articulos[i].precio %></p>
-                      <div class="sub-iconos">
-  
-                          <div class="review">
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star"></i>
-                              <i class="fas fa-star-half-alt"></i>
-                            <p>(4.93)</p>
-                          </div>
-  
-                          <div class="comprar">
-                              <p>Ver más</p><img src="/images/icons/Shop_Empty.svg" alt=""> 
-                          </div>
-  
-                      </div>
-                    </a>
+                            <div class="verify">
+                                <% if (articulos[i].verificado == true) { %><p>Usuario verificado</p><i class="fas fa-user-check"></i><% } else { %> <p>Usuario no verificado</p><i class="fas fa-user-times"></i> <% } %>
+                            </div>
+        
+                            <p class="ciudad-origen"><%= articulos[i].origen %></p>
+                            <div class="flechas">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <p class="ciudad-destino"><%= articulos[i].destino %></p>
+                            <p class="precio">U$s <%= articulos[i].precio %></p>
+                            <div class="sub-iconos">
+        
+                                <div class="review">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <p>(4.93)</p>
+                                </div>
+        
+                                <div class="comprar">
+                                    <p>Ver más</p><img src="/images/icons/Shop_Empty.svg" alt=""> 
+                                </div>
+        
+                            </div>
+                        </a>
                     
                     </article>
                 

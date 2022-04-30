@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+  </head>
+  <body>
+    <%- include('../partials/header') %>   <!-----------HEADER----------->
+    
+    <main>
+
+      <div class="formulario-crear-servicio">
+        <div class="editarCrear">
+          <a href="/users/admin/crear" class="inactivo" id="inactivo"><h2>Crea nuevo servicio</h2></a>
+          <a class="activo" id="activo"><h2>Edita un servicio</h2></a>
+        </div>
+        <div class="formulario-articulo-a-editar">
+          <% for (let i = 0; i < articulos.length; i++) { %>
+            <a  class="linkDetalle" href="../../productos/<%= articulos[i].id %>/editar">
+              <article class="articulo-a-editar">
+                <p class="ciudad-origen"><%= articulos[i].origen %></p>
+                <p class="ciudad-destino"><%= articulos[i].destino %></p>
+              </article>
+            </a>
+          <% } %>
+        </div>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+  </body>
+</html>

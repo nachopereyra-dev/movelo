@@ -1,19 +1,19 @@
 [
  {
   "id": 1,
-  "verificado": "true",
+  "verificado": true,
   "mensajero": "Juan Perez",
   "origen": "Buenos Aires",
   "destino": "Mar del Plata",
   "categoria": "categoria",
   "distancia": 20,
   "peso": 2,
-  "precio": "14,99",
+  "precio": 14.99,
   "imagen": "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1646563.0795013313!2d-59.082578713060435!3d-36.28942042768009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20CABA!3m2!1d-34.6036844!2d-58.3815591!4m5!1s0x9584d94d19d34209%3A0xdd9670804bfed126!2sMar%20del%20Plata%2C%20Provincia%20de%20Buenos%20Aires!3m2!1d-38.0054771!2d-57.542610599999996!5e0!3m2!1ses-419!2sar!4v1649911967394!5m2!1ses-419!2sar"
  },
  {
   "id": 2,
-  "verificado": "true",
+  "verificado": true,
   "mensajero": "Daniel Klein",
   "origen": "Palermo",
   "destino": "Lanus",
@@ -61,7 +61,7 @@
  },
  {
   "id": 6,
-  "verificado": "true",
+  "verificado": true,
   "mensajero": "Joel Cohen",
   "origen": "Rosario",
   "destino": "Mar del Plata",
@@ -73,7 +73,14 @@
  },
  {
   "id": 7,
+  "verificado": false,
   "mensajero": "Admin",
-  "distancia": "???"
+  "origen": "",
+  "destino": "",
+  "distancia": "???",
+  "peso": 0,
+  "precio": 12.99,
+  "imagen": "",
+  "descripcion": ""
  }
 ]

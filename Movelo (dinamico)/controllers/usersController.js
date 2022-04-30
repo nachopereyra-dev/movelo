@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { render } = require('../app');
 
-const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
-const listadoDeUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+
 
 
 const userController = {
@@ -17,9 +16,15 @@ const userController = {
         res.render("users/admin-crear", { title: 'Express' })
     },
     adminEditar: (req, res) => {
-        res.render("users/admin-editar", { title: 'Express' })
+        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
+        const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        res.render("users/admin-elegir-editar", {articulos: listadoDeProductos, title: 'Express'})
     },
     crearUsuario: (req, res) => {
+        const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
+        const listadoDeUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+
         let nuevoUsuario = {
             id: listadoDeUsuarios.length + 1,
             fisrt_name: req.body.Usuario,

@@ -18,7 +18,7 @@ const uploadFile = multer({ storage });
 router.get('/login', userController.login);
 router.get('/registro', userController.registro);
 router.get('/admin/crear', userController.adminCrear);
-router.get('/admin/editar', userController.adminEditar);
+router.get('/admin/elegir-editar', userController.adminEditar);
 
 router.post('/', uploadFile.single('avatar'), userController.crearUsuario);
 

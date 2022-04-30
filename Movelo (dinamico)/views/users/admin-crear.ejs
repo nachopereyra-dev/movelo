@@ -12,20 +12,22 @@
       <div class="formulario-crear-servicio">
           <div class="editarCrear">
             <a class="activo" id="activo"><h2>Crea nuevo servicio</h2></a>
-            <a href="/users/admin/editar" class="inactivo" id="inactivo"><h2>Edita un servicio</h2></a>
+            <a href="/users/admin/elegir-editar" class="inactivo" id="inactivo"><h2>Edita un servicio</h2></a>
           </div>
 
           <div class="formulario">
-            <form action="/productos" method="POST" enctype="multipart/form-data">
+            <form action="/productos" method="POST">
 
                 <h3 for="Ruta">Ruta de envío</h3>
               
               <div class="column-crear">
-                <label for="origen">Orígen</label><input type="text" name="origen" id="origen">
+                <label for="origen">Orígen</label>
+                <input type="text" name="origen" id="origen">
               </div>
 
               <div class="column-crear">
-                <label for="destino">Destino</label><input type="text" name="destino" id="destino">
+                <label for="destino">Destino</label>
+                <input type="text" name="destino" id="destino">
               </div>
                 
               <div class="column-crear">
@@ -33,22 +35,26 @@
                   
                 <div class="row-crear">
                   <div class="sub-row-crear">
-                    <label for="envio-local">Local</label><input type="radio" name="categoria" id="envio-local" value="Envio local">
-                    <label for="envio-internacional">Internacional</label><input type="radio" name="categoria" id="envio-internacional" value="Envio internacional">
+                    <label for="envio-local">Local</label>
+                    <input type="radio" name="tipoEnvio" id="envio-local" value="Envio local">
+                    <label for="envio-internacional">Internacional</label>
+                    <input type="radio" name="tipoEnvio" id="envio-internacional" value="Envio internacional">
                   </div>
                 </div>
 
               </div>
 
               <div class="column-crear">
-                    <h3 for="categoria">Tipo de usuario</h3>
-                  
-                  <div class="row-crear">
-                    <div class="sub-row-crear">
-                      <label for="Verificado">Verificado</label><input type="radio" name="verificado" id="verificado" value="Verificado">
-                      <label for="noVerificado">No verificado</label><input type="radio" name="verificado" id="verificado" value="No Verificado">
-                    </div>
+                <h3 for="categoria">Tipo de usuario</h3>
+                
+                <div class="row-crear">
+                  <div class="sub-row-crear">
+                    <label for="Verificado">Verificado</label>
+                    <input type="radio" name="verificado" id="verificado" value="Verificado">
+                    <label for="noVerificado">No verificado</label>
+                    <input type="radio" name="verificado" id="noVerificado" value="No Verificado">
                   </div>
+                </div>
               </div>
                 
               <div class="column-crear">
@@ -65,25 +71,26 @@
               <div class="column-crear">
                 <h3 for="tamaño">Dimensiones del paquete</h3>
 
-                  <div class="column-crear">
-                    <label for="peso">Peso</label>
-                    <input type="number" placeholder="Kilogramos" name="peso" id="peso">
-                  </div>
+                <div class="column-crear">
+                  <label for="peso">Peso</label>
+                  <input type="number" placeholder="Kilogramos" name="peso" id="peso">
+                </div>
 
-                  <div class="column-crear">
-                    <label for="altura">Alto</label>
-                    <input type="number" placeholder="Centímetros" name="altura" id="altura">
-                  </div>
+                <div class="column-crear">
+                  <label for="altura">Alto</label>
+                  <input type="number" placeholder="Centímetros" name="altura" id="altura">
+                </div>
 
-                  <div class="column-crear">
-                    <label for="ancho">Ancho</label>
-                    <input type="number" placeholder="Centímetros" name="ancho" id="ancho">
-                  </div>
+                <div class="column-crear">
+                  <label for="ancho">Ancho</label>
+                  <input type="number" placeholder="Centímetros" name="ancho" id="ancho">
+                </div>
 
-                  <div class="sub-row-crear">
-                    <label for="fragil">Es un paquete frágil</label>
-                    <input type="checkbox" name="fragil" id="fragil">
-                  </div>
+                <div class="sub-row-crear">
+                  <label for="fragil">Es un paquete frágil</label>
+                  <input type="checkbox" name="fragil" id="fragil">
+                </div>
+
               </div>
 
               <div class="column-crear">
@@ -93,7 +100,7 @@
 
               <div class="column-crear">
                 <h3><label for="precio">Precio base</label></h3>
-                <input type="number" name="precio" id="precio">
+                <input type="number" name="precio" id="precio" step=".00">
               </div>
 
               <div class="column-crear">

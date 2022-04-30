@@ -100,6 +100,26 @@ main .editarCrear {
 
 
 
+main .formulario-articulo-a-editar {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border: black solid 2px;
+  border-radius: 60px;
+  z-index: 1;
+}
+.articulo-a-editar {
+  border: #000000 1px solid;
+  border-radius: 10px;
+  margin: 20px;
+  width: 200px;
+  height: 150px;
+  text-align: center;
+}
+
+
+
 
 /* PRUEBAAAAAAAA */
 
@@ -176,7 +196,7 @@ main .editarCrear a.inactivo:hover {
 }
 
 body:hover .inactivo {
-  width: 27%;
+  width: 33%;
 }
 
 
@@ -258,6 +278,23 @@ form {
   background-color: transparent;
   padding: 5px;
   border: none;
+}
+
+.boton-eliminar {
+  display: flex;
+  background-color: black;
+  margin: 25px auto;
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  align-self: center;
+}
+
+.boton-eliminar input {
+  margin: auto;
+  color: white;
+  background-color: transparent;
+  padding: 5px;
 }
 
 /*--------FOOTER-HOME---------*/
