@@ -101,6 +101,7 @@ form .formulario {
 form .origen {
     margin-top: 10px;
     margin-bottom: 5px;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -128,6 +129,7 @@ form .destino {
     border: solid 1px black;
     border-radius: 15px;
     padding: 5px;
+    margin-left: 10px;
 }
 
 .destino input {
