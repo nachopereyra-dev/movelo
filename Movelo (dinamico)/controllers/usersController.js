@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { render } = require('../app');
+const { validationResult } = require('express-validator')
 
 
 
@@ -25,16 +26,25 @@ const userController = {
         const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
         const listadoDeUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
-        let nuevoUsuario = {
-            id: listadoDeUsuarios.length + 1,
-            fisrt_name: req.body.Usuario,
-            last_name: "",
-            email: req.body.Correo,
-        };
-        console.log(req.body.password)
-        // listadoDeUsuarios.push(nuevoUsuario);
-		// fs.writeFileSync(productsFilePath,JSON.stringify(listadoDeUsuarios, null , ' '));
-        res.render("inicio", { title: 'Express' });
+        let errors = validationResult(req);
+        if(errors.isEmpty()) {
+            let nuevoUsuario = {
+                id: listadoDeUsuarios.length + 1,
+                nombre: req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+                fecha: req.body.fecha,
+                gender: req.body.gender,
+            };
+      
+            listadoDeUsuarios.push(nuevoUsuario);
+            fs.writeFileSync(usuariosFilePath,JSON.stringify(listadoDeUsuarios, null , ' '));
+            res.render("inicio");
+        } else {
+            res.render("users/registro", { errors: errors.array(), old: req.body })
+        }
+
+        
     },
 }
 

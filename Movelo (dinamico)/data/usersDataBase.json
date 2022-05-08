@@ -1,99 +1,101 @@
-[{
-    "id":1,
-    "first_name":"Raffaello"
-    ,"last_name":"Chung","email":"rchung0@nyu.edu"
-    ,"password":"Z8bYVky",
-    "category":"user",
-    "image":"user_1.jpg"
-},
-{
-    "id":2,
-    "first_name":"Miran",
-    "last_name":"Kensington",
-    "email":"mkensington1@stanford.edu",
-    "password":"1tVIo9"
-    ,"category":"user",
-    "image":"user_2.jpg"
-},
-{
-    "id":3,
-    "first_name":"Anica",
-    "last_name":"Germann",
-    "email":"agermann2@nymag.com",
-    "password":"TNL8MaFIxEvb",
-    "category":"user",
-    "image":"user_3.jpg"
-},
-{
-    "id":4,
-    "first_name":"Donny",
-    "last_name":"Rean",
-    "email":"drean3@goo.gl",
-    "password":"jC7Xu34T",
-    "category":"user",
-    "image":"user_4.jpg"
-},
-{
-    "id":5,
-    "first_name":"Web",
-    "last_name":"Johanssen",
-    "email":"wjohanssen4@paginegialle.it",
-    "password":"1pGGt4iVyc4",
-    "category":"user",
-    "image":"user_5.jpg"
-},
-{
-    "id":6,
-    "first_name":"Fabio",
-    "last_name":"Croome",
-    "email":"fcroome5@xing.com",
-    "password":"db3K4VA",
-    "category":"user",
-    "image":"user_6.jpg"
-},
-{
-    "id":7,    
-    "first_name":"Chandler",    
-    "last_name":"Sultan",   
-    "email":"csultan6@merriam-webster.com",    
-    "password":"NQJpa5p",   
-    "category":"user", 
-    "image":"user_7.jpg"
-}, 
-{
-    "id":8,
-    "first_name":"Ermanno",
-    "last_name":"Dyson",
-    "email":"edyson7@techcrunch.com",
-    "password":"BmXmCQw",
-    "category":"user",
-    "image":"user_8.jpg"
-},
-{
-    "id":9,
-    "first_name":"Nacho",
-    "last_name":"?",
-    "email":"?",
-    "password":"?",
-    "category":"admin",
-    "image":"user_9.jpg"
-},
-{
-    "id":10,
-    "first_name":"Lautaro",
-    "last_name":"?",
-    "email":"?",
-    "password":"?",
-    "category":"admin",
-    "image":"user_10.jpg"
-},
-{
-    "id":11,
-    "first_name":"Alejandro",
-    "last_name":"Robles",
-    "email":"aleroblesdm@gmail.com",
-    "password":"1234Admin",
-    "category":"admin",
-    "image":"user_11.jpg"
-}
+[
+ {
+  "id": 1,
+  "first_name": "Raffaello",
+  "last_name": "Chung",
+  "email": "rchung0@nyu.edu",
+  "password": "Z8bYVky",
+  "category": "user",
+  "image": "user_1.jpg"
+ },
+ {
+  "id": 2,
+  "first_name": "Miran",
+  "last_name": "Kensington",
+  "email": "mkensington1@stanford.edu",
+  "password": "1tVIo9",
+  "category": "user",
+  "image": "user_2.jpg"
+ },
+ {
+  "id": 3,
+  "first_name": "Anica",
+  "last_name": "Germann",
+  "email": "agermann2@nymag.com",
+  "password": "TNL8MaFIxEvb",
+  "category": "user",
+  "image": "user_3.jpg"
+ },
+ {
+  "id": 4,
+  "first_name": "Donny",
+  "last_name": "Rean",
+  "email": "drean3@goo.gl",
+  "password": "jC7Xu34T",
+  "category": "user",
+  "image": "user_4.jpg"
+ },
+ {
+  "id": 5,
+  "first_name": "Web",
+  "last_name": "Johanssen",
+  "email": "wjohanssen4@paginegialle.it",
+  "password": "1pGGt4iVyc4",
+  "category": "user",
+  "image": "user_5.jpg"
+ },
+ {
+  "id": 6,
+  "first_name": "Fabio",
+  "last_name": "Croome",
+  "email": "fcroome5@xing.com",
+  "password": "db3K4VA",
+  "category": "user",
+  "image": "user_6.jpg"
+ },
+ {
+  "id": 7,
+  "first_name": "Chandler",
+  "last_name": "Sultan",
+  "email": "csultan6@merriam-webster.com",
+  "password": "NQJpa5p",
+  "category": "user",
+  "image": "user_7.jpg"
+ },
+ {
+  "id": 8,
+  "first_name": "Ermanno",
+  "last_name": "Dyson",
+  "email": "edyson7@techcrunch.com",
+  "password": "BmXmCQw",
+  "category": "user",
+  "image": "user_8.jpg"
+ },
+ {
+  "id": 9,
+  "first_name": "Nacho",
+  "last_name": "?",
+  "email": "?",
+  "password": "?",
+  "category": "admin",
+  "image": "user_9.jpg"
+ },
+ {
+  "id": 10,
+  "first_name": "Lautaro",
+  "last_name": "?",
+  "email": "?",
+  "password": "?",
+  "category": "admin",
+  "image": "user_10.jpg"
+ },
+ {
+  "id": 11,
+  "first_name": "Alejandro",
+  "last_name": "Robles",
+  "email": "aleroblesdm@gmail.com",
+  "password": "1234Admin",
+  "category": "admin",
+  "image": "user_11.jpg"
+ }
 ]
