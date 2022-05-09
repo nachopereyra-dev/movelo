@@ -8,7 +8,41 @@ const { validationResult } = require('express-validator')
 
 const userController = {
     login: (req, res) => {
-        res.render("users/login", { title: 'Express' })
+        return res.render("users/login")
+    },
+    processLogin: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()) {
+            const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
+            const listadoDeUsuarios = fs.readFileSync(usuariosFilePath, 'utf-8');
+            let usuarios;
+            if (listadoDeUsuarios == '') {
+                usuarios = [];
+            } else {
+                usuarios = JSON.parse(listadoDeUsuarios);
+            }
+
+            for (let i = 0; i < usuarios.length; i++) {
+                if (usuarios[i].email == req.body.email) {
+                    if (req.body.password == usuarios[i].password) {
+                        usuarioALoguearse = usuarios[i];
+                        break;
+                    }
+                }
+            }
+
+            if (usuarioALoguearse == undefined) {
+                return res.render('login', {errors: [
+                    {msg: 'Credenciales invalidas'}
+                ]})
+            }
+
+            req.session.usuarioLogueado = usuarioALoguearse;
+            res.send('sucess!')
+        } else {
+            return res.render('users/login', { errors: errors.mapped()})
+        }
     },
     registro: (req, res) => {
         res.render("users/registro", { title: 'Express' })
@@ -43,8 +77,6 @@ const userController = {
         } else {
             res.render("users/registro", { errors: errors.mapped(), old: req.body })
         }
-
-        
     },
 }
 

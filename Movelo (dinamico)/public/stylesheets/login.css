@@ -121,7 +121,7 @@ main section form .casilla {
   width: 220px;
   outline: none;
   max-width: 95%;
-  margin: 40px auto;
+  margin: 40px auto 0px auto;
   display: block;
   background: none;
   border: none;
@@ -134,9 +134,15 @@ main section form .casilla:focus {
   font-weight: bold;
 }
 
+form .feedback-danger {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 main section form .checkbox {
   width: fit-content;
-  margin: -20px 14% 40px;
+  margin: 40px auto 40px auto;
 }
 
 main section form .checkbox-box {
@@ -159,6 +165,14 @@ main section form .boton-iniciarSesion {
   background-color: black;
   color: white;
   border-radius: 25px;
+}
+
+main section form .boton-iniciarSesion input {
+  margin: auto;
+  color: white;
+  border: 0ch;
+  background-color: transparent;
+  padding: 5px;
 }
 
 main section form .boton-iniciarSesion:hover {
@@ -339,6 +353,11 @@ main .iniciarSesionCon-desktop {
   display: none;
 }
 
+main section form .checkbox {
+  width: fit-content;
+  margin: 40px auto 40px auto;
+}
+
 /*-----------DESKTOP------------*/
 
 @media (min-width: 760px) {
@@ -399,10 +418,15 @@ main .iniciarSesionCon-desktop {
     display: none;
   }
 
+  main section form {
+    width: 80%;
+    margin: auto;
+  }
+
   main section form .checkbox {
     width: 220px;
-    margin: -20px auto 40px;
-    text-align: left;
+    margin: 40px auto 40px auto;
+    text-align: center;
   }
 
   main .iniciarSesionCon-desktop {

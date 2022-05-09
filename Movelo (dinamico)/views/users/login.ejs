@@ -14,14 +14,28 @@
           <h1>Iniciar sesión</h1>
           <p class="nuevo-usuario">¿Nuevo usuario?</p>
           <a href="/users/registro" class="registrate">Registrate</a>
-          <form action="#" method="post" class="formulario-ingreso">
-              <input type="text" class="casilla" name="Usuario-Correo" placeholder="Usuario o correo electrónico">
-              <input type="password" class="casilla" name="contraseña-login" placeholder="Contraseña">
+          <form action="/users/login" method="post" class="formulario-ingreso">
+              <input type="text" class="casilla" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Usuario o correo electrónico">
+              <% if (locals.errors && errors.email) { %>
+                <div class="feedback-danger">
+                  <%= errors.email.msg %>
+                </div>
+              <% } %>
+
+              <input type="password" class="casilla" name="password" placeholder="Contraseña">
+              <% if (locals.errors && errors.password) { %>
+                <div class="feedback-danger">
+                  <%= errors.password.msg %>
+                </div>
+              <% } %>
+
               <div class="checkbox">
                   <input type="checkbox" class="checkbox-box" id="recordarme" name="recordarme" value="recordarme"><i class="fa-solid fa-square-check"></i><label for="recordarme" class="label">Recordarme</label>
               </div>
-              <a class="boton-iniciarSesion" href="/">Iniciar Sesión</a>
-          </form>
+              <div class="boton-iniciarSesion">
+              <input type="submit" name="login" id="login" value="Iniciar sesion">
+              </div>
+            </form>
           <div class="iniciarSesionCon-mobile">
               <p class="iniciar-sesion-con">Iniciar sesión con</p>
               <a class="boton-iniciarSesionGoogle" href="/">Google</a>

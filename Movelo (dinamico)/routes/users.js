@@ -32,5 +32,16 @@ router.get('/admin/crear', userController.adminCrear);
 router.get('/admin/elegir-editar', userController.adminEditar);
 
 router.post('/registro', uploadFile.single('avatar'), validacion, userController.crearUsuario);
+router.post('/login', [
+   body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
+   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
+], userController.processLogin)
 
+router.get('/check', function(req, res) {
+   if (req.session.usuarioLogueado == undefined) {
+      res.send('No estas logueado')
+   } else {
+      res.send('El usuario logueado es ' + req.session.usuarioLogueado.email);
+   }
+})
 module.exports = router;

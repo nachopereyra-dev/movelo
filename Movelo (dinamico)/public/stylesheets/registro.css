@@ -176,6 +176,7 @@ main section form .boton-registrarse {
   color: white;
   border-radius: 25px;
 }
+
 main section form .boton-registrarse input {
   margin: auto;
   color: white;
@@ -183,9 +184,6 @@ main section form .boton-registrarse input {
   background-color: transparent;
   padding: 5px;
 }
-
-
-
 
 main section form .boton-registrarse:hover {
     background-color: rgb(48, 48, 48);
