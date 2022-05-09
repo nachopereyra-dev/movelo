@@ -20,7 +20,9 @@ const validacion = [
    body('email')
    .notEmpty().withMessage('Debes ingresar un correo electrónico').bail()
    .isEmail().withMessage('Debes ingresar un correo electrónico valido'),
-   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
+   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres'),
+   body('repeatPassword').isLength({min: 8}).withMessage('La contraseña debe coincidir'),
+   body('fecha').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento')
 ]
 
 /* GET users listing. */

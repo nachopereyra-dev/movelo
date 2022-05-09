@@ -39,9 +39,9 @@ const userController = {
       
             listadoDeUsuarios.push(nuevoUsuario);
             fs.writeFileSync(usuariosFilePath,JSON.stringify(listadoDeUsuarios, null , ' '));
-            res.render("inicio");
+            res.render("users/registro");
         } else {
-            res.render("users/registro", { errors: errors.array(), old: req.body })
+            res.render("users/registro", { errors: errors.mapped(), old: req.body })
         }
 
         
