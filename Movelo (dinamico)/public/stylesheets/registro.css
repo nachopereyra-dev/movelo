@@ -163,6 +163,22 @@ main section form .form-genero .genero {
   background-color: none;
 }
 
+main .form-foto {
+  margin-top: 20px;
+}
+
+main .form-foto input {
+  display: flex;
+  max-width: 70%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 15px auto;
+  color: black;
+  border: 0ch;
+  background-color: transparent;
+}
+
 main section form .boton-registrarse {
   display: flex;
   width: 220px;

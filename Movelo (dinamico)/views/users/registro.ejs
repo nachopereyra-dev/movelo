@@ -59,6 +59,11 @@
                       <option value="Otrx" <%= locals.old && old.gender === 'Otrx' ? 'selected' : ''; %>>Otrx</option>
                   </select>
               </div>
+
+              <div class="form-foto">
+                <label for="avatars">Foto de perfil</label>
+                  <input type="file" name="avatar" id="avatars" accept="image/png, image/jpeg" >
+              </div>
               
               <div class="boton-registrarse">
                 <input type="submit" name="registrar" id="registrarse" value="Registrarse">
