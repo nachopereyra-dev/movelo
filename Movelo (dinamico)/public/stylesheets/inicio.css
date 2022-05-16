@@ -279,6 +279,11 @@ main .boton-2 {
     header nav ul li a:hover {
         text-decoration-line: underline;
     }
+
+    .botones-nav {
+        display: flex;
+        margin: auto;
+    }
     
 
     .botones-nav .boton-a {

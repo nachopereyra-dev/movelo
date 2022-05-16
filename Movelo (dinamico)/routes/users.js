@@ -33,8 +33,8 @@ const validacion = [
 /* GET users listing. */
 router.get('/registro', guestMiddleware, userController.registro);
 router.get('/login', guestMiddleware, userController.login);
-router.get('/perfil', authMiddleware, userController.perfil)
-router.get('/logout', userController.logout)
+router.get('/perfil', authMiddleware, userController.perfil);
+router.get('/logout', userController.logout);
 
 router.get('/admin/crear', authMiddleware, userController.adminCrear);
 router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);

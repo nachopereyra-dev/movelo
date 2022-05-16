@@ -11,14 +11,26 @@
         </div>
 
     <nav>
-        <ul class="menu">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/productos">Servicios</a></li>
-            <li><a href="/productos/carrito"><img src="/images/icons/Shop_Empty.svg" alt=""></a></li>  
-            <div class="botones-nav">
-            <li><a class="boton-a" href="/users/login">Iniciar sesion</a></li>
-            <li><a class="boton-b" href="/users/registro">Registrate</a></li>
-            </div>
+        <ul class="menu-links">
+            <li class="menu-item"><a href="/" class="menu-link">Inicio</a></li>
+            <li class="menu-item"><a href="/productos" class="menu-link">Servicios</a></li>
+            <li><a href="/productos/carrito"><img src="/images/icons/Shop_Empty.svg" alt=""></a></li>
+                <ul>
+                <% if (locals.isLogged) { %>
+                    <li>
+                        <a href='/users/perfil'>Hola, <%= locals.userLogged.name %></a>
+                    </li>
+                    <li>
+                        <a href="/users/logout">Cerrar sesión</a>
+                    </li>
+                <% } else { %>
+                    <div class="botones-nav">
+                        <li><a class="boton-a" href="/users/login">Iniciar sesion</a></li>
+                        <li><a class="boton-b" href="/users/registro">Registrate</a></li>
+                        </div>
+                <% } %>
+                </ul>
+            </li>
         </ul>
     </nav>
 </header>

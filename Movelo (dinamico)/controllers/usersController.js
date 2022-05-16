@@ -57,6 +57,11 @@ const userController = {
             if(isOkThePassword) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
+
+                if(req.body.recordarme) {
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60)*2 })
+                }
+
                 return res.redirect('perfil')
             }
             return res.render('users/login', {
@@ -77,47 +82,6 @@ const userController = {
             }
         })
     },
-    processLogin: (req, res) => {
-        let errors = validationResult(req);
-
-        if(errors.isEmpty()) {
-            const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
-            const listadoDeUsuarios = fs.readFileSync(usuariosFilePath, 'utf-8');
-            let usuarios;
-            if (listadoDeUsuarios == '') {
-                usuarios = [];
-            } else {
-                usuarios = JSON.parse(listadoDeUsuarios);
-            }
-            let usuarioALoguearse
-
-            for (let i = 0; i < usuarios.length; i++) {
-                if (usuarios[i].email == req.body.email) {
-                    if (req.body.password == usuarios[i].password) {
-                        usuarioALoguearse = usuarios[i];
-                        break;
-                    }
-                }
-            }
-
-            if (usuarioALoguearse == undefined) {
-                return res.render('login', {errors: [
-                    {msg: 'Credenciales invalidas'}
-                ]})
-            }
-
-            req.session.usuarioLogueado = usuarioALoguearse;
-
-            if (req.body.recordarme != undefined) {
-                res.cookie('recordarme',
-                usuarioALoguearse.email, { maxAge: 60000})
-            }
-
-            res.send('sucess!')
-        } else {
-            return res.render('users/login', { errors: errors.mapped()})
-        }
-    },
 
     perfil: (req, res) => {
         res.render('users/perfil', {
@@ -126,6 +90,7 @@ const userController = {
     },
 
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/')
     },
@@ -138,28 +103,6 @@ const userController = {
         const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         res.render("users/admin-elegir-editar", {articulos: listadoDeProductos, title: 'Express'})
-    },
-    crearUsuario: (req, res) => {
-        const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
-        const listadoDeUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
-
-        let errors = validationResult(req);
-        if(errors.isEmpty()) {
-            let nuevoUsuario = {
-                id: listadoDeUsuarios.length + 1,
-                nombre: req.body.name,
-                email: req.body.email,
-                password: req.body.password,
-                fecha: req.body.fecha,
-                gender: req.body.gender,
-            };
-      
-            listadoDeUsuarios.push(nuevoUsuario);
-            fs.writeFileSync(usuariosFilePath,JSON.stringify(listadoDeUsuarios, null , ' '));
-            res.render("users/registro");
-        } else {
-            res.render("users/registro", { errors: errors.mapped(), old: req.body })
-        }
     },
 }
 
