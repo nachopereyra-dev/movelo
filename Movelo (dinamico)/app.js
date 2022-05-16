@@ -10,6 +10,7 @@ const session = require ('express-session');
 var inicioRouter = require('./routes/inicio'); //inicio
 var usersRouter = require('./routes/users'); //users
 var productsRouter = require('./routes/productos'); //products
+var recordameMiddleware = require('./middlewares/recordameMiddleware')
 
 var app = express();
 
@@ -22,7 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
-app.use(session({secret: 'Shh, es un secreto!'}));
+app.use(session({secret: 'Shh, es un secreto!',
+                 resave: false,
+                 saveUninitialized: false,}));
+//app.use(recordameMiddleware);
 
 
 // routers

@@ -97,5 +97,16 @@
   "password": "1234Admin",
   "category": "admin",
   "image": "user_11.jpg"
+ },
+ {
+  "id": 12,
+  "name": "Juan ignacio",
+  "email": "nachopereyranoguez@gmail.com",
+  "password": "$2a$10$BqiE2H7QO7wYsrTo1XnAdu0SucGHXDBMtgI4td91bpvlItS7JuPRa",
+  "repeatPassword": "nacho48059584",
+  "fecha": "1995-04-08",
+  "gender": "Masculino",
+  "registrar": "Registrarse",
+  "avatar": "1652661968646_img_.JPEG"
  }
 ]

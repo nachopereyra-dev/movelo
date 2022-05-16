@@ -46,70 +46,6 @@ nav {
     display: none;
 }
 
-/*--------MAIN---------*/
-
-/*--------MAIN-HOME---------*/
-
-main {
-    min-height: calc(100vh - 115.594px - 151.5px);
-    width: 100wv;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main .textos {
-    margin-bottom: 80px;
-}
-
-main .titulos {
-    font-size: 28px;
-    font-weight: 400;
-    margin: 70px;
-    text-align: center;
-}
-
-main .titulo-2 {
-    display: none;
-}
-
-main .sub-titulo {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 50px;
-    text-align: center;
-}
-
-main .botones {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 105px;
-}
-
-main .boton-1 {
-    text-decoration: none;
-    background-color: transparent;
-    color: black;
-    padding: 10px;
-    border: solid 1px black;
-    border-radius: 25px;
-    width: 160px;
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-main .boton-2 {
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    padding: 10px;
-    border: solid 1px black;
-    border-radius: 25px;
-    width: 160px;
-    text-align: center;
-}
-
 /*--------FOOTER-HOME---------*/
 
 
@@ -219,80 +155,43 @@ footer p {
         width: 85px;
         text-align: center;
     }
-
-    
-
-/*--------MAIN_HOME-TABLET---------*/
-
-main .titulo-1 {
-    margin-bottom: 0px;
 }
-
-main .titulo-2 {
-    display: block;
-    color: lightgray;
-    margin-top: 10px;
-}
-
-main .botones {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 150px;
-}
-
-main .boton-1 {
-    margin-bottom: 0px;
-    margin-right: 5px;
-}
-
-main .boton-2 {
-    margin-left: 5px;
-}
-
-}
-
-/*-----------DESKTOP------------*/
 
 @media (min-width: 760px) {
 
-/*--------HEADER-DESKTOP---------*/
-
-    header {
-        width: 85%;
-        margin: auto;
-    }
-
-    header nav {
-        width: 85%;
-    }
-
-    .sub-nav-mobile .logo p {
-        font-size: 24px;
-    }
-
-    header nav ul li a {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    header nav ul li a:hover {
-        text-decoration-line: underline;
-    }
+    /*--------HEADER-DESKTOP---------*/
     
-
-    .botones-nav .boton-a {
-        font-size: 14px;
-        width: 110px;
+        header {
+            width: 85%;
+            margin: auto;
+        }
+    
+        header nav {
+            width: 85%;
+        }
+    
+        .sub-nav-mobile .logo p {
+            font-size: 24px;
+        }
+    
+        header nav ul li a {
+            font-size: 14px;
+            padding: 10px;
+        }
+    
+        header nav ul li a:hover {
+            text-decoration-line: underline;
+        }
+    
+        .botones-nav .boton-a {
+            font-size: 14px;
+            width: 110px;
+        }
+    
+        .botones-nav .boton-b {
+            font-size: 14px;
+            width: 110px;
+        }
+    
     }
 
-    .botones-nav .boton-b {
-        font-size: 14px;
-        width: 110px;
-    }
-
-}
-
-@media (min-width: 1440px){
-
-}

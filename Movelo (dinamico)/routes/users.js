@@ -3,6 +3,8 @@ var router = express.Router();
 var multer = require('multer');
 const path = require('path');
 var { body } = require('express-validator');
+var guestMiddleware = require('../middlewares/guestMiddleware');
+var authMiddleware = require('../middlewares/authMiddleware');
 
 
 
@@ -29,22 +31,25 @@ const validacion = [
 ]
 
 /* GET users listing. */
-router.get('/login', userController.login);
-router.get('/registro', userController.registro);
-router.get('/admin/crear', userController.adminCrear);
-router.get('/admin/elegir-editar', userController.adminEditar);
+router.get('/registro', guestMiddleware, userController.registro);
+router.get('/login', guestMiddleware, userController.login);
+router.get('/perfil', authMiddleware, userController.perfil)
+router.get('/logout', userController.logout)
 
-router.post('/registro', fileUpload.single('avatar'), validacion, userController.crearUsuario);
+router.get('/admin/crear', authMiddleware, userController.adminCrear);
+router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);
+
+router.post('/registro', fileUpload.single('avatar'), validacion, userController.procesoRegistro);
 router.post('/login', [
    body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
-], userController.processLogin)
+], userController.procesoLogin)
 
 router.get('/check', function(req, res) {
-   if (req.session.usuarioLogueado == undefined) {
+   if (req.session.userlogged == undefined) {
       res.send('No estas logueado')
    } else {
-      res.send('El usuario logueado es ' + req.session.usuarioLogueado.email);
+      res.send('El usuario logueado es ' + req.session.userLogged.email);
    }
 })
 module.exports = router;
