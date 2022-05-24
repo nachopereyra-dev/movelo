@@ -140,7 +140,7 @@ main section form .casilla:focus {
 }
 
 main section form .formulario-fecha {
-  margin: 40px auto 20px;
+  margin: 20px auto 20px;
   text-align: center;
   width: 220px;
   display: block;
@@ -152,15 +152,71 @@ main section form .formulario-fecha .fecha {
   background-color: none;
 }
 
+form .formulario-fecha label {
+  font-size: 16xp;
+  font-weight: 700;
+}
+
 main section form .form-genero {
-  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto 10px;
   width: 220px;
-  text-align: left;
+  text-align: center;
 }
 
 main section form .form-genero .genero {
   border: none;
   background-color: none;
+  width: 50%;
+  margin: auto;
+}
+
+form .form-genero label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+form .tipo-de-usuario {
+  display: flex;
+  flex-direction: column;
+}
+
+
+form .tipo-de-usuario label {
+  margin: 5px auto 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+form .sub-tipo-de-usuario {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+form .comprador {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+form .comprador label {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+form .vendedor {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+form .vendedor label {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 5px;
 }
 
 main .form-foto {
@@ -193,7 +249,7 @@ main section form .boton-registrarse {
   border-radius: 25px;
 }
 
-main section form .boton-registrarse input {
+main section form .boton-registrarse button {
   margin: auto;
   color: white;
   border: 0ch;

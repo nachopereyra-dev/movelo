@@ -21,13 +21,16 @@ const userController = require('../controllers/usersController');
 const fileUpload = multer({ storage: storage });
 
 const validacion = [
-   body('name').notEmpty().withMessage('Debes ingresar tu nombre completo'),
+   body('name').notEmpty().withMessage('Debes ingresar tu nombre'),
+   body('apellido').notEmpty().withMessage('Debes ingresar tu apellido'),
    body('email')
    .notEmpty().withMessage('Debes ingresar un correo electrónico').bail()
    .isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres'),
    body('repeatPassword').isLength({min: 8}).withMessage('La contraseña debe coincidir'),
-   body('fecha').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento')
+   body('fecha').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento'),
+   body('usuarioTipo').notEmpty().withMessage('Debes elegir un tipo de usuario'),
+   //body('avatar').notEmpty().withMessage('Debes seleccionar una foto de perfil')
 ]
 
 /* GET users listing. */
@@ -45,11 +48,4 @@ router.post('/login', [
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
 ], userController.procesoLogin)
 
-router.get('/check', function(req, res) {
-   if (req.session.userlogged == undefined) {
-      res.send('No estas logueado')
-   } else {
-      res.send('El usuario logueado es ' + req.session.userLogged.email);
-   }
-})
 module.exports = router;

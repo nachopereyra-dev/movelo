@@ -100,13 +100,14 @@
  },
  {
   "id": 12,
-  "name": "Juan ignacio",
+  "name": "Juan Ignacio",
+  "apellido": "Pereyra Noguez",
   "email": "nachopereyranoguez@gmail.com",
-  "password": "$2a$10$BqiE2H7QO7wYsrTo1XnAdu0SucGHXDBMtgI4td91bpvlItS7JuPRa",
+  "password": "$2a$10$d4nwnNYgp40CkpiaPpi3TeXjgAQXRpePmauYvDokc.9I9OqLMqBea",
   "repeatPassword": "nacho48059584",
   "fecha": "1995-04-08",
   "gender": "Masculino",
-  "registrar": "Registrarse",
-  "avatar": "1652661968646_img_.JPEG"
+  "usuarioTipo": "Vendedor",
+  "avatar": "1653426325962_img_.JPEG"
  }
 ]

@@ -15,10 +15,13 @@
             <li class="menu-item"><a href="/" class="menu-link">Inicio</a></li>
             <li class="menu-item"><a href="/productos" class="menu-link">Servicios</a></li>
             <li><a href="/productos/carrito"><img src="/images/icons/Shop_Empty.svg" alt=""></a></li>
-                <ul>
+                <ul class="sub-menu">
                 <% if (locals.isLogged) { %>
                     <li>
-                        <a href='/users/perfil'>Hola, <%= locals.userLogged.name %></a>
+                        <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40" style="border-radius:100%;" alt="">
+                    </li>
+                    <li>
+                        <a href='/users/perfil'><p> Hola, <%= locals.userLogged.name %></p></a>
                     </li>
                     <li>
                         <a href="/users/logout">Cerrar sesión</a>

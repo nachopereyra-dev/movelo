@@ -15,10 +15,17 @@
           <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
           <a href="/users/login" class="iniciar-sesion">Iniciar sesión</a>
           <form action="/users/registro" method="POST"  class="formulario-registro" enctype="multipart/form-data">
-              <input type="text" class="casilla" name="name" value="<%= locals.old && old.name ? old.name : ''%>" placeholder="Nombre completo">
+              <input type="text" class="casilla" name="name" value="<%= locals.old && old.name ? old.name : ''%>" placeholder="Nombres">
               <% if (locals.errors && errors.name) { %>
                 <div class="feedback-danger">
                   <%= errors.name.msg %>
+                </div>
+              <% } %>
+
+              <input type="text" class="casilla" name="apellido" value="<%= locals.old && old.apellido ? old.apellido : ''%>" placeholder="Apellidos">
+              <% if (locals.errors && errors.apellido) { %>
+                <div class="feedback-danger">
+                  <%= errors.apellido.msg %>
                 </div>
               <% } %>
 
@@ -53,6 +60,7 @@
               </div>
   
               <div class="form-genero">
+                <label for="">Género</label>
                   <select name="gender" id="genero" aria-placeholder="Género" class="genero">
                       <option value="Femenino" <%= locals.old && old.gender === 'Femenino' ? 'selected' : ''; %>>Femenino</option>
                       <option value="Masculino" <%= locals.old && old.gender === 'Masculino' ? 'selected' : ''; %>>Masculino</option>
@@ -60,13 +68,26 @@
                   </select>
               </div>
 
+              <div class="tipo-de-usuario">
+                <label for="">Tipo de usuario</label>
+                <div class="sub-tipo-de-usuario">
+                <div class="comprador"><label for="Comprador">Comprador</label><input type="radio" name="usuarioTipo" id="Comprador" value="Comprador" <%= locals.old && old.usuarioTipo === 'Comprador' ? 'checked' : ''; %>></div>
+                <div class="vendedor"><label for="Vendedor">Vendedor</label><input type="radio" name="usuarioTipo" id="Vendedor" value="Vendedor" <%= locals.old && old.usuarioTipo === 'Vendedor' ? 'checked' : ''; %>></div>
+                </div>
+                <% if (locals.errors && errors.usuarioTipo) { %>
+                  <div class="feedback-danger">
+                    <%= errors.usuarioTipo.msg %>
+                  </div>
+                <% } %>
+                </div>
+
               <div class="form-foto">
                 <label for="avatars">Foto de perfil</label>
-                  <input type="file" name="avatar" id="avatars" accept="image/png, image/jpeg" >
+                  <input type="file" name="avatar" id="avatars" accept="image/png, image/jpeg" required>
               </div>
               
               <div class="boton-registrarse">
-                <input type="submit" name="registrar" id="registrarse" value="Registrarse">
+                <button type="submit" value="Registrarse">Registrarse</button>
               </div>
           </form>
   

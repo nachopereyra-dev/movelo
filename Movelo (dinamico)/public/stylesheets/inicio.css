@@ -276,6 +276,12 @@ main .boton-2 {
         padding: 10px;
     }
 
+   .sub-menu a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
     header nav ul li a:hover {
         text-decoration-line: underline;
     }
@@ -289,11 +295,13 @@ main .boton-2 {
     .botones-nav .boton-a {
         font-size: 14px;
         width: 110px;
+        justify-content: center;
     }
 
     .botones-nav .boton-b {
         font-size: 14px;
         width: 110px;
+        justify-content: center;
     }
 
 }

@@ -193,5 +193,64 @@ footer p {
             width: 110px;
         }
     
+    /*--------MAIN-DESKTOP---------*/
+
+        main .principal {
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            margin: auto;
+        }
+
+        main .user-info {
+            display: flex;
+            flex-direction: row;
+        }
+
+        main .imagen {
+            margin: 20px 30px 20px 30px;
+        }
+
+        main .imagen img {
+            display: block;
+            margin: auto;
+        }
+
+        main .boton-editar {
+            display: flex;
+            width: 220px;
+            max-width: 95%;
+            height: 35px;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin: 20px auto;
+            background-color: black;
+            color: white;
+            border-radius: 25px;
+        }
+
+        main .boton-editar a {
+            margin: auto;
+            color: white;
+            border: 0ch;
+            background-color: transparent;
+            padding: 5px;
+          }
+
+        main .edit-info {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .edit-info label {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .edit-info p {
+            margin: 10px 0px;
+        }
     }
 

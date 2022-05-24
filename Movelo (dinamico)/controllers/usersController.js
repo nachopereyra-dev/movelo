@@ -42,7 +42,7 @@ const userController = {
         }
 
         let userCreated = User.create(userToCreate);
-        return res.render('users/login')
+        return res.redirect('perfil')
     },
 
     login: (req, res) => {
