@@ -96,7 +96,7 @@ const userController = {
     },
     
     adminCrear: (req, res) => {
-        res.render("users/admin-crear", { title: 'Express' })
+        res.render("users/admin-crear", { user: req.session.userLogged})
     },
     adminEditar: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');

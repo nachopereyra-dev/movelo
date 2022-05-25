@@ -7,7 +7,7 @@ const Product = require('../models/Product')
 const productosController = {
 
 	create: (req, res) => {
-		res.render("productos/mis-productos", { user: req.session.userLogged})
+		res.render("productos/mis-productos", { user: req.session.userLogged })
 	},
 
     servicios: (req, res) => {
