@@ -1,19 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
+const Product = require('../models/Product')
+
 
 const productosController = {
+
+	create: (req, res) => {
+		res.render("productos/mis-productos", { user: req.session.userLogged})
+	},
+
     servicios: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
         const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("productos/servicios", { articulos: listadoDeProductos });
+        res.render("productos/servicios", { articulos: listadoDeProductos, user: req.session.userLogged
+		 });
     },
 
 
     carrito: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
         const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("productos/carrito", { articulos: listadoDeProductos });
+        res.render("productos/carrito", { articulos: listadoDeProductos, user: req.session.userLogged });
     },
 
 
@@ -22,7 +30,7 @@ const productosController = {
         const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         let id = req.params.id;
         let artitucloId = listadoDeProductos.find(articulo => id == articulo.id);
-        res.render("productos/detalle", { articulo: artitucloId });
+        res.render("productos/detalle", { articulo: artitucloId, user: req.session.userLogged });
     },
 
 
@@ -46,7 +54,7 @@ const productosController = {
         
 		listadoDeProductos.push(nuevoServicio);
 		fs.writeFileSync(productsFilePath,JSON.stringify(listadoDeProductos, null , ' '));
-        res.render("productos/servicios", { articulos: listadoDeProductos });
+        res.render("productos/servicios", { articulos: listadoDeProductos, user: req.session.userLogged });
     },
 
 
@@ -57,7 +65,7 @@ const productosController = {
 
 		//  ---- Ubicacion del producto para devolverlo a la vista  ---- //
 		let producToEdit = listadoDeProductos.find(producto => producto.id == req.params.id);
-		res.render('users/admin-editar', {productToEdit: producToEdit});
+		res.render('users/admin-editar', {productToEdit: producToEdit, user: req.session.userLogged});
 	},
 
 

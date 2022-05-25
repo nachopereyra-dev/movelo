@@ -6,7 +6,9 @@
 
 const mainController = {
     inicio: (req, res) => {
-      res.render("inicio", { title: 'Express' });
+      res.render("inicio", {
+        user: req.session.userLogged
+    });
     }
     
 }

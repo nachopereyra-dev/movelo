@@ -17,6 +17,7 @@ const productosController = require('../controllers/productosController');
 
 /**** GETs de Productos ****/
 router.get('/', productosController.servicios);
+router.get('/mis-productos', productosController.create);
 
 router.get('/carrito', productosController.carrito);
 router.get('/:id/detalle', productosController.detalle);
@@ -27,6 +28,8 @@ router.put('/:id', productosController.update);
 
 /**** Creación de Productos ****/
 router.post('/', productosController.adminCrearPOST);
+
+
 
 /**** Borrado de Productos ****/
 router.delete('/:id', productosController.destroy);

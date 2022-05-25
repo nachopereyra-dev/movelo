@@ -23,6 +23,12 @@
                     <li>
                         <a href='/users/perfil'><p> Hola, <%= locals.userLogged.name %></p></a>
                     </li>
+                    <% if(user.usuarioTipo == 'Vendedor') { %>
+                    <li>
+                        <a href="/productos/mis-productos">Mis servicios</a>
+                    </li>
+                    <% } %><% { %>
+                    <% } %>
                     <li>
                         <a href="/users/logout">Cerrar sesión</a>
                     </li>

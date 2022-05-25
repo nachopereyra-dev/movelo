@@ -109,5 +109,17 @@
   "gender": "Masculino",
   "usuarioTipo": "Vendedor",
   "avatar": "1653426325962_img_.JPEG"
+ },
+ {
+  "id": 13,
+  "name": "Pedro",
+  "apellido": "Perez",
+  "email": "hh@hotmail.com",
+  "password": "$2a$10$9W7KzH9beaWZi/nXEN6vwuRuSxjaEahJNfZp.JfxvTyqGL/YGmj4C",
+  "repeatPassword": "12345678",
+  "fecha": "1930-09-09",
+  "gender": "Femenino",
+  "usuarioTipo": "Comprador",
+  "avatar": "1653445328155_img_.png"
  }
 ]
