@@ -29,6 +29,11 @@ header .sub-nav-mobile {
   align-items: center;
 }
 
+.sub-nav-mobile .logo a {
+  text-decoration: none;
+  color: black;
+}
+
 .menu-hamburguesa {
   background-color: black;
   color: white;
@@ -63,7 +68,6 @@ main .detalles_carrito {
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin: auto;
   border: solid 1px rgb(66, 66, 66);
   border-radius: 10px;
   margin-top: 15px;
@@ -127,36 +131,6 @@ main article {
 }
 .precio_envio {
   font-weight: bold;
-}
-
-main .botones-crud {
-  display: flex;
-  flex-direction: row;
-  justify-content:center;
-}
-
-main .boton-editar button {
-  text-decoration: none;
-  font-size: 15px;
-  background-color: black;
-  color: white;
-  padding: 10px;
-  border: solid 1px black;
-  border-radius: 25px;
-  margin: 10px;
-  text-align: center;
-}
-
-
-.boton-eliminar input {
-  margin: auto;
-  color: black;
-  background-color: transparent;
-  padding: 8px;
-  border: solid 1px black;
-  border-radius: 25px;
-  margin: 10px;
-  text-align: center;
 }
 
 main article button {

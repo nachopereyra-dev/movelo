@@ -30,6 +30,11 @@ header .sub-nav-mobile {
   align-items: center;
 }
 
+.sub-nav-mobile .logo a {
+  text-decoration: none;
+  color: black;
+}
+
 .menu-hamburguesa {
   background-color: black;
   color: white;

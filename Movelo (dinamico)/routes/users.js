@@ -5,6 +5,7 @@ const path = require('path');
 var { body } = require('express-validator');
 var guestMiddleware = require('../middlewares/guestMiddleware');
 var authMiddleware = require('../middlewares/authMiddleware');
+var adminMiddleware = require('../middlewares/adminMiddleware')
 
 
 
@@ -18,6 +19,7 @@ const storage = multer.diskStorage({
 });
 
 const userController = require('../controllers/usersController');
+const { admin } = require('../controllers/usersController');
 const fileUpload = multer({ storage: storage });
 
 const validacion = [
@@ -37,6 +39,7 @@ const validacion = [
 router.get('/registro', guestMiddleware, userController.registro);
 router.get('/login', guestMiddleware, userController.login);
 router.get('/perfil', authMiddleware, userController.perfil);
+router.get('/admin', adminMiddleware, userController.admin)
 router.get('/logout', userController.logout);
 
 router.get('/admin/crear', authMiddleware, userController.adminCrear);

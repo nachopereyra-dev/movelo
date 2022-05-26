@@ -12,22 +12,16 @@
           <div class="navbar_carrito">
               <img src="/images/icons/Shop_Empty.svg" alt="" class="carrito">
               <a href="/"><img src="/images/icons/flecha.svg"class="flecha"></a>
-              <h2>Carrito de compra</h2>
+              <h2>Pago de servicio</h2>
           </div>
       </div>
       <div class="caja_contenido">
-      <iframe src="<%= articulo.imagen %>" width="600" height="600" style="border-radius:16px; border: 0; box-shadow: 2em gray; opacity: 90%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="googlemaps"></iframe>
+        <iframe src="<%= articulo.imagen %>" width="600" height="600" style="border-radius:16px; border: 0; box-shadow: 2em gray; opacity: 90%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="googlemaps"></iframe>
       <div class="detalles_carrito">
           <h2>$ <%= articulo.precio %></h2>
           <p>Marzo 7, 2022 - 3:45 PM</p>
           <p>Pedido #<%= articulo.id %></p>
-          <div class="botones-crud">
-          <div class="boton-editar">
-            <a href="/productos/<%= articulo.id %>/editar " class="link_comprar"><button type="button" >Editar</button></a></div>
-            <form class="boton-eliminar" action="/productos/<%= articulo.id%>?_method=DELETE" method="POST">
-                <input type="submit" name="delete" id="delete" value="Eliminar">
-            </form>
-          </div>
+          <h2><%= articulo.mensajero %></h2>
           <article class="articulo">
                   <div class="viaje">
                    <p class="ciudad-origen"><%= articulo.origen %></p>

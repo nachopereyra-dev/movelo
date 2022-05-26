@@ -107,7 +107,7 @@
   "repeatPassword": "nacho48059584",
   "fecha": "1995-04-08",
   "gender": "Masculino",
-  "usuarioTipo": "Vendedor",
+  "usuarioTipo": "Admin",
   "avatar": "1653426325962_img_.JPEG"
  },
  {
@@ -121,5 +121,17 @@
   "gender": "Femenino",
   "usuarioTipo": "Comprador",
   "avatar": "1653445328155_img_.png"
+ },
+ {
+  "id": 14,
+  "name": "Juan",
+  "apellido": "Perez",
+  "email": "hhh@hotmail.com",
+  "password": "$2a$10$LU1O14iHKC9RQhVB/v5C0uFlbNorud.fsAY/S9DjGilhK2xybPaS2",
+  "repeatPassword": "12345678",
+  "fecha": "1994-04-09",
+  "gender": "Masculino",
+  "usuarioTipo": "Vendedor",
+  "avatar": "1653599498991_img_.png"
  }
 ]

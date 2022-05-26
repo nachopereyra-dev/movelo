@@ -59,7 +59,7 @@ const userController = {
                 req.session.userLogged = userToLogin;
 
                 if(req.body.recordarme) {
-                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60)*2 })
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60)*30 })
                 }
 
                 return res.redirect('perfil')
@@ -94,7 +94,11 @@ const userController = {
         req.session.destroy();
         return res.redirect('/')
     },
-    
+
+    admin: (req, res) => {
+        res.render("users/admin", { user: req.session.userLogged})
+    },
+
     adminCrear: (req, res) => {
         res.render("users/admin-crear", { user: req.session.userLogged})
     },
