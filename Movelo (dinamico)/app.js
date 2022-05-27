@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users'); //users
 var productsRouter = require('./routes/productos'); //products
 var userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
+
 var app = express();
 
 // view engine setup
@@ -27,6 +28,7 @@ app.use(session({secret: 'Shh, es un secreto!',
                  resave: false,
                  saveUninitialized: false,}));
 app.use(userLoggedMiddleware);
+
 
 
 // routers

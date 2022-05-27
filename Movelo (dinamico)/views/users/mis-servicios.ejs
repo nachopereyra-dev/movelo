@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/mis-servicios.css">
+  </head>
+  <body>
+    <%- include('../partials/header') %>   <!-----------HEADER----------->
+    
+    <main>
+      <h1>Mis servicios</h1>
+      <div class="boton-buscar">
+        <a href="/users/admin/crear">Crear</a>
+    </div>
+    <% for (let i = 0; i < services.length; i++) { %>
+    <h1><%= services[i].mensajero %> Hola</h1>
+    <% } %>
+  </main>
+
+    <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+  </body>
+</html>
