@@ -3,7 +3,8 @@ const path = require('path');
 const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
 
-const db = require('../database/models')
+const User = require('../models/User')
+
 
 const userController = {
 
@@ -21,7 +22,7 @@ const userController = {
             });
         }
 
-        let userInDB = db.Users.findByField('email', req.body.email);
+        let userInDB = User.findByField('email', req.body.email);
 
         if(userInDB) {
             return res.render('users/registro', {
@@ -40,7 +41,7 @@ const userController = {
             avatar: req.file.filename
         }
 
-        let userCreated = db.Users.create(userToCreate);
+        let userCreated = User.create(userToCreate);
         return res.redirect('perfil')
     },
 
@@ -97,16 +98,6 @@ const userController = {
     admin: (req, res) => {
         res.render("users/admin", { user: req.session.userLogged})
     },
-
-    misServicios: (req, res) => {
-        db.Services.findAll()
-            .then(servicios => {
-                return res.render('users/mis-servicios', { user: req.session.userLogged, services: servicios })
-            })
-            .catch(err => {
-                return res.send(err)
-             })
-	},
 
     adminCrear: (req, res) => {
         res.render("users/admin-crear", { user: req.session.userLogged})

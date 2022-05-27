@@ -17,6 +17,7 @@ const productosController = require('../controllers/productosController');
 
 /**** GETs de Productos ****/
 router.get('/', productosController.servicios);
+router.get('/mis-productos', productosController.create);
 
 router.get('/carrito', productosController.carrito);
 router.get('/:id/detalle', productosController.detalle);

@@ -6,7 +6,6 @@ var { body } = require('express-validator');
 var guestMiddleware = require('../middlewares/guestMiddleware');
 var authMiddleware = require('../middlewares/authMiddleware');
 var adminMiddleware = require('../middlewares/adminMiddleware')
-var userTypeMiddleware = require('../middlewares/userTypeMiddleware')
 
 
 
@@ -38,21 +37,18 @@ const validacion = [
 
 /* GET users listing. */
 router.get('/registro', guestMiddleware, userController.registro);
-router.post('/registro', fileUpload.single('avatar'), validacion, userController.procesoRegistro);
-
 router.get('/login', guestMiddleware, userController.login);
-router.post('/login', [
-   body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
-   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
-], userController.procesoLogin)
-
 router.get('/perfil', authMiddleware, userController.perfil);
-router.get('/mis-servicios', authMiddleware, userTypeMiddleware, userController.misServicios);
 router.get('/admin', adminMiddleware, userController.admin)
 router.get('/logout', userController.logout);
 
 router.get('/admin/crear', authMiddleware, userController.adminCrear);
 router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);
 
+router.post('/registro', fileUpload.single('avatar'), validacion, userController.procesoRegistro);
+router.post('/login', [
+   body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
+   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
+], userController.procesoLogin)
 
 module.exports = router;

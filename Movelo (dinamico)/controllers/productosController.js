@@ -6,6 +6,10 @@ const Product = require('../models/Product')
 
 const productosController = {
 
+	create: (req, res) => {
+		res.render("productos/mis-productos", { user: req.session.userLogged })
+	},
+
     servicios: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
         const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
