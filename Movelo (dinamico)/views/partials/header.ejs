@@ -13,7 +13,7 @@
     <nav>
         <ul class="menu-links">
             <li class="menu-item"><a href="/" class="menu-link">Inicio</a></li>
-            <li class="menu-item"><a href="/productos" class="menu-link">Servicios</a></li>
+            <li class="menu-item"><a href="/servicios" class="menu-link">Servicios</a></li>
                 <ul class="sub-menu">
                 <% if (locals.isLogged) { %>
                     <li>
@@ -24,7 +24,7 @@
                     </li>
                     <% if(user.usuarioTipo == 'Vendedor') { %>
                     <li>
-                        <a href="/productos/mis-productos">Mis servicios</a>
+                        <a href="/users/mis-servicios">Mis servicios</a>
                     </li>
                     <% } %><% { %>
                     <% } %>

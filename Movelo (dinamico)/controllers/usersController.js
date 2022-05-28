@@ -89,15 +89,21 @@ const userController = {
         })
     },
 
+    misServicios: (req, res) => {
+        res.render("users/mis-servicios", { user: req.session.userLogged})
+    },
+
+    admin: (req, res) => {
+        res.render("users/admin", { user: req.session.userLogged})
+    },
+
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/')
     },
 
-    admin: (req, res) => {
-        res.render("users/admin", { user: req.session.userLogged})
-    },
+    
 
     adminCrear: (req, res) => {
         res.render("users/admin-crear", { user: req.session.userLogged})

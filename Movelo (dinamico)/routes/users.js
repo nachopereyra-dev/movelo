@@ -39,6 +39,7 @@ const validacion = [
 router.get('/registro', guestMiddleware, userController.registro);
 router.get('/login', guestMiddleware, userController.login);
 router.get('/perfil', authMiddleware, userController.perfil);
+router.get('/mis-servicios', userController.misServicios)
 router.get('/admin', adminMiddleware, userController.admin)
 router.get('/logout', userController.logout);
 
