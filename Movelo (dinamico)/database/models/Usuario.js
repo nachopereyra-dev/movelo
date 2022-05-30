@@ -35,13 +35,13 @@ module.exports = function(sequelize, dataTypes) {
 
     let config = {
         tableName: 'Users',
-        tablestamps: false
+        timestamps: false
     }
     
     let Usuario = sequelize.define(alias, cols, config);
 
     Usuario.associate = function(models) {
-        Usuario.hasMany(models.Servicio, {
+        Usuario.hasMany(models.Services, {
             as: 'servicios',
             foreignKey: 'id_user'
         })
@@ -51,7 +51,7 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: 'id_order'
         })
 
-        Usuario.belongsTo(models.Categoria_usuario, {
+        Usuario.belongsTo(models.CategoriaUsuario, {
             as: 'categoriaU',
             foreignKey: 'id_user_category'
         })

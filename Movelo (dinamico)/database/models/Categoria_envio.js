@@ -1,9 +1,11 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = 'CategoriaE';
+    let alias = 'CategoriaEnvio';
 
-    let cols = {
-        id_shipment_categroy: {
-            type: dataTypes.INTEGER
+    let cols = { 
+        id_shipment_category: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
         name: {
             type: dataTypes.STRING
@@ -12,18 +14,18 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tableName: 'Shipmentstypes',
-        tablestamps: false
+        tableName: 'Shipments_type',
+        timestamps: false
     }
 
-    let Categoria_envio = sequelize.define(alias, cols, config);
+    let CategoriaEnvio = sequelize.define(alias, cols, config);
 
-    Categoria_envio.associate = function(models) {
-        Categoria_envio.hasMany(models.Servicio, {
+    CategoriaEnvio.associate = function(models) {
+        CategoriaEnvio.hasMany(models.Services, {
             as: 'servicios',
             foreignKey: 'id_shipment_category'
         })
     }
 
-    return Categoria_envio;
+    return CategoriaEnvio;
 }

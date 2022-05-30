@@ -1,9 +1,11 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = 'CategoriaU';
+    let alias = 'CategoriaUsuario';
 
     let cols = {
         id_user_categroy: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
         name: {
             type: dataTypes.STRING
@@ -13,17 +15,17 @@ module.exports = function(sequelize, dataTypes) {
 
     let config = {
         tableName: 'Userstypes',
-        tablestamps: false
+        timestamps: false
     }
 
-    let Categoria_usuario = sequelize.define(alias, cols, config);
+    let CategoriaUsuario = sequelize.define(alias, cols, config);
 
-    Categoria_usuario.associate = function(models) {
-        Categoria_usuario.hasMany(models.Usuarios, {
+    CategoriaUsuario.associate = function(models) {
+        CategoriaUsuario.hasMany(models.Usuario, {
             as: 'usuarios',
             foreignKey: 'id_user_category'
         })
     }
 
-    return Categoria_usuario;
+    return CategoriaUsuario;
 }

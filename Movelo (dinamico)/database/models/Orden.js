@@ -1,5 +1,5 @@
 module.exports = function(sequelize, dataTypes) {
-    let alias = 'Ordenes';
+    let alias = 'Orden';
 
     let cols = {
         id_order: {
@@ -15,7 +15,7 @@ module.exports = function(sequelize, dataTypes) {
 
     let config = {
         tableName: 'Orders',
-        tablestamps: false
+        timestamps: false
     }
 
     let Ordenes = sequelize.define(alias, cols, config);
@@ -26,7 +26,7 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: 'id_user'
     })
 
-        Ordenes.belongsTo(models.Servicio, {
+        Ordenes.belongsTo(models.Services, {
             as: 'servicios',
             foreignKey: 'id_service'
     })

@@ -6,6 +6,7 @@ var { body } = require('express-validator');
 var guestMiddleware = require('../middlewares/guestMiddleware');
 var authMiddleware = require('../middlewares/authMiddleware');
 var adminMiddleware = require('../middlewares/adminMiddleware')
+var userTypeMiddleware = require('../middlewares/userTypeMiddleware')
 
 
 
@@ -39,12 +40,17 @@ const validacion = [
 router.get('/registro', guestMiddleware, userController.registro);
 router.get('/login', guestMiddleware, userController.login);
 router.get('/perfil', authMiddleware, userController.perfil);
-router.get('/mis-servicios', userController.misServicios)
-router.get('/admin', adminMiddleware, userController.admin)
-router.get('/logout', userController.logout);
+// router.get('/mis-servicios', userTypeMiddleware, userController.misServicios)
 
+router.get('/mis-servicios/crear', userController.crearServicio)
+router.post('/mis-servicios/crear', userController.guardarServicio)
+
+router.get('/admin', adminMiddleware, userController.admin)
 router.get('/admin/crear', authMiddleware, userController.adminCrear);
 router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);
+router.get('/logout', userController.logout);
+
+
 
 router.post('/registro', fileUpload.single('avatar'), validacion, userController.procesoRegistro);
 router.post('/login', [

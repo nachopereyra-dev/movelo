@@ -4,6 +4,7 @@ const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
 
 const User = require('../models/User')
+const db = require('../database/models')
 
 
 const userController = {
@@ -91,6 +92,28 @@ const userController = {
 
     misServicios: (req, res) => {
         res.render("users/mis-servicios", { user: req.session.userLogged})
+    },
+
+    crearServicio: (req, res) => {
+        db.CategoriaEnvio.findAll()
+            .then(tipoDeEnvio => {
+                return res.render('users/admin-crear', { tipoDeEnvio: tipoDeEnvio, user: req.session.userLogged})
+            })
+	},
+
+    guardarServicio: (req, res) => {
+        db.Services.create({
+            origen: req.body.origen,
+            destination: req.body.destino,
+            id_shipment_category: req.body.tipoDeEnvio,
+            id_frequency: req.body.frecuencia,
+            weight: req.body.peso,
+            height: req.body.altura,
+            width: req.body.ancho,
+            description: req.body.descripcion,
+            price: req.body.precio
+        })
+        res.redirect('mis-servicios')
     },
 
     admin: (req, res) => {
