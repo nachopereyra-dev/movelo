@@ -1,8 +1,13 @@
 function userTypeMiddleware(req, res, next) {
-    if ((req.session.userLogged && (req.session.userLogged.usuarioTipo == 'Comprador'))){
+
+    if(!req.session.userLogged) {
+        return res.redirect('login')
+    } else if
+    (req.session.userLogged.usuarioTipo == 'Comprador') {
         return res.redirect('perfil')
+        }
+        next()
     }
-    next()
-}
 
 module.exports = userTypeMiddleware;
+
