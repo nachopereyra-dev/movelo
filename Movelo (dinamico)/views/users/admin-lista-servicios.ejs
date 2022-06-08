@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/admin-lista-servicios.css">
+  </head>
+  <body>
+    <%- include('../partials/header') %>   <!-----------HEADER----------->
+    
+    <main>
+        <section>
+
+            <h1>Lista de servicios</h1>
+
+            <div class="lista-servicios">
+
+                <div class="servicio">
+                  <% for (let i = 0; i < servicios.length; i++) { %>
+                    <a href=""><p>ID del servicio - Nombre del usuario - Desde <%= servicios[i].origen %> hacia <%= servicios[i].destination %>
+                      </p></a>
+                  <% } %>
+                </div>
+
+            </div>
+        </section>
+  </main>
+
+    <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+  </body>
+</html>

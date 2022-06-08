@@ -72,16 +72,20 @@
     color: black;
   }
 
-  main section .lista-usuarios .usuario {
+  main section .lista-servicios .servicio {
       background-color: black;
       margin-bottom: 10px;
-      padding: 15px 20px;
+      padding: 5px 10px;
       border-radius: 10px;
       width: 70%;
   }
   
-  main section .usuario a {
+  main section .servicio a {
       color: white;
+  }
+
+  .servicio a p {
+    margin: 5px;
   }
 
   /*--------FOOTER-HOME---------*/

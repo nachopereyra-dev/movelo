@@ -120,6 +120,17 @@ const userController = {
         res.render("users/admin", { user: req.session.userLogged})
     },
 
+    servicesList: (req, res) => {
+        db.Services.findAll()
+            .then(function(servicios) {
+                res.render('users/admin-lista-servicios', {servicios:servicios, user: req.session.userLogged})
+            })
+    },
+
+    usersList: (req, res) => {
+       
+    },
+
     logout: (req, res) => {
         res.clearCookie('userEmail');
         req.session.destroy();
