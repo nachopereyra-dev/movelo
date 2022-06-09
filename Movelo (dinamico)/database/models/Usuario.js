@@ -26,7 +26,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING
         },
         image: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
         },
         id_user_category: {
             type: dataTypes.INTEGER

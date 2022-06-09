@@ -133,5 +133,17 @@
   "gender": "Masculino",
   "usuarioTipo": "Vendedor",
   "avatar": "1653599498991_img_.png"
+ },
+ {
+  "id": 15,
+  "name": "Rodrigo",
+  "apellido": "Piriz",
+  "email": "hhhh@hotmail.com",
+  "password": "$2a$10$U4C1iqNPhUjfVaF47gIix.4ndUW/igV6s.krreDsiHrztp7frIYta",
+  "repeatPassword": "12345678",
+  "fecha": "1995-04-08",
+  "gender": "Masculino",
+  "usuarioTipo": "Comprador",
+  "avatar": "1654788867469_img_.png"
  }
 ]

@@ -13,38 +13,41 @@ const userController = {
         res.render("users/registro", { title: 'Express' })
     },
 
-    procesoRegistro: (req, res) => {
+    procesoRegistro: async (req, res) => {
         const resultValidation = validationResult(req);
-
+        
         if(resultValidation.errors.length > 0) {
             return res.render('users/registro', {
                 errors: resultValidation.mapped(),
                 old: req.body
-            });
-        }
-
-        let userInDB = User.findByField('email', req.body.email);
-
-        if(userInDB) {
-            return res.render('users/registro', {
-                errors: {
-                    email: {
-                    msg: 'Este email ya está registrado'
+            })} 
+        else {
+            const userInDB = await db.Usuario.findOne({ where: { email: req.body.email } });
+            
+            if(userInDB) {
+                return res.render('users/registro', {
+                    errors: {
+                        email: {
+                        msg: 'Este email ya está registrado'
+                    }
+                },
+                    old: req.body
+                })} 
+            else {
+                const userToCreate = {
+                    ...req.body,
+                    password: bcryptjs.hashSync(req.body.password, 10),
+                    image: req.file ? req.file.filename : 'default.png'
                 }
-            },
-                old: req.body
-            });
-        }
 
-        let userToCreate = {
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            avatar: req.file.filename
-        }
+                console.log(userToCreate)
 
-        let userCreated = User.create(userToCreate);
-        return res.redirect('perfil')
-    },
+                await db.Usuario.create(userToCreate);
+                return res.redirect('perfil')
+            }
+        }
+        },
+
 
     login: (req, res) => {
         return res.render("users/login")

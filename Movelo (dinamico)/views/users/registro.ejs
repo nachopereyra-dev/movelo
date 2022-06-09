@@ -15,17 +15,17 @@
           <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
           <a href="/users/login" class="iniciar-sesion">Iniciar sesión</a>
           <form action="/users/registro" method="POST"  class="formulario-registro" enctype="multipart/form-data">
-              <input type="text" class="casilla" name="name" value="<%= locals.old && old.name ? old.name : ''%>" placeholder="Nombres">
-              <% if (locals.errors && errors.name) { %>
+              <input type="text" class="casilla" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
+              <% if (locals.errors && errors.first_name) { %>
                 <div class="feedback-danger">
-                  <%= errors.name.msg %>
+                  <%= errors.first_name.msg %>
                 </div>
               <% } %>
 
-              <input type="text" class="casilla" name="apellido" value="<%= locals.old && old.apellido ? old.apellido : ''%>" placeholder="Apellidos">
-              <% if (locals.errors && errors.apellido) { %>
+              <input type="text" class="casilla" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Nombres">
+              <% if (locals.errors && errors.last_name) { %>
                 <div class="feedback-danger">
-                  <%= errors.apellido.msg %>
+                  <%= errors.last_name.msg %>
                 </div>
               <% } %>
 
@@ -43,15 +43,8 @@
                 </div>
               <% } %>
 
-              <input type="password" class="casilla pass2" name="repeatPassword" placeholder="Contraseña">
-              <% if (locals.errors && errors.repeatPassword) { %>
-                <div class="feedback-danger">
-                  <%= errors.repeatPassword.msg %>
-                </div>
-              <% } %>
-
               <div class="formulario-fecha">
-                  <label for="fecha">Fecha de nacimiento</label><input type="date" class="fecha" name="fecha" placeholder="Fecha de nacimiento">
+                  <label for="fecha">Fecha de nacimiento</label><input type="date" class="fecha" name="date" placeholder="Fecha de nacimiento">
                   <% if (locals.errors && errors.fecha) { %>
                     <div class="feedback-danger">
                       <%= errors.fecha.msg %>
@@ -83,7 +76,7 @@
 
               <div class="form-foto">
                 <label for="avatars">Foto de perfil</label>
-                  <input type="file" name="avatar" id="avatars" accept="image/png, image/jpeg" required>
+                  <input type="file" name="image" id="avatars" accept="image/png, image/jpeg">
               </div>
               
               <div class="boton-registrarse">

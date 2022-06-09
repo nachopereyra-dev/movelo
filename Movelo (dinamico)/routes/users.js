@@ -24,16 +24,14 @@ const { admin } = require('../controllers/usersController');
 const fileUpload = multer({ storage: storage });
 
 const validacion = [
-   body('name').notEmpty().withMessage('Debes ingresar tu nombre'),
-   body('apellido').notEmpty().withMessage('Debes ingresar tu apellido'),
+   body('first_name').notEmpty().withMessage('Debes ingresar tu nombre'),
+   body('last_name').notEmpty().withMessage('Debes ingresar tu apellido'),
    body('email')
    .notEmpty().withMessage('Debes ingresar un correo electrónico').bail()
    .isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres'),
-   body('repeatPassword').isLength({min: 8}).withMessage('La contraseña debe coincidir'),
-   body('fecha').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento'),
+   body('date').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento'),
    body('usuarioTipo').notEmpty().withMessage('Debes elegir un tipo de usuario'),
-   //body('avatar').notEmpty().withMessage('Debes seleccionar una foto de perfil')
 ]
 
 /* GET users listing. */
@@ -49,14 +47,11 @@ router.get('/admin', adminMiddleware, userController.admin)
 router.get('/admin/servicios', adminMiddleware, userController.servicesList)
 router.get('/admin/usuarios', adminMiddleware, userController.usersList)
 
-
 router.get('/admin/crear', authMiddleware, userController.adminCrear);
 router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);
 router.get('/logout', userController.logout);
 
-
-
-router.post('/registro', fileUpload.single('avatar'), validacion, userController.procesoRegistro);
+router.post('/registro', fileUpload.single('image'), validacion, userController.procesoRegistro)
 router.post('/login', [
    body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
