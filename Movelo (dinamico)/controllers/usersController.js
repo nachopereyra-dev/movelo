@@ -5,12 +5,13 @@ const { validationResult } = require('express-validator')
 
 const User = require('../models/User')
 const db = require('../database/models')
-
+const {Op} = require('sequelize')
 
 const userController = {
 
-    registro: (req, res) => {
-        res.render("users/registro", { title: 'Express' })
+    registro: async (req, res) => {
+       const categoriasUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+        res.render("users/registro", { categoriasUsuario } )
     },
 
     procesoRegistro: async (req, res) => {
@@ -37,10 +38,9 @@ const userController = {
                 const userToCreate = {
                     ...req.body,
                     password: bcryptjs.hashSync(req.body.password, 10),
-                    image: req.file ? req.file.filename : 'default.png'
+                    image: req.file ? req.file.filename : 'default.png',
+                    id_user_category: Number(req.body.usuarioTipo)
                 }
-
-                console.log(userToCreate)
 
                 await db.Usuario.create(userToCreate);
                 return res.redirect('perfil')
@@ -56,8 +56,6 @@ const userController = {
     procesoLogin: async (req, res) => {
         const userToLogin = await db.Usuario.findOne({ where: { email: req.body.email } });
 
-        console.log(userToLogin)
-
         if(userToLogin) {
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
             if(isOkThePassword) {
@@ -67,17 +65,17 @@ const userController = {
                 if(req.body.recordarme) {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60)*30 })
                 }
-
-                return res.redirect('perfil')
-            } else {
                 
-            return res.render('users/login', {
-                errors: {
-                    email: {
-                        msg: 'Las credenciales no son válidas'
+                return res.render('users/perfil', { user: req.session.userLogged })
+            } else {
+                return res.render('users/login', {
+                    errors: {
+                        email: {
+                            msg: 'Las credenciales no son válidas'
+                        }
                     }
-                }
-            })} 
+                })    
+            } 
         } else {
 
         return res.render('users/login', {

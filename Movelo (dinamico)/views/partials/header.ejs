@@ -11,6 +11,7 @@
         </div>
 
     <nav>
+        
         <ul class="menu-links">
             <li class="menu-item"><a href="/" class="menu-link">Inicio</a></li>
             <li class="menu-item"><a href="/servicios" class="menu-link">Servicios</a></li>
@@ -20,7 +21,7 @@
                         <img src="/images/avatars/<%= locals.userLogged.image %>" width="40" style="border-radius:100%;" alt="">
                     </li>
                     <li>
-                        <a href='/users/perfil'><p> Hola, <%= locals.userLogged.name %></p></a>
+                        <a href='/users/perfil'><p> Hola, <%= locals.userLogged.first_name %></p></a>
                     </li>
                     <% if(user.usuarioTipo == 'Vendedor') { %>
                     <li>

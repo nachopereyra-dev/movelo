@@ -64,8 +64,11 @@
               <div class="tipo-de-usuario">
                 <label for="">Tipo de usuario</label>
                 <div class="sub-tipo-de-usuario">
-                <div class="comprador"><label for="Comprador">Comprador</label><input type="radio" name="usuarioTipo" id="Comprador" value="Comprador" <%= locals.old && old.usuarioTipo === 'Comprador' ? 'checked' : ''; %>></div>
-                <div class="vendedor"><label for="Vendedor">Vendedor</label><input type="radio" name="usuarioTipo" id="Vendedor" value="Vendedor" <%= locals.old && old.usuarioTipo === 'Vendedor' ? 'checked' : ''; %>></div>
+                  <% for (let i = 0; i < categoriasUsuario.length; i++) { %>
+                    <div class="<%= categoriasUsuario[i].name.toLowerCase() %>"><label for="<% categoriasUsuario[i].name %>"><%= categoriasUsuario[i].name %></label><input type="radio" name="usuarioTipo" id="<% categoriasUsuario[i].name %>" value="<%= categoriasUsuario[i].id_user_category %>" <%= locals.old && old.usuarioTipo === categoriasUsuario[i].name ? 'checked' : ''; %>></div>
+                  <% } %>
+                <!-- <div class="comprador"><label for="Comprador">Comprador</label><input type="radio" name="usuarioTipo" id="Comprador" value="Comprador" <%= locals.old && old.usuarioTipo === 'Comprador' ? 'checked' : ''; %>></div>
+                <div class="vendedor"><label for="Vendedor">Vendedor</label><input type="radio" name="usuarioTipo" id="Vendedor" value="Vendedor" <%= locals.old && old.usuarioTipo === 'Vendedor' ? 'checked' : ''; %>></div> -->
                 </div>
                 <% if (locals.errors && errors.usuarioTipo) { %>
                   <div class="feedback-danger">

@@ -2,7 +2,7 @@ module.exports = function(sequelize, dataTypes) {
     let alias = 'CategoriaUsuario';
 
     let cols = {
-        id_user_categroy: {
+        id_user_category: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -14,7 +14,7 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     let config = {
-        tableName: 'Userstypes',
+        tableName: 'Users_type',
         timestamps: false
     }
 
