@@ -17,7 +17,7 @@
                 <ul class="sub-menu">
                 <% if (locals.isLogged) { %>
                     <li>
-                        <img src="/images/avatars/<%= locals.userLogged.avatar %>" width="40" style="border-radius:100%;" alt="">
+                        <img src="/images/avatars/<%= locals.userLogged.image %>" width="40" style="border-radius:100%;" alt="">
                     </li>
                     <li>
                         <a href='/users/perfil'><p> Hola, <%= locals.userLogged.name %></p></a>
@@ -32,7 +32,7 @@
                         <li>
                             <a href="/users/admin">Panel de control</a>
                         </li>
-                        <% } %><% { %>
+                        <% } %> <% { %>
                         <% } %>
                     <li>
                         <a href="/users/logout">Cerrar sesión</a>

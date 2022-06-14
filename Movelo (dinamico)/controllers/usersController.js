@@ -53,8 +53,10 @@ const userController = {
         return res.render("users/login")
     },
 
-    procesoLogin: (req, res) => {
-        let userToLogin = User.findByField('email', req.body.email);
+    procesoLogin: async (req, res) => {
+        const userToLogin = await db.Usuario.findOne({ where: { email: req.body.email } });
+
+        console.log(userToLogin)
 
         if(userToLogin) {
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password)
@@ -67,16 +69,16 @@ const userController = {
                 }
 
                 return res.redirect('perfil')
-            }
+            } else {
+                
             return res.render('users/login', {
                 errors: {
                     email: {
                         msg: 'Las credenciales no son válidas'
                     }
                 }
-            })
-
-        }
+            })} 
+        } else {
 
         return res.render('users/login', {
             errors: {
@@ -84,7 +86,7 @@ const userController = {
                     msg: 'No se encuentra este email en nuestra base de datos'
                 }
             }
-        })
+        })}
     },
 
     perfil: (req, res) => {
