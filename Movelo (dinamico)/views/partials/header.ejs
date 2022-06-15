@@ -23,13 +23,13 @@
                     <li>
                         <a href='/users/perfil'><p> Hola, <%= locals.userLogged.first_name %></p></a>
                     </li>
-                    <% if(user.usuarioTipo == 'Vendedor') { %>
+                    <% if(user.id_user_category == 2) { %>
                     <li>
                         <a href="/users/mis-servicios">Mis servicios</a>
                     </li>
                     <% } %><% { %>
                     <% } %>
-                    <% if(user.usuarioTipo == 'Admin') { %>
+                    <% if(user.id_user_category == 1) { %>
                         <li>
                             <a href="/users/admin">Panel de control</a>
                         </li>

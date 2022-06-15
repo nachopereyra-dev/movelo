@@ -70,8 +70,6 @@ const productosController = {
 		//  ---- Requerimiento de JSON  ---- //
 		const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
         const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-		console.log(req.body)
 		
 		//  ---- Identificar producto  ---- //
 		let index = listadoDeProductos.findIndex(producto => producto.id == req.params.id);

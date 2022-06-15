@@ -3,7 +3,6 @@ const path = require('path');
 const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
 
-const User = require('../models/User')
 const db = require('../database/models')
 const {Op} = require('sequelize')
 
@@ -65,8 +64,9 @@ const userController = {
                 if(req.body.recordarme) {
                     res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60)*30 })
                 }
-                
-                return res.render('users/perfil', { user: req.session.userLogged })
+
+                return res.redirect('perfil')
+
             } else {
                 return res.render('users/login', {
                     errors: {
