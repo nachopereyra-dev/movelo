@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+  </head>
+  <body>
+    <%- include('../partials/header') %>   <!-----------HEADER----------->
+    
+    <main>
+
+      <div class="formulario-crear-servicio">
+          <div class="editarCrear">
+            <a class="activo" id="activo"><h2>Editar servicio</h2></a>
+          </div>
+
+          <div class="formulario">
+            <form action="/users/mis-servicios/<%= servicio.id_service %>" method="POST">
+
+                <h3 for="Ruta">Ruta de envío</h3>
+              
+              <div class="column-crear">
+                <label for="origen">Orígen</label>
+                <input type="text" name="origen" id="origen" value="<%= servicio.origen %>">
+              </div>
+
+              <div class="column-crear">
+                <label for="destino">Destino</label>
+                <input type="text" name="destino" id="destino" value="<%= servicio.destination %>">
+              </div>
+                
+              <div class="column-crear">
+                <h3>Tipo de envío</h3>
+                  
+                <div class="row-crear">
+
+                    <select name="tipoDeEnvio">
+                    <% for (let i = 0; i < categoriaEnvio.length; i++) { %>
+                      <option value="<%= categoriaEnvio[i].id_shipment_category %>">
+                        <%= categoriaEnvio[i].name %>
+                      </option>
+                    <% } %>
+                    </select>
+
+                  </div>
+
+                </div>
+                
+              <div class="column-crear">
+                <h3 for="frecuencia">Frecuencia de envios</h3>
+                
+                <select name="frecuencia" id="frecuencia">
+                  <% for (let i=0; i < frecuenciaEnvio.length; i++) { %>
+                    <option value="<%= frecuenciaEnvio[i].id_frequency %>">
+                      <%= frecuenciaEnvio[i].name %>
+                    </option>
+                  <% } %>
+                </select>
+
+                </div>
+              
+              <div class="column-crear">
+                <h3 for="tamaño">Dimensiones del paquete</h3>
+
+                <div class="column-crear">
+                  <label for="peso">Peso</label>
+                  <input type="number" placeholder="Kilogramos" name="peso" id="peso" value="<%= servicio.weight %>">
+                </div>
+
+                <div class="column-crear">
+                  <label for="altura">Altura</label>
+                  <input type="number" placeholder="Centímetros" name="altura" id="altura" value="<%= servicio.height %>">
+                </div>
+
+                <div class="column-crear">
+                  <label for="ancho">Ancho</label>
+                  <input type="number" placeholder="Centímetros" name="ancho" id="ancho" value="<%= servicio.width %>">
+                </div>
+
+              </div>
+
+              <div class="column-crear">
+                <h3><label for="descripcion">Descripción</label></h3>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= servicio.description %></textarea>
+              </div>  
+
+              <div class="column-crear">
+                <h3><label for="precio">Precio base</label></h3>
+                <input type="number" name="precio" id="precio" step=".00" value="<%= servicio.price %>">
+              </div>
+
+              <button type="submit" name="publicar" id="publicar" value="publicar">Editar</button>
+              <div class="botones-crear">
+                  <div class="publicar-crear">
+                    <button type="submit" name="publicar" id="publicar" value="publicar">
+                  </div>
+
+                  <div class="reset-crear">
+                    <input type="reset" name="restablecer" id="restablecer" value="restablecer">
+                  </div>
+              </div>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+  </body>
+</html>
