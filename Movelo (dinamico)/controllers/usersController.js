@@ -152,7 +152,15 @@ const userController = {
                 id_service: req.params.id
         }}
         );
-        res.redirect('mis-servicios/' + req.params.id)
+        res.redirect('/users/mis-servicios/' + req.params.id)
+    },
+
+    borrar: (req, res) => {
+        db.Services.destroy({ where: {
+            id_service: req.params.id
+        }})
+
+        res.redirect('/users/mis-servicios')
     },
 
     admin: (req, res) => {

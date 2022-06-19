@@ -15,7 +15,7 @@
           </div>
 
           <div class="formulario">
-            <form action="/users/mis-servicios/<%= servicio.id_service %>" method="POST">
+            <form action="/users/editar-servicio/<%= servicio.id_service %>" method="POST">
 
                 <h3 for="Ruta">Ruta de envío</h3>
               
@@ -36,9 +36,15 @@
 
                     <select name="tipoDeEnvio">
                     <% for (let i = 0; i < categoriaEnvio.length; i++) { %>
-                      <option value="<%= categoriaEnvio[i].id_shipment_category %>">
-                        <%= categoriaEnvio[i].name %>
+                      <% if(categoriaEnvio[i].id_shipment_category == servicio.id_shipment_category) { %>
+                      <option value="<%= categoriaEnvio[i].id_shipment_category %>" selected>
+                          <%= categoriaEnvio[i].name %>
                       </option>
+                    <% } else { %>
+                      <option value="<%= categoriaEnvio[i].id_shipment_category %>">
+                          <%= categoriaEnvio[i].name %>
+                        </option>
+                    <% } %>
                     <% } %>
                     </select>
 
@@ -51,9 +57,15 @@
                 
                 <select name="frecuencia" id="frecuencia">
                   <% for (let i=0; i < frecuenciaEnvio.length; i++) { %>
-                    <option value="<%= frecuenciaEnvio[i].id_frequency %>">
+                    <% if(frecuenciaEnvio[i].id_frequency == servicio.id_frequency) { %>
+                    <option value="<%= frecuenciaEnvio[i].id_frequency %>" selected>
                       <%= frecuenciaEnvio[i].name %>
                     </option>
+                    <% } else { %>
+                      <option value="<%= frecuenciaEnvio[i].id_frequency %>">
+                        <%= frecuenciaEnvio[i].name %>
+                      </option>
+                  <% } %>
                   <% } %>
                 </select>
 

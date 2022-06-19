@@ -48,6 +48,8 @@ router.post('/crear-servicio', userController.guardarServicio)
 router.get('/editar-servicio/:id', userController.editar)
 router.post('/editar-servicio/:id', userController.actualizar)
 
+router.post('/borrar/:id', userController.borrar)
+
 router.get('/admin', adminMiddleware, userController.admin)
 router.get('/admin/servicios', adminMiddleware, userController.servicesList)
 router.get('/admin/usuarios', adminMiddleware, userController.usersList)

@@ -9,13 +9,18 @@
     
     <main>
 
+      <h1>Mis servicios</h1>
       <div class="mis-servicios">
-        <h1>Mis servicios</h1>
 
         <% for (let i = 0; i < misServicios.length; i++) { %>
           <div class="servicio">
-          <a href="/users/mis-servicios/<%= misServicios[i].id_service %>"><p> <%= misServicios[i].id_service %> - Desde <%= misServicios[i].origen %> hacia <%= misServicios[i].destination %>
-            </p></a> <a class="editar" href="/users/editar-servicio/<%= misServicios[i].id_service %>">Editar</a>
+          <a class="servicio-item" href="/users/mis-servicios/<%= misServicios[i].id_service %>"><p> <%= misServicios[i].id_service %> - Desde <%= misServicios[i].origen %> hacia <%= misServicios[i].destination %>
+            </p></a> <a class="editar" href="/users/editar-servicio/<%= misServicios[i].id_service %>"> Editar</a> 
+          </div>
+          <div class="servicio-delete">
+            <form action="/users/borrar/<%= misServicios[i].id_service %>" method="POST">
+              <button type="submit" class="delete" href="/users/editar-servicio/<%= misServicios[i].id_service %>"> Eliminar</button>
+            </form>
           </div>
         <% } %>
 
