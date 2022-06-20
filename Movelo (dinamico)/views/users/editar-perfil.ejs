@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/perfil.css">
+  </head>
+  <body>
+    <%- include('../partials/header') %>   <!-----------HEADER----------->
+
+    <main>
+      <div class="principal">
+
+        <div class="titulo"><h1>Hola <%= user.first_name %></h1></div>
+
+        <div class="user-info">
+        <div class="imagen"><img src="/images/avatars/<%= user.image ? user.image : 'default.png' %>" width="180" style="border-radius:100%;" alt="">
+            <a class="boton-editar" href="">Editar foto</a>
+            
+        </div>
+
+        <div class="edit-info">
+
+          <form action="/users/editar-perfil/<%= user.id_user %>" method="POST">          
+
+          <label for="">Nombres</label>
+          <input type="text" class="casilla" name="first_name" value="<%= user.first_name %>">
+
+          <label for="">Apellidos</label>
+          <input type="text" class="casilla" name="last_name" value="<%= user.last_name %>">
+
+          <label for="">Correo electrónico</label>
+          <input type="email" class="casilla" name="email" value="<%= user.email %>">
+
+          <label for="">Contraseña</label>
+          <input type="password" class="casilla" name="password" value="<%= user.password %>">
+
+          <!-- <label for="">Fecha de nacimiento</label>
+          <input type="date" class="casilla" name="date" value="<%= user.date %>"> -->
+
+          <label for="">Genero</label>
+          <select name="gender" id="genero" aria-placeholder="Género" class="genero">
+            <option value="Femenino">Femenino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Otrx">Otrx</option>
+        </select>
+
+          <label for="">Tipo de usuario</label>
+
+          <% for (let i = 0; i < categoriaUsuario.length; i++) { %>
+
+            <div class="<%= categoriaUsuario[i].name.toLowerCase() %>">
+
+              <label for="<% categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label>
+                <input type="radio" name="id_user_category" id="<% categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= (categoriaUsuario[i].id_user_category == user.id_user_category) ? 'checked' : ''; %>>
+
+            </div>
+
+            <% } %>
+
+          <button type="submit" class="boton-editar" href="">Guardar cambios</button>
+
+        </form>
+        </div>
+      </div>
+    </div>
+    </main>
+
+<%- include('../partials/footer') %>   <!-----------FOOTER----------->
+  </body>
+</html>

@@ -9,8 +9,8 @@ const {Op} = require('sequelize')
 const userController = {
 
     registro: async (req, res) => {
-       const categoriasUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
-        res.render("users/registro", { categoriasUsuario } )
+       const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+        res.render("users/registro", { categoriaUsuario } )
     },
 
     procesoRegistro: async (req, res) => {
@@ -91,6 +91,26 @@ const userController = {
         res.render('users/perfil', {
             user: req.session.userLogged
         })
+    },
+
+    editarPerfil: async (req, res) => {
+        const IdUsuarioEnSesion = req.session.userLogged.id_user
+        const usuario = await db.Usuario.findByPk(IdUsuarioEnSesion)
+        const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+
+            res.render('users/editar-perfil', { usuario, categoriaUsuario, user: req.session.userLogged })
+    },
+
+    actualizarPerfil: (req, res) => {
+        db.Usuario.update({
+            ...req.body,
+        },
+        {
+            where: {
+                id_user: req.params.id
+            }
+        });
+            res.redirect('/users/perfil/')
     },
 
     misServicios: async (req, res) => {

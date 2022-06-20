@@ -37,7 +37,10 @@ const validacion = [
 /* GET users listing. */
 router.get('/registro', guestMiddleware, userController.registro);
 router.get('/login', guestMiddleware, userController.login);
+
 router.get('/perfil', authMiddleware, userController.perfil);
+router.get('/editar-perfil/:id', authMiddleware, userController.editarPerfil);
+router.post('/editar-perfil/:id', authMiddleware, userController.actualizarPerfil);
 
 router.get('/mis-servicios', userTypeMiddleware, userController.misServicios)
 router.get('/mis-servicios/:id', userTypeMiddleware, userController.detalle)

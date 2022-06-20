@@ -15,15 +15,20 @@
         <div class="user-info">
         <div class="imagen"><img src="/images/avatars/<%= user.image ? user.image : 'default.png' %>" width="180" style="border-radius:100%;" alt="">
             <a class="boton-editar" href="">Editar foto</a>
+            <a class="boton-editar" href="/users/editar-perfil/<%= user.id_user %>">Editar perfil</a>
         </div>
 
         <div class="edit-info">
-          <label for="">Nombre completo</label>
+          <label for="">Nombres</label>
           <p><%= user.first_name %></p>
+          <label for="">Apellidos</label>
+          <p><%= user.last_name %></p>
           <label for="">Correo electrónico</label>
           <p><%= user.email %></p>
           <label for="">Fecha de nacimiento</label>
           <p><%= user.date %></p>
+          <label for="">Genero</label>
+          <p><%= user.gender %></p>
           <label for="">Tipo de usuario</label>
           <p><%= user.id_user_category %></p>
         </div>
