@@ -14,9 +14,13 @@
 
             <div class="lista-usuarios">
 
-                <div class="usuario">
-                    <a href="">usuario</a>
-                </div>
+                    <% for (let i = 0; i < usuarios.length; i++) { %>
+                      <div class="usuario">
+                      <a href=""><p> #<%= usuarios[i].id_user %> - <%= usuarios[i].first_name %> <%= usuarios[i].last_name %>
+                        </p></a>
+                      </div>
+                    <% } %>
+                
 
             </div>
         </section>

@@ -22,7 +22,7 @@
                 </div>
               <% } %>
 
-              <input type="text" class="casilla" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Nombres">
+              <input type="text" class="casilla" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Apellidos">
               <% if (locals.errors && errors.last_name) { %>
                 <div class="feedback-danger">
                   <%= errors.last_name.msg %>
@@ -64,11 +64,9 @@
               <div class="tipo-de-usuario">
                 <label for="">Tipo de usuario</label>
                 <div class="sub-tipo-de-usuario">
-                  <% for (let i = 0; i < categoriasUsuario.length; i++) { %>
-                    <div class="<%= categoriasUsuario[i].name.toLowerCase() %>"><label for="<% categoriasUsuario[i].name %>"><%= categoriasUsuario[i].name %></label><input type="radio" name="usuarioTipo" id="<% categoriasUsuario[i].name %>" value="<%= categoriasUsuario[i].id_user_category %>" <%= locals.old && old.usuarioTipo === categoriasUsuario[i].name ? 'checked' : ''; %>></div>
+                  <% for (let i = 0; i < categoriaUsuario.length; i++) { %>
+                    <div class="<%= categoriaUsuario[i].name.toLowerCase() %>"><label for="<% categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label><input type="radio" name="usuarioTipo" id="<% categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= locals.old && old.usuarioTipo === categoriaUsuario[i].name ? 'checked' : ''; %>></div>
                   <% } %>
-                <!-- <div class="comprador"><label for="Comprador">Comprador</label><input type="radio" name="usuarioTipo" id="Comprador" value="Comprador" <%= locals.old && old.usuarioTipo === 'Comprador' ? 'checked' : ''; %>></div>
-                <div class="vendedor"><label for="Vendedor">Vendedor</label><input type="radio" name="usuarioTipo" id="Vendedor" value="Vendedor" <%= locals.old && old.usuarioTipo === 'Vendedor' ? 'checked' : ''; %>></div> -->
                 </div>
                 <% if (locals.errors && errors.usuarioTipo) { %>
                   <div class="feedback-danger">

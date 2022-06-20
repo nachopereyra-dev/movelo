@@ -51,79 +51,6 @@ nav {
     display: none;
 }
 
-/*--------MAIN---------*/
-
-/*--------MAIN-HOME---------*/
-
-main {
-    min-height: calc(100vh - 115.594px - 151.5px);
-    width: 70%;
-    margin: auto;
-}
-
-main .mis-servicios {
-    display: flex;
-    flex-direction: row;
-}
-
-main .mis-servicios .servicio {
-    background-color: black;
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    border-radius: 10px;
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-main .servicio .servicio-item {
-    color: white;
-    text-decoration: none;
-    display: flex;
-}
-
-main .servicio .editar {
-    display: flex;
-    margin: 5px;
-    color: white;
-    text-decoration: none;
-}
-
-.servicio a p {
-  margin: 5px;
-}
-
-.mis-servicios .servicio-delete {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.mis-servicios .servicio-delete form button {
-    color: black;
-    text-decoration: none;
-    display: flex;
-    margin-left: 10px;
-    align-items: center;
-}
-
-.boton-buscar {
-    text-decoration: none;
-    background-color: black;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    width: 100px;
-}
-
-.boton-buscar a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-}
-
 /*--------FOOTER-HOME---------*/
 
 
@@ -233,93 +160,127 @@ footer p {
         width: 85px;
         text-align: center;
     }
-
-    
-
-/*--------MAIN_HOME-TABLET---------*/
-
-main .titulo-1 {
-    margin-bottom: 0px;
 }
-
-main .titulo-2 {
-    display: block;
-    color: lightgray;
-    margin-top: 10px;
-}
-
-main .botones {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 150px;
-}
-
-main .boton-1 {
-    margin-bottom: 0px;
-    margin-right: 5px;
-}
-
-main .boton-2 {
-    margin-left: 5px;
-}
-
-}
-
-/*-----------DESKTOP------------*/
 
 @media (min-width: 760px) {
 
-/*--------HEADER-DESKTOP---------*/
-
-    header {
-        width: 85%;
-        margin: auto;
-    }
-
-    header nav {
-        width: 85%;
-    }
-
-    .sub-nav-mobile .logo p {
-        font-size: 24px;
-    }
-
-    header nav ul li a {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-   .sub-menu a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    header nav ul li a:hover {
-        text-decoration-line: underline;
-    }
-
-    .botones-nav {
-        display: flex;
-        margin: auto;
-    }
+    /*--------HEADER-DESKTOP---------*/
     
+        header {
+            width: 85%;
+            margin: auto;
+        }
+    
+        header nav {
+            width: 85%;
+        }
+    
+        .sub-nav-mobile .logo p {
+            font-size: 24px;
+        }
+    
+        header nav ul li a {
+            font-size: 14px;
+            padding: 10px;
+        }
+    
+        header nav ul li a:hover {
+            text-decoration-line: underline;
+        }
+    
+        .botones-nav .boton-a {
+            font-size: 14px;
+            width: 110px;
+        }
+    
+        .botones-nav .boton-b {
+            font-size: 14px;
+            width: 110px;
+        }
+    
+    /*--------MAIN-DESKTOP---------*/
 
-    .botones-nav .boton-a {
-        font-size: 14px;
-        width: 110px;
-        justify-content: center;
+        main .principal {
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            margin: auto;
+        }
+
+        .principal .titulo {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .titulo h1 {
+            display: flex;
+        }
+
+        .titulo a {
+            display: flex;
+            margin: auto;
+            color: black;
+            text-decoration: none;
+        }
+
+        main .user-info {
+            display: flex;
+            flex-direction: row;
+        }
+
+        main .imagen {
+            margin: 20px 30px 20px 30px;
+        }
+
+        main .imagen img {
+            display: block;
+            margin: auto;
+        }
+
+        main .boton-editar {
+            display: flex;
+            width: 220px;
+            max-width: 95%;
+            height: 35px;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin: 20px auto;
+            background-color: black;
+            color: white;
+            border-radius: 25px;
+        }
+
+        main .boton-editar a {
+            margin: auto;
+            color: white;
+            border: 0ch;
+            background-color: transparent;
+            padding: 5px;
+          }
+
+        main .principal .info {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .info .left {
+            margin-right: 70px;
+        }
+
+        main .principal .info .sub-info {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        main .principal .info .sub-info label {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        main .principal .info .sub-info p {
+            margin: 10px 0px;
+        }
     }
 
-    .botones-nav .boton-b {
-        font-size: 14px;
-        width: 110px;
-        justify-content: center;
-    }
-
-}
-
-@media (min-width: 1440px){
-
-}

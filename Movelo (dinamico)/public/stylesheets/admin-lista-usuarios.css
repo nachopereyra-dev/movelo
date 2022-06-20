@@ -72,10 +72,15 @@
     color: black;
   }
 
+  main section .lista-usuarios {
+    display: flex;
+    flex-direction: column;
+  }
+
   main section .lista-usuarios .usuario {
       background-color: black;
       margin-bottom: 10px;
-      padding: 15px 20px;
+      padding: 5px 10px;
       border-radius: 10px;
       width: 70%;
   }
@@ -83,6 +88,10 @@
   main section .usuario a {
       color: white;
   }
+
+  main section .usuario a p {
+    margin: 5px;
+}
 
   /*--------FOOTER-HOME---------*/
   

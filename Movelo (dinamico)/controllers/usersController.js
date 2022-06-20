@@ -9,8 +9,8 @@ const {Op} = require('sequelize')
 const userController = {
 
     registro: async (req, res) => {
-       const categoriasUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
-        res.render("users/registro", { categoriasUsuario } )
+       const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+        res.render("users/registro", { categoriaUsuario } )
     },
 
     procesoRegistro: async (req, res) => {
@@ -93,19 +93,47 @@ const userController = {
         })
     },
 
-    misServicios: (req, res) => {
-        res.render("users/mis-servicios", { user: req.session.userLogged})
+    editarPerfil: async (req, res) => {
+        const IdUsuarioEnSesion = req.session.userLogged.id_user
+        const usuario = await db.Usuario.findByPk(IdUsuarioEnSesion)
+        const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+
+            res.render('users/editar-perfil', { usuario, categoriaUsuario, user: req.session.userLogged })
     },
 
-    crearServicio: (req, res) => {
-        db.CategoriaEnvio.findAll()
-            .then(tipoDeEnvio => {
-                return res.render('users/admin-crear', { tipoDeEnvio: tipoDeEnvio, user: req.session.userLogged})
-            })
+    actualizarPerfil: (req, res) => {
+        db.Usuario.update({
+            ...req.body,
+        },
+        {
+            where: {
+                id_user: req.params.id
+            }
+        });
+            res.redirect('/users/perfil/')
+    },
+
+    misServicios: async (req, res) => {
+            const IdUsuarioEnSesion = req.session.userLogged.id_user
+            const misServicios = await db.Services.findAll({where: { id_user: IdUsuarioEnSesion }});
+                res.render("users/mis-servicios", {misServicios, user: req.session.userLogged})
+    },
+
+    detalle: async (req, res) => {
+        const servicio = await db.Services.findByPk(req.params.id, { include: [{association: 'categoriaE'}, {association: 'frecuenciaE'}]})
+            res.render('users/servicio-detalle', {servicio, user: req.session.userLogged})
+    },
+
+    crearServicio: async (req, res) => {
+        const categoriaEnvio = await  db.CategoriaEnvio.findAll()
+        const frecuenciaEnvio = await db.FrecuenciaEnvio.findAll()
+
+                res.render('users/crear-servicio', {categoriaEnvio, frecuenciaEnvio, user: req.session.userLogged})
 	},
 
     guardarServicio: (req, res) => {
         db.Services.create({
+            id_user: req.session.userLogged.id_user,
             origen: req.body.origen,
             destination: req.body.destino,
             id_shipment_category: req.body.tipoDeEnvio,
@@ -119,20 +147,55 @@ const userController = {
         res.redirect('mis-servicios')
     },
 
+    editar: async (req, res) => {
+        const servicio = await db.Services.findByPk(req.params.id)
+        const categoriaEnvio = await  db.CategoriaEnvio.findAll()
+        const frecuenciaEnvio = await db.FrecuenciaEnvio.findAll()
+
+            res.render('users/editar-servicio', {servicio, categoriaEnvio, frecuenciaEnvio, user: req.session.userLogged})
+
+    },
+
+    actualizar: (req, res) => {
+        db.Services.update({
+            origen: req.body.origen,
+            destination: req.body.destino,
+            id_shipment_category: req.body.tipoDeEnvio,
+            id_frequency: req.body.frecuencia,
+            weight: req.body.peso,
+            height: req.body.altura,
+            width: req.body.ancho,
+            description: req.body.descripcion,
+            price: req.body.precio
+        }, { 
+            where: {
+                id_service: req.params.id
+        }}
+        );
+        res.redirect('/users/mis-servicios/' + req.params.id)
+    },
+
+    borrar: (req, res) => {
+        db.Services.destroy({ where: {
+            id_service: req.params.id
+        }})
+
+        res.redirect('/users/mis-servicios')
+    },
+
     admin: (req, res) => {
         res.render("users/admin", { user: req.session.userLogged})
     },
 
-    servicesList: (req, res) => {
-        db.Services.findAll()
-            .then(function(servicios) {
-                res.render('users/admin-lista-servicios', {servicios:servicios, user: req.session.userLogged})
-            })
-    },
+    servicesList: async (req, res) => {
+        const servicios = await db.Services.findAll()
+            res.render('users/admin-lista-servicios', {servicios, user: req.session.userLogged})
+            },
 
-    usersList: (req, res) => {
-       
-    },
+    usersList: async (req, res) => {
+       const usuarios = await db.Usuario.findAll()
+                res.render('users/admin-lista-usuarios', { usuarios, user: req.session.userLogged})
+            },
 
     logout: (req, res) => {
         res.clearCookie('userEmail');
@@ -143,7 +206,7 @@ const userController = {
     
 
     adminCrear: (req, res) => {
-        res.render("users/admin-crear", { user: req.session.userLogged})
+        res.render("users/crear-servicio", { user: req.session.userLogged})
     },
     adminEditar: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');

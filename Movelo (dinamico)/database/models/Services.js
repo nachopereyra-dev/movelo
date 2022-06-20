@@ -19,6 +19,9 @@ module.exports = function(sequelize, dataTypes) {
         id_shipment_category: {
             type: dataTypes.INTEGER
         },
+        id_frequency: {
+            type: dataTypes.INTEGER
+        },
         weight: {
             type: dataTypes.INTEGER
         },
@@ -57,6 +60,11 @@ module.exports = function(sequelize, dataTypes) {
         Services.belongsTo(models.CategoriaEnvio, {
             as: 'categoriaE',
             foreignKey: 'id_shipment_category'
+        })
+
+        Services.belongsTo(models.FrecuenciaEnvio, {
+            as: 'frecuenciaE',
+            foreignKey: 'id_frequency'
         })
     }
 

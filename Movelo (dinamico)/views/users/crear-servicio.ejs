@@ -12,11 +12,10 @@
       <div class="formulario-crear-servicio">
           <div class="editarCrear">
             <a class="activo" id="activo"><h2>Crea nuevo servicio</h2></a>
-            <a href="/users/admin/elegir-editar" class="inactivo" id="inactivo"><h2>Edita un servicio</h2></a>
           </div>
 
           <div class="formulario">
-            <form action="/users/mis-servicios/crear" method="POST">
+            <form action="/users/crear-servicio" method="POST">
 
                 <h3 for="Ruta">Ruta de envío</h3>
               
@@ -36,9 +35,9 @@
                 <div class="row-crear">
 
                     <select name="tipoDeEnvio">
-                    <% for (let i = 0; i < tipoDeEnvio.length; i++) { %>
-                      <option value="<%= tipoDeEnvio[i].id_shipment_category %>">
-                        <%= tipoDeEnvio[i].name %>
+                    <% for (let i = 0; i < categoriaEnvio.length; i++) { %>
+                      <option value="<%= categoriaEnvio[i].id_shipment_category %>">
+                        <%= categoriaEnvio[i].name %>
                       </option>
                     <% } %>
                     </select>
@@ -51,10 +50,11 @@
                 <h3 for="frecuencia">Frecuencia de envios</h3>
                 
                 <select name="frecuencia" id="frecuencia">
-                  <option value="Diario">Diario</option>
-                  <option value="Semanal">Semanal</option>
-                  <option value="Mensual">Mensual</option>
-                  <option value="A coordinar">A coordinar</option>
+                  <% for (let i=0; i < frecuenciaEnvio.length; i++) { %>
+                    <option value="<%= frecuenciaEnvio[i].id_frequency %>">
+                      <%= frecuenciaEnvio[i].name %>
+                    </option>
+                  <% } %>
                 </select>
 
                 </div>

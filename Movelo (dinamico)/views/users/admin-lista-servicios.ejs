@@ -16,7 +16,7 @@
 
                 <div class="servicio">
                   <% for (let i = 0; i < servicios.length; i++) { %>
-                    <a href=""><p>ID del servicio - Nombre del usuario - Desde <%= servicios[i].origen %> hacia <%= servicios[i].destination %>
+                    <a href=""><p><%= servicios[i].id_service %> - Nombre del usuario - Desde <%= servicios[i].origen %> hacia <%= servicios[i].destination %>
                       </p></a>
                   <% } %>
                 </div>

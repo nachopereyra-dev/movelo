@@ -37,11 +37,21 @@ const validacion = [
 /* GET users listing. */
 router.get('/registro', guestMiddleware, userController.registro);
 router.get('/login', guestMiddleware, userController.login);
-router.get('/perfil', authMiddleware, userController.perfil);
-router.get('/mis-servicios', userTypeMiddleware, userController.misServicios)
 
-router.get('/mis-servicios/crear', userController.crearServicio)
-router.post('/mis-servicios/crear', userController.guardarServicio)
+router.get('/perfil', authMiddleware, userController.perfil);
+router.get('/editar-perfil/:id', authMiddleware, userController.editarPerfil);
+router.post('/editar-perfil/:id', authMiddleware, userController.actualizarPerfil);
+
+router.get('/mis-servicios', userTypeMiddleware, userController.misServicios)
+router.get('/mis-servicios/:id', userTypeMiddleware, userController.detalle)
+
+router.get('/crear-servicio', userTypeMiddleware, userController.crearServicio)
+router.post('/crear-servicio', userController.guardarServicio)
+
+router.get('/editar-servicio/:id', userController.editar)
+router.post('/editar-servicio/:id', userController.actualizar)
+
+router.post('/borrar/:id', userController.borrar)
 
 router.get('/admin', adminMiddleware, userController.admin)
 router.get('/admin/servicios', adminMiddleware, userController.servicesList)

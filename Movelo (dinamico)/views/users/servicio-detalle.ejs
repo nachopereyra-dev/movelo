@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/servicio-detalle.css">
+  </head>
+  <body>
+    <%- include('../partials/header') %>   <!-----------HEADER----------->
+
+    <main>
+      <div class="principal">
+
+        <div class="titulo"><h1>Servicio de envio desde <%= servicio.origen %> hacia <%= servicio.destination %></h1><a class="editar" href="/users/editar-servicio/<%= servicio.id_service %>">Editar</a></div>
+
+        <div class="info">
+
+        <div class="sub-info left">
+          <label for="">Origen</label>
+          <p><%= servicio.origen %></p>
+          <label for="">Destino</label>
+          <p><%= servicio.destination %></p>
+          <label for="">Categoria de envio</label>
+          <p><%= servicio.id_shipment_category %></p>
+          <label for="">Frecuencia del servicio</label>
+          <p><%= servicio.id_frequency %></p>
+          <label for="">Descripcion del servicio</label>
+          <p><%= servicio.description %></p>
+          <label for="">Precio</label>
+          <p><%= servicio.price %></p>
+        </div>
+        <div class="sub-info right">
+            <label for="">Peso máximo</label>
+            <p><%= servicio.weight %></p>
+            <label for="">Altura máxima</label>
+            <p><%= servicio.height %></p>
+            <label for="">Ancho máximo</label>
+            <p><%= servicio.width %></p>
+        </div>
+        </div>
+      </div>
+    </div>
+    </main>
+
+<%- include('../partials/footer') %>   <!-----------FOOTER----------->
+  </body>
+</html>
