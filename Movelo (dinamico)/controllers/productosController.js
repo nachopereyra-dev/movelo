@@ -1,17 +1,25 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
+const Op = db.Sequelize.Op
 
 const Product = require('../models/Product')
 
 
 const productosController = {
 
-    servicios: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-        const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("servicios/servicios", { articulos: listadoDeProductos, user: req.session.userLogged
-		 });
-    },
+	listar: async (req, res) => {
+		const servicios = await db.Services.findAll()
+		res.render("servicios/servicios", {servicios, user: req.session.userLogged})
+
+	},
+
+	search: async (req, res) => {
+		const servicios = await db.Services.findOne({ where: {
+			origen: {[Op.Like]: '%req.body.origen%'}, destination: {[Op.Like]: '%req.body.destination%'}
+		}})
+			res.render('servicios/servicios', {servicios, user: req.session.userLogged })
+	},
 
 
     carrito: (req, res) => {

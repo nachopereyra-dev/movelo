@@ -16,8 +16,10 @@ const productosController = require('../controllers/productosController');
 
 
 
-/**** GETs de Productos ****/
-router.get('/', productosController.servicios);
+/**** GETs de Servicios ****/
+
+router.get('/', productosController.listar)
+router.post('/', productosController.search)
 
 
 router.get('/carrito', productosController.carrito);

@@ -18,7 +18,7 @@
           <img src="/images/vectors/Character-1.svg" alt="">
           </div>
   
-              <form action="">
+              <form action="/servicios">
                   <div class="formulario">
   
                   <div class="origen">
@@ -28,11 +28,11 @@
   
                   <div class="destino">
                       <label for="destino_envio">Destino</label>
-                      <input type="text" id="destino_envio" name="destino" placeholder="Destino del envío">
+                      <input type="text" id="destino_envio" name="destination" placeholder="Destino del envío">
                   </div>
   
                   <div class="boton-buscar">
-                      <a href="">Buscar</a>
+                      <button type="submit" href="">Buscar</button>
                   </div>
   
                   </div>
@@ -72,20 +72,17 @@
   
           <div class="articulos">
 
-            <% for (let i = 0; i < articulos.length; i++) { %>
-                <!-- <article class="articulo" style="background-image: url('/images/products/<%=articulos[i].imagen%>'); background-size:cover;"> -->
+            <% for (let i = 0; i < servicios.length; i++) { %>
+                <!-- <article class="articulo" style="background-image: url('/images/products/<%=servicios[i].imagen%>'); background-size:cover;"> -->
                     <article class="articulo">
-                        <a  class="linkDetalle" href="./servicios/<%= articulos[i].id %>/detalle">
-                            <div class="verify">
-                                <% if (articulos[i].verificado == true) { %><p>Usuario verificado</p><i class="fas fa-user-check"></i><% } else { %> <p>Usuario no verificado</p><i class="fas fa-user-times"></i> <% } %>
-                            </div>
+                        <a  class="linkDetalle" href="./servicios/<%= servicios[i].id_service %>/detalle">
         
-                            <p class="ciudad-origen"><%= articulos[i].origen %></p>
+                            <p class="ciudad-origen"><%= servicios[i].origen %></p>
                             <div class="flechas">
                                 <i class="fas fa-exchange-alt"></i>
                             </div>
-                            <p class="ciudad-destino"><%= articulos[i].destino %></p>
-                            <p class="precio">U$s <%= articulos[i].precio %></p>
+                            <p class="ciudad-destino"><%= servicios[i].destination %></p>
+                            <p class="precio">U$s <%= servicios[i].price %></p>
                             <div class="sub-iconos">
         
                                 <div class="review">
