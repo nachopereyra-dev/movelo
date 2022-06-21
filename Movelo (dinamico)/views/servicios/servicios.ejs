@@ -18,19 +18,39 @@
           <img src="/images/vectors/Character-1.svg" alt="">
           </div>
   
-              <form action="/servicios">
+              <form action="/servicios" method="POST">
                   <div class="formulario">
-  
+
+                    <% if(typeof origen != 'undefined') { %>
+                        <div class="origen">
+                            <label for="origen_envio">Origen</label>
+                            <input type="text" id="origen_envio" name="origen" value="<%= origen %>" placeholder="Origen del envío">
+                        </div>
+                       
+                        
+                    <% } else { %>
                   <div class="origen">
                       <label for="origen_envio">Origen</label>
                       <input type="text" id="origen_envio" name="origen" placeholder="Origen del envío">
                   </div>
   
-                  <div class="destino">
-                      <label for="destino_envio">Destino</label>
-                      <input type="text" id="destino_envio" name="destination" placeholder="Destino del envío">
-                  </div>
+
+                  <% } %>
   
+                  <% if(typeof destination != 'undefined') { %>
+                    
+                    <div class="destino">
+                        <label for="destino_envio">Destino</label>
+                        <input type="text" id="destino_envio" name="destination" value="<%= destination %>" placeholder="Destino del envío">
+                    </div>
+                <% } else { %>
+
+                    <div class="destino">
+                        <label for="destino_envio">Destino</label>
+                        <input type="text" id="destino_envio" name="destination" placeholder="Destino del envío">
+                    </div>
+
+              <% } %>
                   <div class="boton-buscar">
                       <button type="submit" href="">Buscar</button>
                   </div>

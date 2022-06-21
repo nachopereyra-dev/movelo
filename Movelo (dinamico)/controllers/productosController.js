@@ -15,10 +15,10 @@ const productosController = {
 	},
 
 	search: async (req, res) => {
-		const servicios = await db.Services.findOne({ where: {
-			origen: {[Op.Like]: '%req.body.origen%'}, destination: {[Op.Like]: '%req.body.destination%'}
+		const servicios = await db.Services.findAll({ where: {
+			origen: {[Op.like]: '%'+req.body.origen+'%' }, destination: {[Op.like]: '%'+req.body.destination+'%'}
 		}})
-			res.render('servicios/servicios', {servicios, user: req.session.userLogged })
+			res.render('servicios/servicios', {servicios, user: req.session.userLogged, origen:req.body.origen, destination:req.body.destination })
 	},
 
 
