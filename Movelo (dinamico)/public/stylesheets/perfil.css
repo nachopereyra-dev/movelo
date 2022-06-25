@@ -51,6 +51,25 @@ nav {
     display: none;
 }
 
+main form .edit-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-info .item {
+    margin-bottom: 10px;
+}
+
+.item .comprador label {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.item .vendedor label {
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
 /*--------FOOTER-HOME---------*/
 
 

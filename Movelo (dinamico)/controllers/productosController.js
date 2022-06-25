@@ -21,6 +21,10 @@ const productosController = {
 			res.render('servicios/servicios', {servicios, user: req.session.userLogged, origen:req.body.origen, destination:req.body.destination })
 	},
 
+	detalle: async (req, res) => {
+		const servicio = await db.Services.findByPk(req.params.id)
+		res.render('servicios/detalle', {servicio, user: req.session.userLogged })
+	},
 
     carrito: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
@@ -29,13 +33,13 @@ const productosController = {
     },
 
 
-    detalle: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-        const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let id = req.params.id;
-        let artitucloId = listadoDeProductos.find(articulo => id == articulo.id);
-        res.render("productos/detalle", { articulo: artitucloId, user: req.session.userLogged });
-    },
+    // detalle: (req, res) => {
+    //     const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
+    //     const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    //     let id = req.params.id;
+    //     let artitucloId = listadoDeProductos.find(articulo => id == articulo.id);
+    //     res.render("productos/detalle", { articulo: artitucloId, user: req.session.userLogged });
+    // },
 
 
     adminCrearPOST: (req, res) => {

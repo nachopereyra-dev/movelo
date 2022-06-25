@@ -153,11 +153,14 @@ form .destino {
     width: 100px;
 }
 
-.boton-buscar a {
+.boton-buscar button {
     color: white;
+    border: 0px;
+    background-color: transparent;
     text-decoration: none;
     display: block;
     text-align: center;
+    margin: auto;
 }
 
 .filtros .filtros-desktop {
