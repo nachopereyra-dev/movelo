@@ -59,9 +59,12 @@
   
   main {
     min-height: calc(100vh - 115.594px - 151.5px);
-    width: 100wv;
     width: 85%;
     margin: auto;
+  }
+
+  main h1 {
+    font-size: 24px;
   }
   
   main section a:link {
@@ -77,15 +80,17 @@
       margin-bottom: 10px;
       padding: 5px 10px;
       border-radius: 10px;
-      width: 70%;
+      width: 80%;
   }
   
   main section .servicio a {
       color: white;
+      font-size: 12px;
   }
 
   .servicio a p {
     margin: 5px;
+    font-size: 12px;
   }
 
   /*--------FOOTER-HOME---------*/
@@ -261,6 +266,20 @@
     main {
       justify-content: space-between;
     }
+
+    main h1 {
+      font-size: 32px;
+    }
+
+    main section .servicio a {
+      color: white;
+      font-size: 16px;
+  }
+
+  .servicio a p {
+    margin: 5px;
+    font-size: 16px;
+  }
   
     form {
       width: 70%;

@@ -10,7 +10,10 @@
     <main>
       <div class="principal">
 
-        <div class="titulo"><h1>Hola <%= user.first_name %></h1></div>
+        <div class="titulo">
+          <a href="/"><img src="/images/icons/flecha.svg"class="flecha"></a>
+          <h1>Hola <%= user.first_name %></h1>
+        </div>
 
         <div class="user-info">
         <div class="imagen"><img src="/images/avatars/<%= user.image ? user.image : 'default.png' %>" width="180" style="border-radius:100%;" alt="">

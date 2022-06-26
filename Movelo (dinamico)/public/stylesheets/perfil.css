@@ -51,6 +51,70 @@ nav {
     display: none;
 }
 
+main .principal {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+}
+
+.principal h1 {
+    font-size: 24px;
+}
+
+main .user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+main .imagen {
+    margin: 20px 30px 20px 30px;
+}
+
+main .imagen img {
+    display: block;
+    margin: auto;
+}
+
+main .boton-editar {
+    display: flex;
+    width: 220px;
+    max-width: 95%;
+    height: 35px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 20px auto;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-size: 12px;
+}
+
+main .boton-editar a {
+    margin: auto;
+    color: white;
+    border: 0ch;
+    background-color: transparent;
+    padding: 5px;
+  }
+
+main .edit-info {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.edit-info label {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.edit-info p {
+    margin: 10px 0px;
+    font-size: 12px;
+}
+
 main form .edit-info {
     display: flex;
     flex-direction: column;
@@ -58,6 +122,18 @@ main form .edit-info {
 
 .edit-info .item {
     margin-bottom: 10px;
+}
+
+.item label {
+    font-size: 12px;
+}
+
+.item input {
+    font-size: 12px;
+}
+
+.item select {
+    font-size: 12px;
 }
 
 .item .comprador label {
@@ -226,6 +302,10 @@ footer p {
             margin: auto;
         }
 
+        .principal h1 {
+            font-size: 32px;
+        }
+
         main .user-info {
             display: flex;
             flex-direction: row;
@@ -252,6 +332,7 @@ footer p {
             background-color: black;
             color: white;
             border-radius: 25px;
+            font-size: 16px;
         }
 
         main .boton-editar a {
@@ -275,6 +356,15 @@ footer p {
 
         .edit-info p {
             margin: 10px 0px;
+            font-size: 16px;
+        }
+
+        .item input {
+            font-size: 16px;
+        }
+        
+        .item select {
+            font-size: 16px;
         }
     }
 

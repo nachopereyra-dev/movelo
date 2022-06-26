@@ -63,6 +63,10 @@
     width: 85%;
     margin: auto;
   }
+
+  main h1 {
+    font-size: 24px;
+  }
   
   main section a:link {
     color: #000000;
@@ -82,16 +86,18 @@
       margin-bottom: 10px;
       padding: 5px 10px;
       border-radius: 10px;
-      width: 70%;
+      width: 80%;
   }
   
   main section .usuario a {
       color: white;
+      font-size: 12px;
   }
 
   main section .usuario a p {
-    margin: 5px;
-}
+      margin: 5px;
+      font-size: 12px;
+  }
 
   /*--------FOOTER-HOME---------*/
   
@@ -268,6 +274,20 @@
     main {
       justify-content: space-between;
     }
+
+    main h1 {
+      font-size: 32px;
+    }
+
+    main section .usuario a {
+      color: white;
+      font-size: 16px;
+  }
+
+  main section .usuario a p {
+      margin: 5px;
+      font-size: 16px;
+  }
   
     form {
       width: 70%;

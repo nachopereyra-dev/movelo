@@ -51,6 +51,7 @@
   nav {
     display: none;
   }
+
   
   /*--------MAIN---------*/
   
@@ -62,6 +63,10 @@
     width: 100wv;
     width: 85%;
     margin: auto;
+  }
+
+  main h1 {
+    font-size: 24px;
   }
   
   main section a:link {
@@ -82,17 +87,19 @@
   
   main section .usuarios a {
       color: white;
+      font-size: 12px;
   }
 
-  main section .productos {
+  main section .servicios {
       background-color: black;
       padding: 15px 20px;
       border-radius: 10px;
       width: 70%;
   }
 
-  main section .productos a {
+  main section .servicios a {
       color: white;
+      font-size: 12px;
   }
   /*--------FOOTER-HOME---------*/
   
@@ -264,6 +271,20 @@
   
     main .editarCrear a {
       padding-bottom: 0px;
+    }
+
+    main h1 {
+      font-size: 32px;
+    }
+  
+    main section .usuarios a {
+        color: white;
+        font-size: 16px;
+    }
+  
+    main section .servicios a {
+        color: white;
+        font-size: 16px;
     }
   }
   

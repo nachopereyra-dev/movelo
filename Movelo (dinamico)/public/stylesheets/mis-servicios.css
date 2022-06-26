@@ -67,11 +67,14 @@ main .cabecera {
 }
 
 .cabecera h1 {
+    display: flex;
     margin-right: 20px;
+    font-size: 24px;
+    align-items: center;
 }
 
 .boton-buscar {
-    display: block;
+    display: flex;
     text-decoration: none;
     background-color: black;
     padding: 5px;
@@ -82,9 +85,10 @@ main .cabecera {
 .boton-buscar a {
     color: white;
     text-decoration: none;
-    display: block;
-    text-align: center;
+    display: flex;
+    margin: auto;    
     padding: 5px;
+    font-size: 12px;
 }
 
 main .mis-servicios {
@@ -111,24 +115,45 @@ main .mis-servicios .servicio {
 
 main .servicio .servicio-item {
     color: white;
+    font-size: 12px;
     text-decoration: none;
     display: flex;
 }
 
 main .servicio .editar {
     display: flex;
-    margin: 5px;
     color: white;
     text-decoration: none;
+    font-size: 12px;
+    justify-content: space-between;
+
 }
 
 .servicio a p {
-  margin: 5px;
+  margin: auto;
+}
+
+.mis-servicios .servicio-editar {
+    background-color: black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.servicio-editar a {
+    font-size: 12px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    margin: auto;
 }
 
 .mis-servicios .servicio-delete {
     display: flex;
     margin-bottom: 10px;
+    font-size: 12px;
 }
 
 .mis-servicios .servicio-delete form {
@@ -339,6 +364,52 @@ main .boton-2 {
         font-size: 14px;
         width: 110px;
         justify-content: center;
+    }
+
+    .cabecera h1 {
+        display: flex;
+        margin-right: 20px;
+        font-size: 32px;
+        align-items: center;
+    }
+    
+    .boton-buscar a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        margin: auto;    
+        padding: 5px;
+        font-size: 16px;
+    }
+    
+    main .servicio .servicio-item {
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        display: flex;
+    }
+    
+    main .servicio .editar {
+        display: flex;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        justify-content: space-between;
+    
+    }
+    
+    .servicio-editar a {
+        font-size: 16px;
+        color: white;
+        text-decoration: none;
+        display: flex;
+        margin: auto;
+    }
+    
+    .mis-servicios .servicio-delete {
+        display: flex;
+        margin-bottom: 10px;
+        font-size: 16px;
     }
 
 }
