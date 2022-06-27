@@ -2,15 +2,18 @@
 <html>
   <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/stylesheets/servicio-detalle.css">
+    <link rel="stylesheet" href="/stylesheets/detalle.css">
   </head>
   <body>
     <%- include('../partials/header') %>   <!-----------HEADER----------->
     
     <main>
+
+        
       <div class="caja_titulo">
+
           <div class="navbar_carrito">
-              <a href="/"><img src="/images/icons/flecha.svg"class="flecha"></a>
+            <a href="/servicios"><img src="/images/icons/flecha.svg"class="flecha"></a>
               <h2>Pago de servicio</h2>
           </div>
       </div>
@@ -19,7 +22,7 @@
           <h2>$ <%= servicio.price %></h2>
           <p>Marzo 7, 2022 - 3:45 PM</p>
           <p>Pedido #<%= servicio.id_service %></p>
-          <h2> Nombre del vendedor </h2>
+          <a href="/servicios/<%= servicio.id_service %>">Nombre del vendedor</a>
           <article class="articulo">
                   <div class="viaje">
                    <p class="ciudad-origen"><%= servicio.origen %></p>

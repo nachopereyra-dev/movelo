@@ -10,7 +10,7 @@
     <main>
       <div class="principal">
 
-        <div class="titulo"><h1>Servicio de envio desde <%= servicio.origen %> hacia <%= servicio.destination %></h1><a class="editar" href="/users/editar-servicio/<%= servicio.id_service %>">Editar</a></div>
+        <div class="titulo"><h1>Servicio de envio desde <%= servicio.origen %> hacia <%= servicio.destination %></h1></div>
 
         <div class="info">
 
@@ -37,6 +37,7 @@
             <p><%= servicio.width %></p>
         </div>
         </div>
+        <a class="editar" href="/users/editar-servicio/<%= servicio.id_service %>">Editar</a>
       </div>
     </div>
     </main>

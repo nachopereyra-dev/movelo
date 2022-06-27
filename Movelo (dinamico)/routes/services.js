@@ -24,6 +24,7 @@ router.post('/', productosController.search)
 
 router.get('/carrito', productosController.carrito);
 router.get('/:id/detalle', productosController.detalle);
+router.get('/:id', productosController.perfil)
 
 /**** Formulario y Edición de Productos  ****/
 router.get('/:id/editar', productosController.edit)

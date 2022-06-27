@@ -9,12 +9,10 @@
     
     <main>
 
+      <a href="/users/mis-servicios"><img src="/images/icons/flecha.svg"class="flecha"></a>
+      <h2>Editar servicio</h2>
+
       <div class="formulario-crear-servicio">
-        <a href="/"><img src="/images/icons/flecha.svg"class="flecha"></a>
-          <div class="editarCrear">
-            <a class="activo" id="activo"><h2>Editar servicio</h2></a>
-          </div>
-          
 
           <div class="formulario">
             <form action="/users/editar-servicio/<%= servicio.id_service %>" method="POST">
@@ -103,10 +101,10 @@
                 <input type="number" name="precio" id="precio" step=".00" value="<%= servicio.price %>">
               </div>
 
-              <button type="submit" name="publicar" id="publicar" value="publicar">Editar</button>
+              
               <div class="botones-crear">
                   <div class="publicar-crear">
-                    <button type="submit" name="publicar" id="publicar" value="publicar">
+                    <button type="submit" name="publicar" id="publicar" value="publicar">Editar</button>
                   </div>
 
                   <div class="reset-crear">

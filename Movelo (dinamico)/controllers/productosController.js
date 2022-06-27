@@ -26,6 +26,11 @@ const productosController = {
 		res.render('servicios/detalle', {servicio, user: req.session.userLogged })
 	},
 
+	perfil: async (req, res) => {
+		const servicios = await db.Services.findAll()
+		res.render('servicios/perfil-publico', {servicios, user: req.session.userLogged })
+	},
+
     carrito: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
         const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
