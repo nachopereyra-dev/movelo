@@ -255,6 +255,11 @@ footer p {
         width: 85px;
         text-align: center;
     }
+    main {
+        min-height: calc(100vh - 115.594px - 151.5px);
+        width: 85%;
+        margin: auto;
+      }
 }
 
 @media (min-width: 760px) {
