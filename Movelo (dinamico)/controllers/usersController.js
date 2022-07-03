@@ -104,6 +104,7 @@ const userController = {
     actualizarPerfil: (req, res) => {
         db.Usuario.update({
             ...req.body,
+            image: req.file ? req.file.filename : req.session.userLogged.image
         },
         {
             where: {

@@ -122,10 +122,13 @@ main form .edit-info {
 
 .edit-info .item {
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .item label {
     font-size: 12px;
+    margin-bottom: 5px;
 }
 
 .item input {

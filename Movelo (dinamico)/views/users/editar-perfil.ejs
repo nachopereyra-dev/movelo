@@ -17,13 +17,12 @@
 
         <div class="user-info">
         <div class="imagen"><img src="/images/avatars/<%= user.image ? user.image : 'default.png' %>" width="180" style="border-radius:100%;" alt="">
-            <a class="boton-editar" href="">Editar foto</a>
             
         </div>
 
         <div class="edit-info">
 
-          <form action="/users/editar-perfil/<%= user.id_user %>" method="POST">          
+          <form action="/users/editar-perfil/<%= user.id_user %>" method="POST" enctype="multipart/form-data">          
 
             <div class="item">
               <label for="">Nombres</label>
@@ -71,7 +70,8 @@
             </div>
 
               <div class="item">
-                <input type="file" class="">
+                <label for="">Foto de perfil</label>
+                <input type="file" name="image" class="avatars" value="<%= user.image %>">
               </div>
 
               <button type="submit" class="boton-editar" href="">Guardar cambios</button>
