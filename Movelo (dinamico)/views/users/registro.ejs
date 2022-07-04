@@ -45,9 +45,9 @@
 
               <div class="formulario-fecha">
                   <label for="fecha">Fecha de nacimiento</label><input type="date" class="fecha" name="date" placeholder="Fecha de nacimiento">
-                  <% if (locals.errors && errors.fecha) { %>
+                  <% if (locals.errors && errors.date) { %>
                     <div class="feedback-danger">
-                      <%= errors.fecha.msg %>
+                      <%= errors.date.msg %>
                     </div>
                   <% } %>
               </div>
@@ -65,19 +65,22 @@
                 <label for="">Tipo de usuario</label>
                 <div class="sub-tipo-de-usuario">
                   <% for (let i = 0; i < categoriaUsuario.length; i++) { %>
-                    <div class="<%= categoriaUsuario[i].name.toLowerCase() %>"><label for="<% categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label><input type="radio" name="usuarioTipo" id="<% categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= locals.old && old.usuarioTipo === categoriaUsuario[i].name ? 'checked' : ''; %>></div>
+                    <div class="<%= categoriaUsuario[i].name.toLowerCase() %>">
+                      <label for="<%= categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label>
+                      <input type="radio" name="id_user_category" id="<%= categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= locals.old && old.id_user_category === categoriaUsuario[i].name ? 'checked' : ''; %>>
+                    </div>
                   <% } %>
                 </div>
-                <% if (locals.errors && errors.usuarioTipo) { %>
+                <% if (locals.errors && errors.id_user_category) { %>
                   <div class="feedback-danger">
-                    <%= errors.usuarioTipo.msg %>
+                    <%= errors.id_user_category.msg %>
                   </div>
                 <% } %>
                 </div>
 
               <div class="form-foto">
                 <label for="avatars">Foto de perfil</label>
-                  <input type="file" name="image" id="avatars" accept="image/png, image/jpeg">
+                  <input type="file" name="image" id="avatars" accept="image/png, image/jpeg, image/jpg, image/gif">
               </div>
               
               <div class="boton-registrarse">

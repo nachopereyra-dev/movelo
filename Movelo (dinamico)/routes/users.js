@@ -31,12 +31,18 @@ const validacion = [
    .isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres'),
    body('date').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento'),
-   body('usuarioTipo').notEmpty().withMessage('Debes elegir un tipo de usuario'),
+   body('id_user_category').notEmpty().withMessage('Debes elegir un tipo de usuario'),
 ]
 
 /* GET users listing. */
 router.get('/registro', guestMiddleware, userController.registro);
+router.post('/registro', fileUpload.single('image'), validacion, userController.procesoRegistro)
+
 router.get('/login', guestMiddleware, userController.login);
+router.post('/login', [
+   body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
+   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
+], userController.procesoLogin)
 
 router.get('/perfil', authMiddleware, userController.perfil);
 router.get('/editar-perfil/:id', authMiddleware, userController.editarPerfil);
@@ -61,10 +67,5 @@ router.get('/admin/crear', authMiddleware, userController.adminCrear);
 router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);
 router.get('/logout', userController.logout);
 
-router.post('/registro', fileUpload.single('image'), validacion, userController.procesoRegistro)
-router.post('/login', [
-   body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
-   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
-], userController.procesoLogin)
 
 module.exports = router;

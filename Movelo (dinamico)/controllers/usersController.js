@@ -10,7 +10,7 @@ const userController = {
 
     registro: async (req, res) => {
        const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
-        res.render("users/registro", { categoriaUsuario } )
+       res.render("users/registro", { categoriaUsuario } )
     },
 
     procesoRegistro: async (req, res) => {
@@ -38,7 +38,7 @@ const userController = {
                     ...req.body,
                     password: bcryptjs.hashSync(req.body.password, 10),
                     image: req.file ? req.file.filename : 'default.png',
-                    id_user_category: Number(req.body.usuarioTipo)
+                    id_user_category: Number(req.body.id_user_category),
                 }
 
                 await db.Usuario.create(userToCreate);
