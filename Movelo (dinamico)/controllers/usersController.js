@@ -14,8 +14,9 @@ const userController = {
     },
 
     procesoRegistro: async (req, res) => {
+
         const resultValidation = validationResult(req);
-        
+
         if(resultValidation.errors.length > 0) {
             return res.render('users/registro', {
                 errors: resultValidation.mapped(),
@@ -23,8 +24,8 @@ const userController = {
             })} 
         else {
             const userInDB = await db.Usuario.findOne({ where: { email: req.body.email } });
-            
-            if(userInDB) {
+            console.log(userInDB)
+            if(userInDB != null) {
                 return res.render('users/registro', {
                     errors: {
                         email: {
