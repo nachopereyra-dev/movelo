@@ -67,7 +67,7 @@
                   <% for (let i = 0; i < categoriaUsuario.length; i++) { %>
                     <div class="<%= categoriaUsuario[i].name.toLowerCase() %>">
                       <label for="<%= categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label>
-                      <input type="radio" name="id_user_category" id="<%= categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= locals.old && old.id_user_category === categoriaUsuario[i].name ? 'checked' : ''; %>>
+                      <input type="radio" name="id_user_category" id="<%= categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= locals.old && old.id_user_category === categoriaUsuario[i].name ? 'checked' : ''; %> checked>
                     </div>
                   <% } %>
                 </div>

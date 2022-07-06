@@ -16,17 +16,21 @@ const userController = {
     procesoRegistro: async (req, res) => {
 
         const resultValidation = validationResult(req);
-
+        console.log(resultValidation)
         if(resultValidation.errors.length > 0) {
-            return res.render('users/registro', {
+            const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+            return res.render('users/registro', { categoriaUsuario,
                 errors: resultValidation.mapped(),
                 old: req.body
             })} 
+            
         else {
-            const userInDB = await db.Usuario.findOne({ where: { email: req.body.email } });
-            console.log(userInDB)
-            if(userInDB != null) {
-                return res.render('users/registro', {
+
+            const userInDB = await db.Usuario.findOne({ where: { email: req.body.email }});
+
+            if(userInDB) {
+                const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+                return res.render('users/registro', { categoriaUsuario,
                     errors: {
                         email: {
                         msg: 'Este email ya está registrado'
@@ -46,7 +50,7 @@ const userController = {
                 return res.redirect('perfil')
             }
         }
-        },
+    },
 
 
     login: (req, res) => {

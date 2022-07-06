@@ -31,7 +31,6 @@ const validacion = [
    .isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres'),
    body('date').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento'),
-   body('id_user_category').notEmpty().withMessage('Debes elegir un tipo de usuario'),
 ]
 
 /* GET users listing. */
