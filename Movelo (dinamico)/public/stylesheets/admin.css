@@ -72,6 +72,12 @@ main {
   margin: auto;
 }
 
+form .feedback-danger {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
 main .formulario-crear-servicio {
   display: flex;
   flex-direction: column;

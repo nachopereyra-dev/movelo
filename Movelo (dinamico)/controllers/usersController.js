@@ -16,7 +16,6 @@ const userController = {
     procesoRegistro: async (req, res) => {
 
         const resultValidation = validationResult(req);
-        console.log(resultValidation)
         if(resultValidation.errors.length > 0) {
             const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
             return res.render('users/registro', { categoriaUsuario,
@@ -137,7 +136,19 @@ const userController = {
                 res.render('users/crear-servicio', {categoriaEnvio, frecuenciaEnvio, user: req.session.userLogged})
 	},
 
-    guardarServicio: (req, res) => {
+    guardarServicio: async (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0) {
+            const categoriaEnvio = await  db.CategoriaEnvio.findAll()
+            const frecuenciaEnvio = await db.FrecuenciaEnvio.findAll()
+            return res.render('users/crear-servicio', { user: req.session.userLogged, categoriaEnvio, frecuenciaEnvio,
+                errors: resultValidation.mapped(),
+                old: req.body
+            })} 
+            else {
+
         db.Services.create({
             id_user: req.session.userLogged.id_user,
             origen: req.body.origen,
@@ -151,7 +162,7 @@ const userController = {
             price: req.body.precio
         })
         res.redirect('mis-servicios')
-    },
+    }},
 
     editar: async (req, res) => {
         const servicio = await db.Services.findByPk(req.params.id)
@@ -162,7 +173,20 @@ const userController = {
 
     },
 
-    actualizar: (req, res) => {
+    actualizar: async (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0) {
+            const servicio = await db.Services.findByPk(req.params.id)
+            const categoriaEnvio = await  db.CategoriaEnvio.findAll()
+            const frecuenciaEnvio = await db.FrecuenciaEnvio.findAll()
+            return res.render('users/editar-servicio', { servicio, user: req.session.userLogged, categoriaEnvio, frecuenciaEnvio,
+                errors: resultValidation.mapped(),
+                old: req.body
+            })} 
+            else { 
+
         db.Services.update({
             origen: req.body.origen,
             destination: req.body.destino,
@@ -179,7 +203,7 @@ const userController = {
         }}
         );
         res.redirect('/users/mis-servicios/' + req.params.id)
-    },
+    }},
 
     borrar: (req, res) => {
         db.Services.destroy({ where: {

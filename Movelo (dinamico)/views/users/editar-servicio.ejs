@@ -22,11 +22,21 @@
               <div class="column-crear">
                 <label for="origen">Orígen</label>
                 <input type="text" name="origen" id="origen" value="<%= servicio.origen %>">
+                <% if (locals.errors && errors.origen) { %>
+                  <div class="feedback-danger">
+                    <%= errors.origen.msg %>
+                  </div>
+                <% } %>
               </div>
 
               <div class="column-crear">
                 <label for="destino">Destino</label>
                 <input type="text" name="destino" id="destino" value="<%= servicio.destination %>">
+                <% if (locals.errors && errors.destino) { %>
+                  <div class="feedback-danger">
+                    <%= errors.destino.msg %>
+                  </div>
+                <% } %>
               </div>
                 
               <div class="column-crear">
@@ -94,6 +104,11 @@
               <div class="column-crear">
                 <h3><label for="descripcion">Descripción</label></h3>
                 <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= servicio.description %></textarea>
+                <% if (locals.errors && errors.descripcion) { %>
+                  <div class="feedback-danger">
+                    <%= errors.descripcion.msg %>
+                  </div>
+                <% } %>
               </div>  
 
               <div class="column-crear">

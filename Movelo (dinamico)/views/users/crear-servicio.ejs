@@ -21,12 +21,22 @@
               
               <div class="column-crear">
                 <label for="origen">Orígen</label>
-                <input type="text" name="origen" id="origen">
+                <input type="text" name="origen" id="origen" value="<%= locals.old && old.origen ? old.origen : ''%>">
+                <% if (locals.errors && errors.origen) { %>
+                  <div class="feedback-danger">
+                    <%= errors.origen.msg %>
+                  </div>
+                <% } %>
               </div>
 
               <div class="column-crear">
                 <label for="destino">Destino</label>
-                <input type="text" name="destino" id="destino">
+                <input type="text" name="destino" id="destino" value="<%= locals.old && old.destino ? old.destino : ''%>">
+                <% if (locals.errors && errors.destino) { %>
+                  <div class="feedback-danger">
+                    <%= errors.destino.msg %>
+                  </div>
+                <% } %>
               </div>
                 
               <div class="column-crear">
@@ -81,7 +91,12 @@
 
               <div class="column-crear">
                 <h3><label for="descripcion">Descripción</label></h3>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="10" ><%= locals.old && old.descripcion ? old.descripcion : ''%></textarea>
+                <% if (locals.errors && errors.descripcion) { %>
+                  <div class="feedback-danger">
+                    <%= errors.descripcion.msg %>
+                  </div>
+                <% } %>
               </div>  
 
               <div class="column-crear">
