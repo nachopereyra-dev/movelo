@@ -21,7 +21,7 @@
               
               <div class="column-crear">
                 <label for="origen">Orígen</label>
-                <input type="text" name="origen" id="origen" value="<%= locals.old && old.origen ? old.origen : ''%>">
+                <input type="text" class="origen" name="origen" id="origen" value="<%= locals.old && old.origen ? old.origen : ''%>">
                 <% if (locals.errors && errors.origen) { %>
                   <div class="feedback-danger">
                     <%= errors.origen.msg %>
@@ -122,5 +122,6 @@
     </main>
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+    <script src="../js/validator.js"></script>
   </body>
 </html>

@@ -133,6 +133,20 @@ main section form .casilla {
   transition: 100ms;
 }
 
+.is-invalid {
+  border-bottom: 1px solid red !important
+}
+
+.is-valid {
+  border-bottom: 1px solid green !important
+}
+
+.alert-warning {
+  list-style: none;
+  color: red;
+  border-radius: 10px;
+}
+
 form .feedback-danger {
   color: red;
   font-size: 12px;

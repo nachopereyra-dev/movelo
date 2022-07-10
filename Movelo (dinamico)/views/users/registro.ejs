@@ -14,22 +14,23 @@
           <h1>Registrarse</h1>
           <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
           <a href="/users/login" class="iniciar-sesion">Iniciar sesión</a>
+          <ul class="errores"></ul>
           <form action="/users/registro" method="POST"  class="formulario-registro" enctype="multipart/form-data">
-              <input type="text" class="casilla" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
+              <input type="text" class="casilla first_name" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
               <% if (locals.errors && errors.first_name) { %>
                 <div class="feedback-danger">
                   <%= errors.first_name.msg %>
                 </div>
               <% } %>
 
-              <input type="text" class="casilla" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Apellidos">
+              <input type="text" class="casilla last_name" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Apellidos">
               <% if (locals.errors && errors.last_name) { %>
                 <div class="feedback-danger">
                   <%= errors.last_name.msg %>
                 </div>
               <% } %>
 
-              <input type="email" class="casilla" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Correo electrónico">
+              <input type="email" class="casilla email" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Correo electrónico">
               <% if (locals.errors && errors.email) { %>
                 <div class="feedback-danger">
                   <%= errors.email.msg %>
@@ -104,5 +105,6 @@
   </main>
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+    <script src="../js/validator.js"></script>
   </body>
 </html>
