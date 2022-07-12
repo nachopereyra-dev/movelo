@@ -14,9 +14,10 @@
           <h1>Iniciar sesión</h1>
           <p class="nuevo-usuario">¿Nuevo usuario?</p>
           <a href="/users/registro" class="registrate">Registrate</a>
-          <ul class="erroresIngreso"></ul>
+          <div class="erroresIngreso"></div>
           <form action="/users/login" method="post" class="formulario-ingreso">
               <input type="email" class="casilla emailLogin" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Usuario o correo electrónico">
+              <p class="erroresIngresoEmail"></p>
               <% if (locals.errors && errors.email) { %>
                 <div class="feedback-danger">
                   <%= errors.email.msg %>
@@ -46,12 +47,13 @@
       </section>
       <div class="iniciarSesionCon-desktop">
           <p class="iniciar-sesion-con">Iniciar sesión con</p>
-          <a class="boton-iniciarSesionGoogle" href="/">Google</a>
+          <a class="boton-iniciarSesionGoogle" </a> href="/">Google</a>
       </div>
       <div class="CharacterIMG">
           <a href="/users/admin/crear"><img src="/images/vectors/Character-2.svg" class="Character" width="180" alt="Character-2"></a>
       </div>
   </main>
+  <!---->
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->
     <script src="../js/validator.js"></script>

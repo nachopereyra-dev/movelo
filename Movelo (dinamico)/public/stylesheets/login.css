@@ -147,11 +147,23 @@ main section form .casilla:focus {
   border-bottom: 1px solid green !important
 }
 
-.alert-warning {
+div.alert-warning {
+  list-style-type: none;
+  display: block;
   list-style: none;
   color: red;
   border-radius: 10px;
 }
+
+p.alert-warning {
+  display: block;
+  margin-top: 5px;
+  margin-left: 20%;
+  text-align: left;
+  color: red;
+  border-radius: 10px;
+}
+
 
 
 form .feedback-danger {

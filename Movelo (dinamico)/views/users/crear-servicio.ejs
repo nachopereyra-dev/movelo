@@ -13,9 +13,9 @@
       <h2>Crea nuevo servicio</h2>
 
       <div class="formulario-crear-servicio">
-
+          <div class="erroresCrearServicio"></div>
           <div class="formulario">
-            <form action="/users/crear-servicio" method="POST">
+            <form action="/users/crear-servicio" class="formulario-servicio" method="POST">
 
                 <h3 for="Ruta">Ruta de envío</h3>
               
@@ -31,7 +31,7 @@
 
               <div class="column-crear">
                 <label for="destino">Destino</label>
-                <input type="text" name="destino" id="destino" value="<%= locals.old && old.destino ? old.destino : ''%>">
+                <input type="text" class="destino" name="destino" id="destino" value="<%= locals.old && old.destino ? old.destino : ''%>">
                 <% if (locals.errors && errors.destino) { %>
                   <div class="feedback-danger">
                     <%= errors.destino.msg %>
@@ -91,7 +91,7 @@
 
               <div class="column-crear">
                 <h3><label for="descripcion">Descripción</label></h3>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10" ><%= locals.old && old.descripcion ? old.descripcion : ''%></textarea>
+                <textarea name="descripcion" class="descripcion" id="descripcion" cols="30" rows="10" ><%= locals.old && old.descripcion ? old.descripcion : ''%></textarea>
                 <% if (locals.errors && errors.descripcion) { %>
                   <div class="feedback-danger">
                     <%= errors.descripcion.msg %>
@@ -117,11 +117,10 @@
               
             </form>
           </div>
-        </div>
       </div>
     </main>
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->
-    <script src="../js/validator.js"></script>
+    <script src="../js/crearServicioValidator.js"></script>
   </body>
 </html>

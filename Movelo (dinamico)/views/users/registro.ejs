@@ -14,7 +14,7 @@
           <h1>Registrarse</h1>
           <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
           <a href="/users/login" class="iniciar-sesion">Iniciar sesión</a>
-          <ul class="errores"></ul>
+          <div class="errores"></div>
           <form action="/users/registro" method="POST"  class="formulario-registro" enctype="multipart/form-data">
               <input type="text" class="casilla first_name" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
               <% if (locals.errors && errors.first_name) { %>

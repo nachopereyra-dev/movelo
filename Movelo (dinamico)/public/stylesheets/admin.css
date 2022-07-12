@@ -229,6 +229,19 @@ form {
   padding: 5px;
 }
 
+.is-invalid {
+  border: 1px solid red !important
+}
+
+.is-valid {
+  border: 1px solid green !important
+}
+
+.alert-warning {
+  list-style: none;
+  color: red;
+  border-radius: 10px;
+}
 /*--------FOOTER-HOME---------*/
 
 footer {

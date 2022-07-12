@@ -13,15 +13,15 @@
       <h2>Editar servicio</h2>
 
       <div class="formulario-crear-servicio">
-
+          <div class="erroresEditarServicio"></div>
           <div class="formulario">
-            <form action="/users/editar-servicio/<%= servicio.id_service %>" method="POST">
+            <form action="/users/editar-servicio/<%= servicio.id_service %>" class="formulario-editar" method="POST">
 
                 <h3 for="Ruta">Ruta de envío</h3>
               
               <div class="column-crear">
                 <label for="origen">Orígen</label>
-                <input type="text" name="origen" id="origen" value="<%= servicio.origen %>">
+                <input type="text" class="origen" name="origen" id="origen" value="<%= servicio.origen %>">
                 <% if (locals.errors && errors.origen) { %>
                   <div class="feedback-danger">
                     <%= errors.origen.msg %>
@@ -31,7 +31,7 @@
 
               <div class="column-crear">
                 <label for="destino">Destino</label>
-                <input type="text" name="destino" id="destino" value="<%= servicio.destination %>">
+                <input type="text" class="destino" name="destino" id="destino" value="<%= servicio.destination %>">
                 <% if (locals.errors && errors.destino) { %>
                   <div class="feedback-danger">
                     <%= errors.destino.msg %>
@@ -103,7 +103,7 @@
 
               <div class="column-crear">
                 <h3><label for="descripcion">Descripción</label></h3>
-                <textarea name="descripcion" id="descripcion" cols="30" rows="10"><%= servicio.description %></textarea>
+                <textarea name="descripcion" class="descripcion" id="descripcion" cols="30" rows="10"><%= servicio.description %></textarea>
                 <% if (locals.errors && errors.descripcion) { %>
                   <div class="feedback-danger">
                     <%= errors.descripcion.msg %>
@@ -129,11 +129,10 @@
               
             </form>
           </div>
-        </div>
       </div>
     </main>
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->
-    <script src="../js/validator.js"></script>
+    <script src="../../js/editarServicioValidator.js"></script>
   </body>
 </html>
