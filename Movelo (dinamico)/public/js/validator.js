@@ -74,7 +74,7 @@ window.addEventListener('load', function() {
         if(errores.length > 0) {
             ulErrores.classList.add('alert-warning')
             for(let i = 0; i < errores.length; i++) {
-                ulErrores.innerHTML += '<ul>' + errores[i] + '</ul>'
+                ulErrores.innerHTML += '<p>' + errores[i] + '</p>'
             }
         } else {
             form.submit()
@@ -121,7 +121,7 @@ window.addEventListener('load', function() {
         if(errores.length > 0) {
             ulErroresIngreso.classList.add('alert-warning')
             for(let i = 0; i < errores.length; i++) {
-                ulErroresIngreso.innerHTML += '<ul>' + errores[i] + '</ul>'
+                ulErroresIngreso.innerHTML += '<p>' + errores[i] + '</p>'
             }
         } else {
             formIngreso.submit()
@@ -134,7 +134,7 @@ window.addEventListener('load', function() {
         
 
     // Crear servicio
-
+        
     // Editar servicio
 
 })
