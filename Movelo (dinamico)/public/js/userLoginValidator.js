@@ -92,11 +92,27 @@ window.addEventListener('load', function() {
     form.addEventListener('submit', (e) => {
         
         let inputInvalid = document.querySelector('.is-invalid')
+        
 
         if (inputInvalid !== null) {
             e.preventDefault()
             inputInvalid.focus()
-        } 
+        } //else {
+        //     e.preventDefault()
+        //     console.log('http://localhost:3000/users/login/' + inputEmail.value)
+            
+        //     fetch('http://localhost:3000/users/login/'+ inputEmail.value).then((response) => {
+        //         console.log("aca va el response ---->" + response)
+        //         console.log(response)  
+        //         return response.json();
+                
+        //     }).then((dataDecode) => {
+        //         console.log("aca va el dataDecode ---->" + dataDecode)
+        //     }).catch((e) =>{
+        //         alert("error")
+        //     })
+        // }
+
     })
 
     

@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users'); //users
 var servicesRouter = require('./routes/services'); //services
 var userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
+
 var app = express();
 
 // view engine setup
@@ -33,6 +34,7 @@ app.use(userLoggedMiddleware);
 app.use('/', inicioRouter);
 app.use('/users', usersRouter);
 app.use('/servicios', servicesRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

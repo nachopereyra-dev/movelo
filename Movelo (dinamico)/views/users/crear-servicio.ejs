@@ -21,8 +21,8 @@
               
               <div class="column-crear">
                 <label for="origen">Orígen *</label>
-                <input type="text" class="origen" name="origen" id="origen" value="<%= locals.old && old.origen ? old.origen : ''%>">
-                <div class="error-origen alert-warning"></div>
+                <input type="text" class="origen transition" name="origen" id="origen" value="<%= locals.old && old.origen ? old.origen : ''%>">
+                <div class="error-origen alert-warning transition"></div>
                 <% if (locals.errors && errors.origen) { %>
                   <div class="feedback-danger">
                     <%= errors.origen.msg %>
@@ -32,8 +32,8 @@
 
               <div class="column-crear">
                 <label for="destino">Destino *</label>
-                <input type="text" class="destino" name="destino" id="destino" value="<%= locals.old && old.destino ? old.destino : ''%>">
-                <div class="error-destino alert-warning"></div>
+                <input type="text" class="destino transition" name="destino" id="destino" value="<%= locals.old && old.destino ? old.destino : ''%>">
+                <div class="error-destino alert-warning transition"></div>
                 <% if (locals.errors && errors.destino) { %>
                   <div class="feedback-danger">
                     <%= errors.destino.msg %>
@@ -93,8 +93,8 @@
 
               <div class="column-crear">
                 <h3><label for="descripcion">Descripción *</label></h3>
-                <textarea name="descripcion" class="descripcion" id="descripcion" cols="30" rows="10" ><%= locals.old && old.descripcion ? old.descripcion : ''%></textarea>
-                <div class="error-descripcion alert-warning"></div>
+                <textarea name="descripcion" class="descripcion transition" id="descripcion" cols="30" rows="10" ><%= locals.old && old.descripcion ? old.descripcion : ''%></textarea>
+                <div class="error-descripcion alert-warning transition"></div>
                 <% if (locals.errors && errors.descripcion) { %>
                   <div class="feedback-danger">
                     <%= errors.descripcion.msg %>

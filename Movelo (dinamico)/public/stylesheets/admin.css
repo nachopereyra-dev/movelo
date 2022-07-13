@@ -236,7 +236,12 @@ input {
   border: 2px solid green !important
 }
 
+.transition {
+  transition: 250ms;
+}
+
 .alert-warning {
+  font-size: 14px;
   list-style-type: none;
   display: block;
   list-style: none;
