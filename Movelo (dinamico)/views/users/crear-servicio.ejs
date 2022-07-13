@@ -20,8 +20,9 @@
                 <h3 for="Ruta">Ruta de envío</h3>
               
               <div class="column-crear">
-                <label for="origen">Orígen</label>
+                <label for="origen">Orígen *</label>
                 <input type="text" class="origen" name="origen" id="origen" value="<%= locals.old && old.origen ? old.origen : ''%>">
+                <div class="error-origen alert-warning"></div>
                 <% if (locals.errors && errors.origen) { %>
                   <div class="feedback-danger">
                     <%= errors.origen.msg %>
@@ -30,8 +31,9 @@
               </div>
 
               <div class="column-crear">
-                <label for="destino">Destino</label>
+                <label for="destino">Destino *</label>
                 <input type="text" class="destino" name="destino" id="destino" value="<%= locals.old && old.destino ? old.destino : ''%>">
+                <div class="error-destino alert-warning"></div>
                 <% if (locals.errors && errors.destino) { %>
                   <div class="feedback-danger">
                     <%= errors.destino.msg %>
@@ -90,8 +92,9 @@
               </div>
 
               <div class="column-crear">
-                <h3><label for="descripcion">Descripción</label></h3>
+                <h3><label for="descripcion">Descripción *</label></h3>
                 <textarea name="descripcion" class="descripcion" id="descripcion" cols="30" rows="10" ><%= locals.old && old.descripcion ? old.descripcion : ''%></textarea>
+                <div class="error-descripcion alert-warning"></div>
                 <% if (locals.errors && errors.descripcion) { %>
                   <div class="feedback-danger">
                     <%= errors.descripcion.msg %>
@@ -101,7 +104,7 @@
 
               <div class="column-crear">
                 <h3><label for="precio">Precio base</label></h3>
-                <input type="number" name="precio" id="precio" step=".00">
+                <input type=" number" name="precio" id="precio" step=".00">
               </div>
 
               

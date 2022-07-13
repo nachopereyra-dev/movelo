@@ -142,9 +142,17 @@ main section form .casilla:focus {
 .is-invalid {
   border-bottom: 1px solid red !important
 }
+.is-invalid:focus {
+  font-weight: bold;
+  border-bottom: 2px solid red !important
+}
 
 .is-valid {
   border-bottom: 1px solid green !important
+}
+.is-valid:focus {
+  font-weight: bold;
+  border-bottom: 2px solid green !important
 }
 
 div.alert-warning {

@@ -1,58 +1,83 @@
 window.addEventListener('load', function() {
  
-    let formCrearServicio = document.querySelector('.formulario-servicio')
     let inputOrigen = document.querySelector('.origen')
+    let errorOrigen = document.querySelector('.error-origen')
+
     let inputDestino = document.querySelector('.destino')
+    let errorDestino = document.querySelector('.error-destino')
+    
     let inputDescripcion = document.querySelector('.descripcion')
+    let errorDescripcion = document.querySelector('.error-descripcion')
 
 
 
-    let ulErroresCrearServicio = document.querySelector('.erroresCrearServicio')
+    inputOrigen.classList.add('is-invalid')
+    inputDestino.classList.add('is-invalid')
+    inputDescripcion.classList.add('is-invalid')
 
-    formCrearServicio.addEventListener('submit', (e) => {
-        e.preventDefault();
+    inputOrigen.addEventListener('input', (e) => {
 
-        let errores = []
-        console.log(inputOrigen.value.length)
-
-        if(inputOrigen.value.length <= 2) {
-            inputOrigen.classList.remove('is-valid')
-            inputOrigen.classList.add('is-invalid')
-            errores.push('Debes introducir una ciudad de origen valida')
-        } else {
+        if (e.target.value.length >= 3) {
+            
             inputOrigen.classList.remove('is-invalid')
             inputOrigen.classList.add('is-valid')
-        }
+            errorOrigen.innerHTML = ''
 
-        if(inputDestino.value.length <= 2) {
-            inputDestino.classList.remove('is-valid')
-            inputDestino.classList.add('is-invalid')
-            errores.push('Debes introducir una ciudad de destino valida')
         } else {
+
+            inputOrigen.classList.remove('is-valid')
+            inputOrigen.classList.add('is-invalid')
+            errorOrigen.innerHTML = 'Mínimo 3 caracteres'
+        }
+    })
+
+
+    inputDestino.addEventListener('input', (e) => {
+
+        if (e.target.value.length >= 3) {
+
             inputDestino.classList.remove('is-invalid')
             inputDestino.classList.add('is-valid')
-        }
+            errorDestino.innerHTML = ''
 
-        if(inputDescripcion.value.length <= 20) {
-            inputDescripcion.classList.remove('is-valid')
-            inputDescripcion.classList.add('is-invalid')
-            errores.push('Descripción demasiado corta (20 caracteres mínimo)')
         } else {
+
+            inputDestino.classList.remove('is-valid')
+            inputDestino.classList.add('is-invalid')
+            errorDestino.innerHTML = 'Mínimo 3 caracteres'
+        }
+    })
+
+
+    inputDescripcion.addEventListener('input', (e) => {
+
+        if (e.target.value.length >= 20) {
+
             inputDescripcion.classList.remove('is-invalid')
             inputDescripcion.classList.add('is-valid')
-        }
+            errorDescripcion.innerHTML = ''
 
-        ulErroresCrearServicio.innerHTML = ''
-        if(errores.length > 0) {
-            ulErroresCrearServicio.classList.add('alert-warning')
-            for(let i = 0; i < errores.length; i++) {
-                ulErroresCrearServicio.innerHTML += '<p>' + errores[i] + '</p>'
-            }
         } else {
-            formCrearServicio.submit()
+
+            inputDescripcion.classList.remove('is-valid')
+            inputDescripcion.classList.add('is-invalid')
+            errorDescripcion.innerHTML = 'Mínimo 20 caracteres'
         }
+    })
+
+    form.addEventListener('submit', (e) => {
+        
+        let inputValidar = document.querySelector('.is-invalid')
+
+        if (inputValidar !== null) {
+            e.preventDefault()
+        } 
+    })
 
 
-})
+
+
+
+
 })
 

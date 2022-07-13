@@ -75,7 +75,7 @@ const userController = {
                 return res.render('users/login', {
                     errors: {
                         email: {
-                            msg: 'Las credenciales no son válidas'
+                            msg: 'Contraseña o usuario'
                         }
                     }
                 })    

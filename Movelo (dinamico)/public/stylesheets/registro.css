@@ -142,7 +142,10 @@ main section form .casilla {
 }
 
 .alert-warning {
-  list-style: none;
+  display: block;
+  margin-top: 5px;
+  margin-left: 25%;
+  text-align: left;
   color: red;
   border-radius: 10px;
 }
