@@ -17,6 +17,8 @@ window.addEventListener('load', function() {
     inputDestino.classList.add('is-invalid')
     inputDescripcion.classList.add('is-invalid')
 
+    inputOrigen.focus()
+
     inputOrigen.addEventListener('input', (e) => {
 
         if (e.target.value.length >= 3) {
@@ -69,10 +71,11 @@ window.addEventListener('load', function() {
 
     form.addEventListener('submit', (e) => {
         
-        let inputValidar = document.querySelector('.is-invalid')
+        let inputInvalid = document.querySelector('.is-invalid')
 
-        if (inputValidar !== null) {
+        if (inputInvalid !== null) {
             e.preventDefault()
+            inputInvalid.focus()
         } 
     })
 

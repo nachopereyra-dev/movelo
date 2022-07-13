@@ -14,33 +14,32 @@
           <h1>Registrarse</h1>
           <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
           <a href="/users/login" class="iniciar-sesion">Iniciar sesión</a>
-          <div class="errores"></div>
           <form action="/users/registro" method="POST"  class="formulario-registro" enctype="multipart/form-data" >
-              <input type="text" class="casilla first_name" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
-              <div class="errores error-first-name alert-warning">* Campo obligatorio</div>
+              <input type="text" class="casilla first_name transition" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
+              <div class="errores error-first-name alert-warning transition"></div>
               <% if (locals.errors && errors.first_name) { %>
                 <div class="feedback-danger">
                   <%= errors.first_name.msg %>
                 </div>
               <% } %>
-              <input type="text" class="casilla last_name" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Apellidos">
-              <p class="errores error-last-name alert-warning">* Campo obligatorio</p>
+              <input type="text" class="casilla last_name transition" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Apellidos">
+              <div class="errores error-last-name alert-warning transition"></div>
               <% if (locals.errors && errors.last_name) { %>
                 <div class="feedback-danger">
                   <%= errors.last_name.msg %>
                 </div>
               <% } %>
 
-              <input type="text" class="casilla email" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Correo electrónico">
-              <p class="errores error-email alert-warning">* Campo obligatorio</p>
+              <input type="text" class="casilla email transition" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Correo electrónico">
+              <div class="errores error-email alert-warning transition"></div>
               <% if (locals.errors && errors.email) { %>
                 <div class="feedback-danger">
                   <%= errors.email.msg %>
                 </div>
               <% } %>
 
-              <input type="password" class="casilla pass1" name="password" placeholder="Contraseña">
-              <p class="errores error-password alert-warning">* Campo obligatorio</p>
+              <input type="password" class="casilla pass1 transition" name="password" placeholder="Contraseña">
+              <div class="errores error-password alert-warning transition"></div>
               <% if (locals.errors && errors.password) { %>
                 <div class="feedback-danger">
                   <%= errors.password.msg %>

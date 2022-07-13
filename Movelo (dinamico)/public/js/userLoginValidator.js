@@ -8,31 +8,64 @@ window.addEventListener('load', function() {
     let inputPassword = document.querySelector('.passwordLogin')
     let pErroresIngresoPassword = document.querySelector('.erroresIngresoPassword')
 
-    let form = document.querySelector('.formulario-ingreso')
+    let form = document.querySelector('.formulario-ingreso')    
     
     
+    pErroresIngresoPassword.style.opacity = "0"
+    pErroresIngresoEmail.style.opacity = "0"
 
-    inputEmail.addEventListener("blur", () =>{
+    inputEmail.addEventListener("input", (e) =>{
         
-        if (inputEmail.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+        if (e.target.value === '') {
+
+            inputEmail.classList.remove('no-es-un-correo')
+            inputEmail.classList.remove('is-valid')
+            inputEmail.classList.add('is-invalid')
+            pErroresIngresoEmail.style.opacity = "0"            
+            if (pErroresIngresoEmail.innerHTML) {
+                setTimeout(function(){
+                
+                    pErroresIngresoEmail.innerHTML = 'Campo vacío'
+                    pErroresIngresoEmail.style.opacity = "1"
+                    
+                },200)
+
+            } else {
+                pErroresIngresoEmail.innerHTML = 'Campo vacío'
+                pErroresIngresoEmail.style.opacity = "1"
+            }
             
+
+        } else if (e.target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) === null && !e.target.classList.contains('no-es-un-correo')) {
+
+            inputEmail.classList.remove('is-valid')
+            inputEmail.classList.add('no-es-un-correo')
+            inputEmail.classList.add('is-invalid')
+            pErroresIngresoEmail.style.opacity = "0"
+            if (pErroresIngresoEmail.innerHTML) {  //Si el div TIENE contenido hago fade-out y luego fade-in
+                setTimeout(function(){
+
+                    pErroresIngresoEmail.innerHTML = 'No es un correo'
+                    pErroresIngresoEmail.style.opacity = "1"
+
+                },200)
+
+            } else {  //Si el div NO tiene contenido hago SOLO fade-in
+                pErroresIngresoEmail.innerHTML = 'No es un correo'
+                pErroresIngresoEmail.style.opacity = "1"
+            }
+              
+            
+            
+        } else if (e.target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) === null && e.target.classList.contains('no-es-un-correo')) {
+            // no se ejecuta ningun cambio para que la animacion no se muestre cada vez que se teclea algo
+        } else {
+
             inputEmail.classList.remove('is-invalid')
+            inputEmail.classList.remove('no-es-un-correo')
             inputEmail.classList.add('is-valid')
             pErroresIngresoEmail.innerHTML = ''
-
-        } else if (inputEmail.value === '') {
-            
-            inputEmail.classList.add('is-invalid')
-            inputEmail.classList.remove('is-valid')
-            pErroresIngresoEmail.classList.add('alert-warning')
-            pErroresIngresoEmail.innerHTML = 'Campo vacío'
-
-        } else {
-            
-            inputEmail.classList.add('is-invalid')
-            inputEmail.classList.remove('is-valid')
-            pErroresIngresoEmail.classList.add('alert-warning')
-            pErroresIngresoEmail.innerHTML = 'No es un correo'    
+            pErroresIngresoEmail.style.opacity = "0"
         }
     })
 
@@ -43,25 +76,26 @@ window.addEventListener('load', function() {
 
             inputPassword.classList.add('is-invalid')
             inputPassword.classList.remove('is-valid')
-            pErroresIngresoPassword.classList.add('alert-warning')
+            pErroresIngresoPassword.style.opacity = "1"
             pErroresIngresoPassword.innerHTML = 'Campo vacío'
 
         } else {
             
             inputPassword.classList.remove('is-invalid')
             inputPassword.classList.add('is-valid')
-            pErroresIngresoPassword.innerHTML = ''
-            
+            pErroresIngresoPassword.style.opacity = "0"
+
         }
     })
 
 
     form.addEventListener('submit', (e) => {
         
-        let inputValidar = document.querySelector('.is-invalid')
+        let inputInvalid = document.querySelector('.is-invalid')
 
-        if (inputValidar !== null) {
+        if (inputInvalid !== null) {
             e.preventDefault()
+            inputInvalid.focus()
         } 
     })
 

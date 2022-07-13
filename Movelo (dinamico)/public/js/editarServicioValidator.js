@@ -70,10 +70,11 @@ window.addEventListener('load', function() {
 
     form.addEventListener('submit', (e) => {
         
-        let inputValidar = document.querySelector('.is-invalid')
+        let inputInvalidar = document.querySelector('.is-invalid')
 
-        if (inputValidar !== null) {
+        if (inputInvalidar !== null) {
             e.preventDefault()
+            inputInvalidar.focus()
         } 
     })
 })

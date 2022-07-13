@@ -2,19 +2,19 @@ window.addEventListener('load', function() {
 
     // Declaro Div de errores e Input de Nombre
     let inputNombre = document.querySelector('.first_name')
-    let pErroresNombre = document.querySelector('.error-first-name')
+    let divErroresNombre = document.querySelector('.error-first-name')
 
     // Declaro Div de errores e Input de Apellido
     let inputApellido = document.querySelector('.last_name')
-    let pErroresApellido = document.querySelector('.error-last-name')
+    let divErroresApellido = document.querySelector('.error-last-name')
 
     // Declaro Div de errores e Input de eMail
     let inputEmail = document.querySelector('.email')
-    let pErroresEmail = document.querySelector('.error-email')
+    let divErroresEmail = document.querySelector('.error-email')
 
     // Declaro Div de errores e Input de Password
     let inputPassword = document.querySelector('.pass1')
-    let pErroresPassword = document.querySelector('.error-password')
+    let divErroresPassword = document.querySelector('.error-password')
 
 
     // Declaro el Formulario de registro
@@ -23,34 +23,69 @@ window.addEventListener('load', function() {
     // Focus en castillero "Nombres"
     inputNombre.focus()
 
-    // Declaro los Inputs con clase "os-invalid"
+    // Declaro los Inputs con clase "is-invalid"
     inputNombre.classList.add('is-invalid')
     inputApellido.classList.add('is-invalid')
-    inputEmail.classList.remove('is-invalid')
+    inputEmail.classList.add('is-invalid')
     inputPassword.classList.add('is-invalid')
+
+    divErroresNombre.style.opacity = "0"
+    divErroresApellido.style.opacity = "0"
+    divErroresEmail.style.opacity = "0"
+    divErroresPassword.style.opacity = "0"
+    
 
 
     inputNombre.addEventListener('input', (e) => { //Evento "Input" de NOMBRE
 
         if (e.target.value === '') {
 
-            inputNombre.classList.add('is-invalid')
+            inputNombre.classList.remove('menor-a-5')
             inputNombre.classList.remove('is-valid')
-            pErroresNombre.classList.add('alert-warning')
-            pErroresNombre.innerHTML = '* Campo obligatorio'
-
-        } else if (e.target.value.length < 5) {
-
             inputNombre.classList.add('is-invalid')
-            inputNombre.classList.remove('is-valid')
-            pErroresNombre.classList.add('alert-warning')
-            pErroresNombre.innerHTML = 'Mínimo 5 caracteres'
+            divErroresNombre.style.opacity = "0"
+            if (divErroresNombre.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresNombre.innerHTML = '* Campo obligatorio'
+                    divErroresNombre.style.opacity = "1"
+                    
+                },200) 
 
+            } else {
+                divErroresNombre.innerHTML = '* Campo obligatorio'
+                divErroresNombre.style.opacity = "1"
+            }
+            
+            
+        } else if (e.target.value.length < 5 && !e.target.classList.contains('menor-a-5')) {
+            
+            inputNombre.classList.remove('is-valid')
+            inputNombre.classList.add('is-invalid')
+            inputNombre.classList.add('menor-a-5')
+            divErroresNombre.style.opacity = "0"
+            if (divErroresNombre.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresNombre.innerHTML = 'Mínimo 5 caracteres'
+                    divErroresNombre.style.opacity = "1"
+                    
+                },200) 
+
+            } else {
+                divErroresNombre.innerHTML = 'Mínimo 5 caracteres'
+                divErroresNombre.style.opacity = "1"
+            }
+            
+        } else if (e.target.value.length < 5 && e.target.classList.contains('menor-a-5')) {
+            
         } else {
-
+            
+            inputNombre.classList.remove('menor-a-5')
             inputNombre.classList.remove('is-invalid')
             inputNombre.classList.add('is-valid')
-            pErroresNombre.innerHTML = ''
+            divErroresNombre.style.opacity = "0"
+            divErroresNombre.innerHTML = ''
         }
     })
 
@@ -59,83 +94,170 @@ window.addEventListener('load', function() {
 
         if (e.target.value === '') {
 
-            inputApellido.classList.add('is-invalid')
+            inputApellido.classList.remove('menor-a-5')
             inputApellido.classList.remove('is-valid')
-            pErroresApellido.classList.add('alert-warning')
-            pErroresApellido.innerHTML = '* Campo obligatorio'
-
-        } else if (e.target.value.length < 5) {
-
             inputApellido.classList.add('is-invalid')
-            inputApellido.classList.remove('is-valid')
-            pErroresApellido.classList.add('alert-warning')
-            pErroresApellido.innerHTML = 'Mínimo 5 caracteres'
+            divErroresApellido.style.opacity = "0"
+            if (divErroresApellido.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresApellido.innerHTML = '* Campo obligatorio'
+                    divErroresApellido.style.opacity = "1"
+                    
+                },200) 
 
+            } else {
+                divErroresApellido.innerHTML = '* Campo obligatorio'
+                divErroresApellido.style.opacity = "1"
+            }
+
+        } else if (e.target.value.length < 5 && !e.target.classList.contains('menor-a-5')) {
+
+            inputApellido.classList.remove('is-valid')
+            inputApellido.classList.add('is-invalid')
+            inputApellido.classList.add('menor-a-5')
+            divErroresApellido.style.opacity = "0"
+            if (divErroresApellido.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresApellido.innerHTML = 'Mínimo 5 caracteres'
+                    divErroresApellido.style.opacity = "1"
+                    
+                },200) 
+
+            } else {
+                divErroresApellido.innerHTML = 'Mínimo 5 caracteres'
+                divErroresApellido.style.opacity = "1"
+            }
+
+        } else if (e.target.value.length < 5 && e.target.classList.contains('menor-a-5')) {
+            
         } else {
-
+            
+            inputApellido.classList.remove('menor-a-5')
             inputApellido.classList.remove('is-invalid')
             inputApellido.classList.add('is-valid')
-            pErroresApellido.innerHTML = ''
+            divErroresApellido.style.opacity = "0"
+            divErroresApellido.innerHTML = ''
         }
     })
 
 
     inputEmail.addEventListener('input', (e) => {
 
-        if (e.target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+        if (e.target.value === '') {
 
+            inputEmail.classList.remove('no-es-un-correo')
+            inputEmail.classList.remove('is-valid')
+            inputEmail.classList.add('is-invalid')
+            divErroresEmail.style.opacity = "0"
+            if (divErroresEmail.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresEmail.innerHTML = '* Campo obligatorio'
+                    divErroresEmail.style.opacity = "1"
+                    
+                },200) 
+
+            } else {
+                divErroresEmail.innerHTML = '* Campo obligatorio'
+                divErroresEmail.style.opacity = "1"
+            }
+
+        } else if (e.target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) === null && !e.target.classList.contains('no-es-un-correo')) {
+
+            
+            inputEmail.classList.remove('is-valid')
+            inputEmail.classList.add('is-invalid')
+            inputEmail.classList.add('no-es-un-correo')
+            divErroresEmail.style.opacity = "0"
+            if (divErroresEmail.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresEmail.innerHTML = 'No es un correo'
+                    divErroresEmail.style.opacity = "1"
+                    
+                },200) 
+            } else {
+                divErroresEmail.innerHTML = 'No es un correo'
+                divErroresEmail.style.opacity = "1"
+            }
+
+        } else if (e.target.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) === null && e.target.classList.contains('no-es-un-correo')) {
+            
+        } else {
+            
+            inputEmail.classList.remove('no-es-un-correo')
             inputEmail.classList.remove('is-invalid')
             inputEmail.classList.add('is-valid')
-            pErroresEmail.innerHTML = ''
-
-        } else if (e.target.value === '') {
-
-            inputEmail.classList.add('is-invalid')
-            inputEmail.classList.remove('is-valid')
-            pErroresEmail.classList.add('alert-warning')
-            pErroresEmail.innerHTML = '* Campo obligatorio'
-
-        } else {
-
-            inputEmail.classList.add('is-invalid')
-            inputEmail.classList.remove('is-valid')
-            pErroresEmail.classList.add('alert-warning')
-            pErroresEmail.innerHTML = 'No es un correo'
+            divErroresEmail.style.opacity = "0"
+            divErroresEmail.innerHTML = ''
         }
     })
 
 
     inputPassword.addEventListener('input', (e) => {
 
-        if (e.target.value.length < 8) {
+        if (e.target.value === '') {
 
-            inputPassword.classList.add('is-invalid')
+            inputPassword.classList.remove('menor-a-8')
             inputPassword.classList.remove('is-valid')
-            pErroresPassword.classList.add('alert-warning')
-            pErroresPassword.innerHTML = 'Mínimo 8 caracteres'
-            
-        } else if (e.target.value === '') {
-            
             inputPassword.classList.add('is-invalid')
+            divErroresPassword.style.opacity = "0"
+            if (divErroresPassword.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresPassword.innerHTML = '* Campo obligatorio'
+                    divErroresPassword.style.opacity = "1"
+                    
+                },200) 
+
+            } else {
+                divErroresPassword.innerHTML = '* Campo obligatorio'
+                divErroresPassword.style.opacity = "1"
+            }
+            
+            
+        } else if (e.target.value.length < 8 && !e.target.classList.contains('menor-a-8')) {
+            
             inputPassword.classList.remove('is-valid')
-            pErroresPassword.classList.add('alert-warning')
-            pErroresPassword.innerHTML = '* Campo obligatorio'
+            inputPassword.classList.add('is-invalid')
+            inputPassword.classList.add('menor-a-8')
+            divErroresPassword.style.opacity = "0"
+            if (divErroresPassword.innerHTML) {
+                setTimeout(function(){
+                
+                    divErroresPassword.innerHTML = 'Mínimo 8 caracteres'
+                    divErroresPassword.style.opacity = "1"
+                    
+                },200) 
+
+            } else {
+                divErroresPassword.innerHTML = 'Mínimo 8 caracteres'
+                divErroresPassword.style.opacity = "1"
+            }
+            
+        } else if (e.target.value.length < 8 && e.target.classList.contains('menor-a-8')) {
             
         } else {
-
+            
+            inputPassword.classList.remove('menor-a-8')
             inputPassword.classList.remove('is-invalid')
             inputPassword.classList.add('is-valid')
-            pErroresPassword.innerHTML = ''
+            divErroresPassword.style.opacity = "0"
+            divErroresPassword.innerHTML = ''
         }
+
     })
 
 
     form.addEventListener('submit', (e) => {
         
-        let inputValidar = document.querySelector('.is-invalid')
+        let inputInvalid = document.querySelector('.is-invalid')
 
-        if (inputValidar !== null) {
+        if (inputInvalid !== null) {
             e.preventDefault()
+            inputInvalid.focus()
         } 
     })
     

@@ -14,15 +14,14 @@
           <h1>Iniciar sesión</h1>
           <p class="nuevo-usuario">¿Nuevo usuario?</p>
           <a href="/users/registro" class="registrate">Registrate</a>
-          <div class="erroresIngreso"></div>
           <form action="/users/login" method="post" class="formulario-ingreso">
-              <input type="email" class="casilla emailLogin" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Usuario o correo electrónico">
-              <p class="erroresIngresoEmail"></p>
+              <input type="email" class="casilla emailLogin transition" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Usuario o correo electrónico">
+              <div class="erroresIngresoEmail alert-warning transition"></div>
               <% if (locals.errors && errors.email) { %>
                 <p class="feedback-danger errores-email-b"><%= errors.email.msg %></p>
               <% } %>
-              <input type="password" class="casilla passwordLogin" name="password" placeholder="Contraseña">
-              <p class="erroresIngresoPassword"></p>
+              <input type="password" class="casilla passwordLogin transition" name="password" placeholder="Contraseña">
+              <div class="erroresIngresoPassword alert-warning transition"></div>
               <% if (locals.errors && errors.password) { %>
                 <p class="feedback-danger errores-password-b"><%= errors.password.msg %></p>
               <% } %>
