@@ -136,39 +136,28 @@ form {
   display: inline
 }
 
-.formulario-crear-servicio h3{
+h3{
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.formulario-crear-servicio .row-crear {
+.row-crear {
   display: flex;
   flex-direction: row;
 }
 
-.row-crear input {
-  margin-right: 25px;
-}
 
-.formulario-crear-servicio .column-crear {
+.column-crear {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
 
-.formulario-crear-servicio input {
+input {
   border-radius: 10px;
   padding: 2px;
   border: solid 1px black;
   margin-top: 5px;
-}
-
-.sub-row-crear input {
-  margin-left: 8px;
-}
-
-.sub-row-crear {
-  margin-top: 10px;
 }
 
 .botones-crear {
@@ -227,6 +216,37 @@ form {
   color: white;
   background-color: transparent;
   padding: 5px;
+}
+
+.is-invalid {
+  border: 1px solid red !important
+}
+.is-invalid:focus {
+  outline: none; /* --- hace que no se muestre el focus por default */
+  font-weight: bold;
+  border: 2px solid red !important
+}
+
+.is-valid {
+  border: 1px solid green !important
+}
+.is-valid:focus {
+  outline: none; /* --- hace que no se muestre el focus por default */
+  font-weight: bold;
+  border: 2px solid green !important
+}
+
+.transition {
+  transition: 250ms;
+}
+
+.alert-warning {
+  font-size: 14px;
+  list-style-type: none;
+  display: block;
+  list-style: none;
+  color: red;
+  border-radius: 10px;
 }
 
 /*--------FOOTER-HOME---------*/
