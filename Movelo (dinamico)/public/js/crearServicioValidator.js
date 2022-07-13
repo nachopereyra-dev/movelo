@@ -9,6 +9,8 @@ window.addEventListener('load', function() {
     let inputDescripcion = document.querySelector('.descripcion')
     let errorDescripcion = document.querySelector('.error-descripcion')
 
+    let form = document.querySelector('.formulario-servicio')
+
 
 
     inputOrigen.classList.add('is-invalid')

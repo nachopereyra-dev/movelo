@@ -9,6 +9,8 @@ window.addEventListener('load', function() {
     let inputDescripcion = document.querySelector('.descripcion')
     let errorDescripcion = document.querySelector('.error-descripcion')
 
+    let form = document.querySelector('.formulario-editar')
+
 
 
     inputOrigen.classList.add('is-valid')
@@ -63,5 +65,15 @@ window.addEventListener('load', function() {
             inputDescripcion.classList.add('is-invalid')
             errorDescripcion.innerHTML = 'Mínimo 20 caracteres'
         }
+    })
+
+
+    form.addEventListener('submit', (e) => {
+        
+        let inputValidar = document.querySelector('.is-invalid')
+
+        if (inputValidar !== null) {
+            e.preventDefault()
+        } 
     })
 })
