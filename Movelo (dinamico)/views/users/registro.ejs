@@ -14,22 +14,23 @@
           <h1>Registrarse</h1>
           <p class="nuevo-usuario">¿Ya tienes una cuenta?</p>
           <a href="/users/login" class="iniciar-sesion">Iniciar sesión</a>
+          <ul class="errores"></ul>
           <form action="/users/registro" method="POST"  class="formulario-registro" enctype="multipart/form-data">
-              <input type="text" class="casilla" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
+              <input type="text" class="casilla first_name" name="first_name" value="<%= locals.old && old.first_name ? old.first_name : ''%>" placeholder="Nombres">
               <% if (locals.errors && errors.first_name) { %>
                 <div class="feedback-danger">
                   <%= errors.first_name.msg %>
                 </div>
               <% } %>
 
-              <input type="text" class="casilla" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Apellidos">
+              <input type="text" class="casilla last_name" name="last_name" value="<%= locals.old && old.last_name ? old.last_name : ''%>" placeholder="Apellidos">
               <% if (locals.errors && errors.last_name) { %>
                 <div class="feedback-danger">
                   <%= errors.last_name.msg %>
                 </div>
               <% } %>
 
-              <input type="email" class="casilla" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Correo electrónico">
+              <input type="email" class="casilla email" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Correo electrónico">
               <% if (locals.errors && errors.email) { %>
                 <div class="feedback-danger">
                   <%= errors.email.msg %>
@@ -45,9 +46,9 @@
 
               <div class="formulario-fecha">
                   <label for="fecha">Fecha de nacimiento</label><input type="date" class="fecha" name="date" placeholder="Fecha de nacimiento">
-                  <% if (locals.errors && errors.fecha) { %>
+                  <% if (locals.errors && errors.date) { %>
                     <div class="feedback-danger">
-                      <%= errors.fecha.msg %>
+                      <%= errors.date.msg %>
                     </div>
                   <% } %>
               </div>
@@ -65,19 +66,22 @@
                 <label for="">Tipo de usuario</label>
                 <div class="sub-tipo-de-usuario">
                   <% for (let i = 0; i < categoriaUsuario.length; i++) { %>
-                    <div class="<%= categoriaUsuario[i].name.toLowerCase() %>"><label for="<% categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label><input type="radio" name="usuarioTipo" id="<% categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= locals.old && old.usuarioTipo === categoriaUsuario[i].name ? 'checked' : ''; %>></div>
+                    <div class="<%= categoriaUsuario[i].name.toLowerCase() %>">
+                      <label for="<%= categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label>
+                      <input type="radio" name="id_user_category" id="<%= categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= locals.old && old.id_user_category === categoriaUsuario[i].name ? 'checked' : ''; %> checked>
+                    </div>
                   <% } %>
                 </div>
-                <% if (locals.errors && errors.usuarioTipo) { %>
+                <% if (locals.errors && errors.id_user_category) { %>
                   <div class="feedback-danger">
-                    <%= errors.usuarioTipo.msg %>
+                    <%= errors.id_user_category.msg %>
                   </div>
                 <% } %>
                 </div>
 
               <div class="form-foto">
                 <label for="avatars">Foto de perfil</label>
-                  <input type="file" name="image" id="avatars" accept="image/png, image/jpeg">
+                  <input type="file" name="image" id="avatars" accept="image/png, image/jpeg, image/jpg, image/gif">
               </div>
               
               <div class="boton-registrarse">
@@ -101,5 +105,6 @@
   </main>
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+    <script src="../js/validator.js"></script>
   </body>
 </html>

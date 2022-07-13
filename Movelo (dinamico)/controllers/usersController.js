@@ -10,22 +10,26 @@ const userController = {
 
     registro: async (req, res) => {
        const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
-        res.render("users/registro", { categoriaUsuario } )
+       res.render("users/registro", { categoriaUsuario } )
     },
 
     procesoRegistro: async (req, res) => {
+
         const resultValidation = validationResult(req);
-        
         if(resultValidation.errors.length > 0) {
-            return res.render('users/registro', {
+            const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+            return res.render('users/registro', { categoriaUsuario,
                 errors: resultValidation.mapped(),
                 old: req.body
             })} 
-        else {
-            const userInDB = await db.Usuario.findOne({ where: { email: req.body.email } });
             
+        else {
+
+            const userInDB = await db.Usuario.findOne({ where: { email: req.body.email }});
+
             if(userInDB) {
-                return res.render('users/registro', {
+                const categoriaUsuario = await db.CategoriaUsuario.findAll({where: { [Op.or]: [{name: 'Vendedor'}, {name: 'Comprador'}] }})
+                return res.render('users/registro', { categoriaUsuario,
                     errors: {
                         email: {
                         msg: 'Este email ya está registrado'
@@ -38,14 +42,14 @@ const userController = {
                     ...req.body,
                     password: bcryptjs.hashSync(req.body.password, 10),
                     image: req.file ? req.file.filename : 'default.png',
-                    id_user_category: Number(req.body.usuarioTipo)
+                    id_user_category: Number(req.body.id_user_category),
                 }
 
                 await db.Usuario.create(userToCreate);
                 return res.redirect('perfil')
             }
         }
-        },
+    },
 
 
     login: (req, res) => {
@@ -104,6 +108,7 @@ const userController = {
     actualizarPerfil: (req, res) => {
         db.Usuario.update({
             ...req.body,
+            image: req.file ? req.file.filename : req.session.userLogged.image
         },
         {
             where: {
@@ -131,7 +136,19 @@ const userController = {
                 res.render('users/crear-servicio', {categoriaEnvio, frecuenciaEnvio, user: req.session.userLogged})
 	},
 
-    guardarServicio: (req, res) => {
+    guardarServicio: async (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0) {
+            const categoriaEnvio = await  db.CategoriaEnvio.findAll()
+            const frecuenciaEnvio = await db.FrecuenciaEnvio.findAll()
+            return res.render('users/crear-servicio', { user: req.session.userLogged, categoriaEnvio, frecuenciaEnvio,
+                errors: resultValidation.mapped(),
+                old: req.body
+            })} 
+            else {
+
         db.Services.create({
             id_user: req.session.userLogged.id_user,
             origen: req.body.origen,
@@ -145,7 +162,7 @@ const userController = {
             price: req.body.precio
         })
         res.redirect('mis-servicios')
-    },
+    }},
 
     editar: async (req, res) => {
         const servicio = await db.Services.findByPk(req.params.id)
@@ -156,7 +173,20 @@ const userController = {
 
     },
 
-    actualizar: (req, res) => {
+    actualizar: async (req, res) => {
+
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.errors.length > 0) {
+            const servicio = await db.Services.findByPk(req.params.id)
+            const categoriaEnvio = await  db.CategoriaEnvio.findAll()
+            const frecuenciaEnvio = await db.FrecuenciaEnvio.findAll()
+            return res.render('users/editar-servicio', { servicio, user: req.session.userLogged, categoriaEnvio, frecuenciaEnvio,
+                errors: resultValidation.mapped(),
+                old: req.body
+            })} 
+            else { 
+
         db.Services.update({
             origen: req.body.origen,
             destination: req.body.destino,
@@ -173,7 +203,7 @@ const userController = {
         }}
         );
         res.redirect('/users/mis-servicios/' + req.params.id)
-    },
+    }},
 
     borrar: (req, res) => {
         db.Services.destroy({ where: {

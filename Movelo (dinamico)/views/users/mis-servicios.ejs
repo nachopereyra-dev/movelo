@@ -9,25 +9,36 @@
     
     <main>
 
-      <h1>Mis servicios</h1>
+      <a href="/users/perfil"><img src="/images/icons/flecha.svg"class="flecha"></a>
+
+      <div class="cabecera">
+        <h1 h1>Mis servicios</h1>
+          <div class="boton-buscar">
+            <a href="/users/crear-servicio">Crear servicio</a>
+          </div>
+      </div>
       <div class="mis-servicios">
 
         <% for (let i = 0; i < misServicios.length; i++) { %>
+          <div class="fila-servicio">
           <div class="servicio">
           <a class="servicio-item" href="/users/mis-servicios/<%= misServicios[i].id_service %>"><p> <%= misServicios[i].id_service %> - Desde <%= misServicios[i].origen %> hacia <%= misServicios[i].destination %>
-            </p></a> <a class="editar" href="/users/editar-servicio/<%= misServicios[i].id_service %>"> Editar</a> 
+            </p></a> 
           </div>
+
+          <div class="servicio-editar">
+            <a class="editar" href="/users/editar-servicio/<%= misServicios[i].id_service %>"> Editar</a> 
+          </div>
+
           <div class="servicio-delete">
             <form action="/users/borrar/<%= misServicios[i].id_service %>" method="POST">
               <button type="submit" class="delete" href="/users/editar-servicio/<%= misServicios[i].id_service %>"> Eliminar</button>
             </form>
           </div>
+        </div>
         <% } %>
 
       </div>
-      <div class="boton-buscar">
-        <a href="/users/crear-servicio">Crear</a>
-    </div>
   </main>
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->

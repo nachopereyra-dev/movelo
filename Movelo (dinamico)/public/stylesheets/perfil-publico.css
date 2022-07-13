@@ -63,53 +63,35 @@ nav {
 
 main {
     min-height: calc(100vh - 115.594px - 151.5px);
-    width: 70%;
-    margin: auto;
+    width: 100wv;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-main .principal {
-    display: flex;
-    flex-direction: column;
+main .textos {
+    margin-bottom: 80px;
 }
 
-main .titulo {
-    display: flex;
-    flex-direction: row;
+main .titulos {
+    font-size: 28px;
+    font-weight: 400;
+    margin: 70px;
+    text-align: center;
 }
-
-main .titulo h1 {
-    font-size: 24px;
-    margin-right: 20px;
-}
-
-main a {
-    display: flex;
-    color: white;
-    text-decoration: none;
+ 
+main .titulo-1{
+    white-space: nowrap;
+    border-right: 4px solid;
+    text-align: center;
     margin: auto;
-    margin-bottom: 20px;
-    background-color: black;
-    padding: 10px;
-    border-radius: 10px;
-}
+ }
 
-main .info {
-    display: flex;
-    flex-direction: column;
+main .titulo-1{
+    animation: typing 4s forwards,
+    blink .5s infinite step-end alternate;
+    overflow: hidden;
 }
-
-main .sub-info label {
-    font-size: 16px;
-    font-weight: 700;
-}
-
-main .sub-info p {
-    font-size: 12px;
-}
-
 
 @keyframes typing {
     from { width: 0 }
@@ -381,23 +363,6 @@ main .boton-2 {
         font-size: 14px;
         width: 110px;
         justify-content: center;
-    }
-
-    main .info {
-        flex-direction: row;
-    }
-
-    main .left {
-        margin-right: 50px;
-    }
-
-    main .sub-info label {
-        font-size: 16px;
-        font-weight: 700;
-    }
-    
-    main .sub-info p {
-        font-size: 16px;
     }
 
 }

@@ -2,39 +2,40 @@
 <html>
   <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/stylesheets/shop.css">
+    <link rel="stylesheet" href="/stylesheets/detalle.css">
   </head>
   <body>
     <%- include('../partials/header') %>   <!-----------HEADER----------->
     
     <main>
+
+        
       <div class="caja_titulo">
+
           <div class="navbar_carrito">
-              <img src="/images/icons/Shop_Empty.svg" alt="" class="carrito">
-              <a href="/"><img src="/images/icons/flecha.svg"class="flecha"></a>
+            <a href="/servicios"><img src="/images/icons/flecha.svg"class="flecha"></a>
               <h2>Pago de servicio</h2>
           </div>
       </div>
       <div class="caja_contenido">
-        <iframe src="<%= articulo.imagen %>" width="600" height="600" style="border-radius:16px; border: 0; box-shadow: 2em gray; opacity: 90%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="googlemaps"></iframe>
       <div class="detalles_carrito">
-          <h2>$ <%= articulo.precio %></h2>
+          <h2>$ <%= servicio.price %></h2>
           <p>Marzo 7, 2022 - 3:45 PM</p>
-          <p>Pedido #<%= articulo.id %></p>
-          <h2><%= articulo.mensajero %></h2>
+          <p>Pedido #<%= servicio.id_service %></p>
+          <a href="/servicios/<%= servicio.id_service %>">Nombre del vendedor</a>
           <article class="articulo">
                   <div class="viaje">
-                   <p class="ciudad-origen"><%= articulo.origen %></p>
+                   <p class="ciudad-origen"><%= servicio.origen %></p>
                       <div class="flechas">
                           <i class="fas fa-exchange-alt"></i>
                       </div>
-                  <p class="ciudad-destino"><%= articulo.destino %></p>
+                  <p class="ciudad-destino"><%= servicio.destination %></p>
                   </div>
   
                   <div class="precio_producto">
                       <div class="precio_line">
                           <p>Precio</p>
-                          <p class="precio">$  <%= articulo.precio %></p>
+                          <p class="precio">$  <%= servicio.price %></p>
                       </div>
                       <div class="precio_line">
                           <p>Impuestos</p>
@@ -51,11 +52,11 @@
                       <hr>
                       <div class="precio_line">
                           <p>Precio del envio</p>
-                          <p class="precio">$  <%= articulo.precio %></p>
+                          <p class="precio">$  <%= servicio.price %></p>
                       </div>
                   </div>
                   <div class="boton">
-                  <a href="/" class="link_comprar"><button type="button" >Confirmar Compra</button></a></div>
+                  <a href="/" class="link_comprar"><button type="button" >Comprar</button></a></div>
       </article>
   </div>
   </div>

@@ -10,11 +10,12 @@
     <main>
       <div class="principal">
 
+        <a href="/"><img src="/images/icons/flecha.svg"class="flecha"></a>
+
         <div class="titulo"><h1>Hola <%= user.first_name %></h1></div>
 
         <div class="user-info">
         <div class="imagen"><img src="/images/avatars/<%= user.image ? user.image : 'default.png' %>" width="180" style="border-radius:100%;" alt="">
-            <a class="boton-editar" href="">Editar foto</a>
             <a class="boton-editar" href="/users/editar-perfil/<%= user.id_user %>">Editar perfil</a>
         </div>
 

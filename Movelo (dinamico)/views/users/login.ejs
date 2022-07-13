@@ -14,15 +14,16 @@
           <h1>Iniciar sesión</h1>
           <p class="nuevo-usuario">¿Nuevo usuario?</p>
           <a href="/users/registro" class="registrate">Registrate</a>
+          <ul class="erroresIngreso"></ul>
           <form action="/users/login" method="post" class="formulario-ingreso">
-              <input type="text" class="casilla" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Usuario o correo electrónico">
+              <input type="email" class="casilla emailLogin" name="email" value="<%= locals.old && old.email ? old.email : ''%>" placeholder="Usuario o correo electrónico">
               <% if (locals.errors && errors.email) { %>
                 <div class="feedback-danger">
                   <%= errors.email.msg %>
                 </div>
               <% } %>
 
-              <input type="password" class="casilla" name="password" placeholder="Contraseña">
+              <input type="password" class="casilla passwordLogin" name="password" placeholder="Contraseña">
               <% if (locals.errors && errors.password) { %>
                 <div class="feedback-danger">
                   <%= errors.password.msg %>
@@ -53,5 +54,6 @@
   </main>
 
     <%- include('../partials/footer') %>   <!-----------FOOTER----------->
+    <script src="../js/validator.js"></script>
   </body>
 </html>

@@ -10,54 +10,71 @@
     <main>
       <div class="principal">
 
-        <div class="titulo"><h1>Hola <%= user.first_name %></h1></div>
+        <div class="titulo">
+          <a href="/users/perfil"><img src="/images/icons/flecha.svg"class="flecha"></a>
+          <h1>Hola <%= user.first_name %></h1>
+        </div>
 
         <div class="user-info">
         <div class="imagen"><img src="/images/avatars/<%= user.image ? user.image : 'default.png' %>" width="180" style="border-radius:100%;" alt="">
-            <a class="boton-editar" href="">Editar foto</a>
             
         </div>
 
         <div class="edit-info">
 
-          <form action="/users/editar-perfil/<%= user.id_user %>" method="POST">          
+          <form action="/users/editar-perfil/<%= user.id_user %>" method="POST" enctype="multipart/form-data">          
 
-          <label for="">Nombres</label>
-          <input type="text" class="casilla" name="first_name" value="<%= user.first_name %>">
+            <div class="item">
+              <label for="">Nombres</label>
+              <input type="text" class="casilla" name="first_name" value="<%= user.first_name %>">
+            </div>
+            
+            <div class="item">
+              <label for="">Apellidos</label>
+              <input type="text" class="casilla" name="last_name" value="<%= user.last_name %>">
+            </div>
 
-          <label for="">Apellidos</label>
-          <input type="text" class="casilla" name="last_name" value="<%= user.last_name %>">
+            <div class="item">
+              <label for="">Correo electrónico</label>
+              <input type="email" class="casilla" name="email" value="<%= user.email %>">
+            </div>
+              <!-- <label for="">Contraseña</label>
+              <input type="password" class="casilla" name="password" value="<%= user.password %>"> -->
 
-          <label for="">Correo electrónico</label>
-          <input type="email" class="casilla" name="email" value="<%= user.email %>">
+              <!-- <label for="">Fecha de nacimiento</label>
+              <input type="date" class="casilla" name="date" value="<%= user.date %>"> -->
 
-          <label for="">Contraseña</label>
-          <input type="password" class="casilla" name="password" value="<%= user.password %>">
+            <div class="item">
+              <label for="">Genero</label>
+              <select name="gender" id="genero" aria-placeholder="Género" class="genero">
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Otrx">Otrx</option>
+              </select>
+            </div>
 
-          <!-- <label for="">Fecha de nacimiento</label>
-          <input type="date" class="casilla" name="date" value="<%= user.date %>"> -->
+            <div class="item">
+              <label for="">Tipo de usuario</label>
 
-          <label for="">Genero</label>
-          <select name="gender" id="genero" aria-placeholder="Género" class="genero">
-            <option value="Femenino">Femenino</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Otrx">Otrx</option>
-        </select>
+              <% for (let i = 0; i < categoriaUsuario.length; i++) { %>
 
-          <label for="">Tipo de usuario</label>
+                <div class="<%= categoriaUsuario[i].name.toLowerCase() %>">
 
-          <% for (let i = 0; i < categoriaUsuario.length; i++) { %>
+                  <label for="<% categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label>
+                    <input type="radio" name="id_user_category" id="<% categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= (categoriaUsuario[i].id_user_category == user.id_user_category) ? 'checked' : ''; %>>
 
-            <div class="<%= categoriaUsuario[i].name.toLowerCase() %>">
+                </div>
 
-              <label for="<% categoriaUsuario[i].name %>"><%= categoriaUsuario[i].name %></label>
-                <input type="radio" name="id_user_category" id="<% categoriaUsuario[i].name %>" value="<%= categoriaUsuario[i].id_user_category %>" <%= (categoriaUsuario[i].id_user_category == user.id_user_category) ? 'checked' : ''; %>>
+                <% } %>
 
             </div>
 
-            <% } %>
+              <div class="item">
+                <label for="">Foto de perfil</label>
+                <input type="file" name="image" class="avatars" accept="image/png, image/jpeg, image/jpg, image/gif">
+              </div>
 
-          <button type="submit" class="boton-editar" href="">Guardar cambios</button>
+              <button type="submit" class="boton-editar" href="">Guardar cambios</button>
 
         </form>
         </div>

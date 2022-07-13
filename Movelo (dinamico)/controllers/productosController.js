@@ -1,18 +1,35 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
+const Op = db.Sequelize.Op
 
 const Product = require('../models/Product')
 
 
 const productosController = {
 
-    servicios: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-        const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        res.render("servicios/servicios", { articulos: listadoDeProductos, user: req.session.userLogged
-		 });
-    },
+	listar: async (req, res) => {
+		const servicios = await db.Services.findAll()
+		res.render("servicios/servicios", {servicios, user: req.session.userLogged})
 
+	},
+
+	search: async (req, res) => {
+		const servicios = await db.Services.findAll({ where: {
+			origen: {[Op.like]: '%'+req.body.origen+'%' }, destination: {[Op.like]: '%'+req.body.destination+'%'}
+		}})
+			res.render('servicios/servicios', {servicios, user: req.session.userLogged, origen:req.body.origen, destination:req.body.destination })
+	},
+
+	detalle: async (req, res) => {
+		const servicio = await db.Services.findByPk(req.params.id)
+		res.render('servicios/detalle', {servicio, user: req.session.userLogged })
+	},
+
+	perfil: async (req, res) => {
+		const servicios = await db.Services.findAll()
+		res.render('servicios/perfil-publico', {servicios, user: req.session.userLogged })
+	},
 
     carrito: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
@@ -21,13 +38,13 @@ const productosController = {
     },
 
 
-    detalle: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-        const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let id = req.params.id;
-        let artitucloId = listadoDeProductos.find(articulo => id == articulo.id);
-        res.render("productos/detalle", { articulo: artitucloId, user: req.session.userLogged });
-    },
+    // detalle: (req, res) => {
+    //     const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
+    //     const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+    //     let id = req.params.id;
+    //     let artitucloId = listadoDeProductos.find(articulo => id == articulo.id);
+    //     res.render("productos/detalle", { articulo: artitucloId, user: req.session.userLogged });
+    // },
 
 
     adminCrearPOST: (req, res) => {

@@ -24,32 +24,45 @@ const { admin } = require('../controllers/usersController');
 const fileUpload = multer({ storage: storage });
 
 const validacion = [
-   body('first_name').notEmpty().withMessage('Debes ingresar tu nombre'),
-   body('last_name').notEmpty().withMessage('Debes ingresar tu apellido'),
+   body('first_name').isLength({min:2}).withMessage('Debes ingresar tu nombre con al menos 2 caracteres'),
+   body('last_name').isLength({min:2}).withMessage('Debes ingresar tu apellido con al menos 2 caracteres'),
    body('email')
    .notEmpty().withMessage('Debes ingresar un correo electrónico').bail()
    .isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres'),
    body('date').notEmpty().withMessage('Debes ingresar tu fecha de nacimiento'),
-   body('usuarioTipo').notEmpty().withMessage('Debes elegir un tipo de usuario'),
 ]
 
 /* GET users listing. */
 router.get('/registro', guestMiddleware, userController.registro);
+router.post('/registro', fileUpload.single('image'), validacion, userController.procesoRegistro)
+
 router.get('/login', guestMiddleware, userController.login);
+router.post('/login', [
+   body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
+   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
+], userController.procesoLogin)
 
 router.get('/perfil', authMiddleware, userController.perfil);
 router.get('/editar-perfil/:id', authMiddleware, userController.editarPerfil);
-router.post('/editar-perfil/:id', authMiddleware, userController.actualizarPerfil);
+router.post('/editar-perfil/:id', fileUpload.single('image'), authMiddleware, userController.actualizarPerfil);
 
 router.get('/mis-servicios', userTypeMiddleware, userController.misServicios)
 router.get('/mis-servicios/:id', userTypeMiddleware, userController.detalle)
 
 router.get('/crear-servicio', userTypeMiddleware, userController.crearServicio)
-router.post('/crear-servicio', userController.guardarServicio)
+router.post('/crear-servicio', [
+   body('origen').notEmpty().withMessage('Debes ingresar la ciudad de origen de tu servicio-envio'),
+   body('destino').notEmpty().withMessage('Debes ingresar la ciudad de destino de tu servicio-envio'),
+   body('descripcion').isLength({min:20}).withMessage('Debes ingresar una descripcion de al menos 20 caracteres')
+], userController.guardarServicio)
 
 router.get('/editar-servicio/:id', userController.editar)
-router.post('/editar-servicio/:id', userController.actualizar)
+router.post('/editar-servicio/:id', [
+   body('origen').notEmpty().withMessage('Debes ingresar la ciudad de origen de tu servicio-envio'),
+   body('destino').notEmpty().withMessage('Debes ingresar la ciudad de destino de tu servicio-envio'),
+   body('descripcion').isLength({min:20}).withMessage('Debes ingresar una descripcion de al menos 20 caracteres')
+], userController.actualizar)
 
 router.post('/borrar/:id', userController.borrar)
 
@@ -61,10 +74,5 @@ router.get('/admin/crear', authMiddleware, userController.adminCrear);
 router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);
 router.get('/logout', userController.logout);
 
-router.post('/registro', fileUpload.single('image'), validacion, userController.procesoRegistro)
-router.post('/login', [
-   body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
-   body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
-], userController.procesoLogin)
 
 module.exports = router;
