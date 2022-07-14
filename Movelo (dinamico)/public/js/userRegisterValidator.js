@@ -254,11 +254,41 @@ window.addEventListener('load', function() {
     form.addEventListener('submit', (e) => {
         
         let inputInvalid = document.querySelector('.is-invalid')
+        if (inputInvalid === null) {
+            e.preventDefault()
+            console.log('http://localhost:3001/users/validation/'+inputEmail.value+'/'+inputPassword.value)
 
-        if (inputInvalid !== null) {
+            fetch('http://localhost:3001/users/validation/'+inputEmail.value+'/'+inputPassword.value)
+                .then((response) => {
+                    
+                    return response.json();                
+                })
+                .then((dataDecode) => {
+                    console.log(dataDecode.email)
+                     
+                    if (dataDecode.email) {
+
+                        inputEmail.classList.remove('is-valid')
+                        inputEmail.classList.add('is-invalid')
+                        inputEmail.focus()
+                        divErroresEmail.innerHTML = 'El email ya se encuentra registrado'
+                        divErroresEmail.style.opacity = "1"
+                        divErroresEmail.style.marginLeft = "23%"
+                        
+                    } else {
+                        
+                        form.submit() 
+                    }
+                     
+                })
+                .catch((e) => {
+                    alert("hubo un error")
+                });
+            
+        } else {
             e.preventDefault()
             inputInvalid.focus()
-        } 
+        }
     })
     
 })
