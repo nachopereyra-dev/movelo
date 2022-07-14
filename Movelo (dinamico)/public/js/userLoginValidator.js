@@ -90,38 +90,38 @@ window.addEventListener('load', function() {
 
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault()
-
+        
         let inputInvalid = document.querySelector('.is-invalid')
-
         if (inputInvalid === null) {
-            
-            fetch('http://localhost:3001/users/login/'+inputEmail.value)
+            e.preventDefault()
+            console.log('http://localhost:3001/users/login/'+inputEmail.value+'/'+inputPassword.value)
+
+            fetch('http://localhost:3001/users/login/'+inputEmail.value+'/'+inputPassword.value)
                 .then((response) => {
+                    
                     return response.json();                
                 })
                 .then((dataDecode) => {
-                    if (dataDecode.a === true) {   
-                        console.log(e)                    
-                        console.log("----deberia submitear----")  
-                                           
+                     
+                    if (dataDecode.email && dataDecode.pass) {
+
+                        form.submit() 
+
                     } else {
-                        e.preventDefault()
-                        console.log("----deberia prevenir -- no esta el usuario ----") 
+                         
                         inputEmail.classList.remove('is-valid')
                         inputEmail.classList.add('is-invalid')
                         pErroresIngresoEmail.innerHTML = 'Usuario o contraseña incorrectos'
                         pErroresIngresoEmail.style.opacity = "1"
                         pErroresIngresoEmail.style.marginLeft = "14%"
                     }
+                     
                 })
                 .catch((e) => {
-                    e.preventDefault()
-                    alert("error")
-                })
+                    alert("hubo un error")
+                });
             
         } else {
-            console.log("----deberia prevenir -- informacion incorrecta ----") 
             e.preventDefault()
             inputInvalid.focus()
         }

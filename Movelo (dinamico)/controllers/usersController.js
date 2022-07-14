@@ -93,15 +93,17 @@ const userController = {
 
     procesoLoginVerification: async (req, res) => {
         console.log("-------------------------estoy en verificacion--------------------")
-        let verifyEmail = await db.Usuario.findOne({ where: { email: req.params.user } })
-        console.log(verifyEmail)
+        let verifyEmailPass = await db.Usuario.findOne({ where: { email: req.params.user } })
+        let validationCheck = {}
         
-        if (verifyEmail) {
-            res.send({a: true})
+        if (verifyEmailPass) {
+            validationCheck.email = true
+            bcryptjs.compareSync(req.params.pass, verifyEmailPass.password) ? validationCheck.pass = true : validationCheck.pass = false 
         } else {
-            res.send({a: false})
+            validationCheck.email = false
+            validationCheck.pass = false
         }
-        
+        res.send(validationCheck)        
     },
 
     perfil: (req, res) => {

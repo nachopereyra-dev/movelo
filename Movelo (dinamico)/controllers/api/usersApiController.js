@@ -31,15 +31,6 @@ const userController = {
     perfil: async (req, res) => {
         const usuarios = await db.Usuario.findByPk(req.params.id)
                 res.status(200).json({ 
-<<<<<<< HEAD
-                    
-                    id: usuarios.id_user,
-                    first_name: usuarios.first_name,
-                    last_name: usuarios.last_name,
-                    email: usuarios.email,
-                    fecha: usuarios.date,
-                    genero: usuarios.gender,
-=======
                     detalle_usuario: {
                         id: usuarios.id_user,
                         first_name: usuarios.first_name,
@@ -48,7 +39,6 @@ const userController = {
                         fecha: usuarios.date,
                         genero: usuarios.gender,
                     },  
->>>>>>> main
                     url_imagen: {}, 
                 })
         }
