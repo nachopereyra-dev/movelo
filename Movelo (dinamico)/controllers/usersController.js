@@ -91,17 +91,18 @@ const userController = {
         })}
     },
 
-    // procesoLoginVerification: async (req, res) => {
-    //     let verifyEmail = await db.Usuario.findOne({ where: { email: req.params.user } })
-    //     console.log(req.params.user)
+    procesoLoginVerification: async (req, res) => {
+        console.log("-------------------------estoy en verificacion--------------------")
+        let verifyEmail = await db.Usuario.findOne({ where: { email: req.params.user } })
+        console.log(verifyEmail)
         
-    //     if (verifyEmail) {
-    //         res.send('el usuario ya existe')
-    //     } else {
-    //         res.send('activar login')
-    //     }
+        if (verifyEmail) {
+            res.send({a: true})
+        } else {
+            res.send({a: false})
+        }
         
-    // },
+    },
 
     perfil: (req, res) => {
         res.render('users/perfil', {
