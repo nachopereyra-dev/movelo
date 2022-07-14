@@ -36,8 +36,8 @@ const validacion = [
 
 /* GET users listing. */
 
-router.get('/users', userController.usersList)
-router.get('/users/:id', userController.perfil);
+router.get('/', userController.usersList)
+router.get('/:id', userController.perfil);
 
 
 

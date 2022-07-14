@@ -10,6 +10,7 @@ const session = require ('express-session');
 var inicioRouter = require('./routes/inicio'); //inicio
 var usersRouter = require('./routes/users'); //users
 var usersRouterApi = require('./routes/api/usersApi'); //usersApi
+var servicesRouterApi = require('./routes/api/servicesApi'); //servicesApi
 var servicesRouter = require('./routes/services'); //services
 var userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 
@@ -34,8 +35,9 @@ app.use(userLoggedMiddleware);
 // routers
 app.use('/', inicioRouter);
 app.use('/users', usersRouter);
-app.use('/api', usersRouterApi);
+app.use('/api/users', usersRouterApi);
 app.use('/servicios', servicesRouter);
+app.use('/api/servicios', servicesRouterApi);
 
 
 // catch 404 and forward to error handler
