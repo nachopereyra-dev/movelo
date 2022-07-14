@@ -110,7 +110,10 @@ window.addEventListener('load', function() {
                     } else {
                          
                         inputEmail.classList.remove('is-valid')
+                        inputPassword.classList.remove('is-valid')
                         inputEmail.classList.add('is-invalid')
+                        inputPassword.classList.add('is-invalid')
+                        inputPassword.value = ''
                         pErroresIngresoEmail.innerHTML = 'Usuario o contraseña incorrectos'
                         pErroresIngresoEmail.style.opacity = "1"
                         pErroresIngresoEmail.style.marginLeft = "14%"
