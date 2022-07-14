@@ -35,9 +35,8 @@ const userController = {
                         email: usuarios.email,
                         fecha: usuarios.date,
                         genero: usuarios.gender,
-                },  url_imagen: {
-
-                }, 
+                    },  
+                    url_imagen: {}, 
                 })
             }
 
