@@ -94,7 +94,6 @@ window.addEventListener('load', function() {
         let inputInvalid = document.querySelector('.is-invalid')
         if (inputInvalid === null) {
             e.preventDefault()
-            console.log('http://localhost:3001/users/validation/'+inputEmail.value+'/'+inputPassword.value)
 
             fetch('http://localhost:3001/users/validation/'+inputEmail.value+'/'+inputPassword.value)
                 .then((response) => {

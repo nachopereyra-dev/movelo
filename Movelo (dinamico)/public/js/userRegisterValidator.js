@@ -194,7 +194,7 @@ window.addEventListener('load', function() {
             divErroresEmail.innerHTML = ''
         }
     })
-
+    // /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/
 
     inputPassword.addEventListener('input', (e) => {
 
@@ -256,7 +256,6 @@ window.addEventListener('load', function() {
         let inputInvalid = document.querySelector('.is-invalid')
         if (inputInvalid === null) {
             e.preventDefault()
-            console.log('http://localhost:3001/users/validation/'+inputEmail.value+'/'+inputPassword.value)
 
             fetch('http://localhost:3001/users/validation/'+inputEmail.value+'/'+inputPassword.value)
                 .then((response) => {
@@ -264,7 +263,6 @@ window.addEventListener('load', function() {
                     return response.json();                
                 })
                 .then((dataDecode) => {
-                    console.log(dataDecode.email)
                      
                     if (dataDecode.email) {
 

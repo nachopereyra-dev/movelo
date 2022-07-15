@@ -43,13 +43,12 @@
 
               <!-- <label for="">Fecha de nacimiento</label>
               <input type="date" class="casilla" name="date" value="<%= user.date %>"> -->
-
             <div class="item">
               <label for="">Genero</label>
               <select name="gender" id="genero" aria-placeholder="Género" class="genero">
-                <option value="Femenino">Femenino</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Otrx">Otrx</option>
+                <option value="Femenino" <%= user.gender == "Femenino" ? "selected" : ""%>>Femenino</option>
+                <option value="Masculino" <%= user.gender == "Masculino" ? "selected" : ""%>>Masculino</option>
+                <option value="Otrx" <%= user.gender == "Otrx" ? "selected" : ""%>>Otrx</option>
               </select>
             </div>
 

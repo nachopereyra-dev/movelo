@@ -92,7 +92,6 @@ const userController = {
     },
 
     procesoLoginVerification: async (req, res) => {
-        console.log("-------------------------estoy en verificacion--------------------")
         let verifyEmailPass = await db.Usuario.findOne({ where: { email: req.params.user } })
         let validationCheck = {}
         
@@ -106,10 +105,13 @@ const userController = {
         res.send(validationCheck)        
     },
 
-    perfil: (req, res) => {
-        res.render('users/perfil', {
-            user: req.session.userLogged
+    perfil: async (req, res) => {
+        const IdUsuarioEnSesion = req.session.userLogged.id_user
+        const usuario = await db.Usuario.findByPk(IdUsuarioEnSesion, {
+            include: [{association: "categoriaU"}]
         })
+        
+        res.render('users/perfil', {usuario, user: req.session.userLogged})
     },
 
     editarPerfil: async (req, res) => {
@@ -120,8 +122,8 @@ const userController = {
             res.render('users/editar-perfil', { usuario, categoriaUsuario, user: req.session.userLogged })
     },
 
-    actualizarPerfil: (req, res) => {
-        db.Usuario.update({
+    actualizarPerfil: async(req, res) => {
+        await db.Usuario.update({            
             ...req.body,
             image: req.file ? req.file.filename : req.session.userLogged.image
         },
@@ -130,7 +132,11 @@ const userController = {
                 id_user: req.params.id
             }
         });
-            res.redirect('/users/perfil/')
+        const userEnSesion = await db.Usuario.findOne({ where: { email: req.body.email } });
+        delete userEnSesion.password;
+        req.session.userLogged = userEnSesion;
+
+        res.redirect('/users/perfil/')
     },
 
     misServicios: async (req, res) => {
