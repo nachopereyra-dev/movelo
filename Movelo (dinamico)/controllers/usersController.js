@@ -75,7 +75,7 @@ const userController = {
                 return res.render('users/login', {
                     errors: {
                         email: {
-                            msg: 'Las credenciales no son válidas'
+                            msg: 'Contraseña o usuario'
                         }
                     }
                 })    
@@ -91,10 +91,27 @@ const userController = {
         })}
     },
 
-    perfil: (req, res) => {
-        res.render('users/perfil', {
-            user: req.session.userLogged
+    procesoLoginVerification: async (req, res) => {
+        let verifyEmailPass = await db.Usuario.findOne({ where: { email: req.params.user } })
+        let validationCheck = {}
+        
+        if (verifyEmailPass) {
+            validationCheck.email = true
+            bcryptjs.compareSync(req.params.pass, verifyEmailPass.password) ? validationCheck.pass = true : validationCheck.pass = false 
+        } else {
+            validationCheck.email = false
+            validationCheck.pass = false
+        }
+        res.send(validationCheck)        
+    },
+
+    perfil: async (req, res) => {
+        const IdUsuarioEnSesion = req.session.userLogged.id_user
+        const usuario = await db.Usuario.findByPk(IdUsuarioEnSesion, {
+            include: [{association: "categoriaU"}]
         })
+        
+        res.render('users/perfil', {usuario, user: req.session.userLogged})
     },
 
     editarPerfil: async (req, res) => {
@@ -105,8 +122,8 @@ const userController = {
             res.render('users/editar-perfil', { usuario, categoriaUsuario, user: req.session.userLogged })
     },
 
-    actualizarPerfil: (req, res) => {
-        db.Usuario.update({
+    actualizarPerfil: async(req, res) => {
+        await db.Usuario.update({            
             ...req.body,
             image: req.file ? req.file.filename : req.session.userLogged.image
         },
@@ -115,7 +132,11 @@ const userController = {
                 id_user: req.params.id
             }
         });
-            res.redirect('/users/perfil/')
+        const userEnSesion = await db.Usuario.findOne({ where: { email: req.body.email } });
+        delete userEnSesion.password;
+        req.session.userLogged = userEnSesion;
+
+        res.redirect('/users/perfil/')
     },
 
     misServicios: async (req, res) => {

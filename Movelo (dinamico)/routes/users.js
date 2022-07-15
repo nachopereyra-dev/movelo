@@ -42,6 +42,7 @@ router.post('/login', [
    body('email').isEmail().withMessage('Debes ingresar un correo electrónico valido'),
    body('password').isLength({min: 8}).withMessage('Debes ingresar una contraseña de al menos 8 caracteres')
 ], userController.procesoLogin)
+router.get('/validation/:user/:pass', userController.procesoLoginVerification)
 
 router.get('/perfil', authMiddleware, userController.perfil);
 router.get('/editar-perfil/:id', authMiddleware, userController.editarPerfil);

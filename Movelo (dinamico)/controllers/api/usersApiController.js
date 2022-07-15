@@ -13,34 +13,32 @@ const userController = {
 
     usersList: async (req, res) => {
         const usuarios = await db.Usuario.findAll({ attributes: ['id_user', 'first_name', 'last_name', 'email']})
-                res.status(200).json({
-                     total: usuarios.length,
-                     data: usuarios,
-                     detalle: (req, res) => {
-                         fetch('http://localhost:3001/api/users/' + usuarios.id_user)
-                         .then(response => response.json())
-                     },
-                     status: 200
-            })
-        },
+        for (let i=0; i < usuarios.length; i++){
+            usuarios[i].dataValues.detail = 'http://localhost:3001/api/users/'+usuarios[i].id_user
+        };
+        res.status(200).json({
+            count: usuarios.length,
+            data: usuarios,               
+            status: 200
+        })
+    },
 
     
     perfil: async (req, res) => {
-        const usuarios = await db.Usuario.findByPk(req.params.id)
-                res.status(200).json({ 
-                    detalle_usuario: {
-                        id: usuarios.id_user,
-                        first_name: usuarios.first_name,
-                        last_name: usuarios.last_name,
-                        email: usuarios.email,
-                        fecha: usuarios.date,
-                        genero: usuarios.gender,
-                },  url_imagen: {
+        const usuario = await db.Usuario.findByPk(req.params.id, {attributes: ['id_user', 'first_name', 'last_name', 'email', 'date', 'gender', 'image'] } )
+        usuario.image = 'http://localhost:3001/api/users/'+ usuario.image;
+        console.log(usuario.image)
+        res.status(200).json({
+            id_user: usuario.id_user,
+            first_name: usuario.first_name,
+            last_name: usuario.last_name,
+            email: usuario.email,
+            date: usuario.date,
+            gender: usuario.gender,
+            imagen: usuario.image
+        })
+    }
 
-                }, 
-                })
-            }
-
-            }
+}
 
 module.exports = userController;

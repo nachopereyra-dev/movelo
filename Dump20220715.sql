@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `movelo_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `movelo_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `movelo_db`;
 -- MySQL dump 10.13  Distrib 8.0.29, for macos12 (x86_64)
 --
@@ -28,7 +28,7 @@ CREATE TABLE `Frequency` (
   `id_frequency` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id_frequency`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,7 +58,7 @@ CREATE TABLE `Orders` (
   KEY `order_service_idx` (`id_service`),
   CONSTRAINT `order_service` FOREIGN KEY (`id_service`) REFERENCES `Services` (`id_service`),
   CONSTRAINT `order_user` FOREIGN KEY (`id_user`) REFERENCES `Users` (`id_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,11 +84,11 @@ CREATE TABLE `Services` (
   `destination` varchar(100) NOT NULL,
   `id_shipment_category` int NOT NULL,
   `id_frequency` int NOT NULL,
-  `weight` decimal(10,0) NOT NULL,
-  `height` int NOT NULL,
-  `width` int NOT NULL,
-  `description` longtext,
-  `price` int NOT NULL,
+  `weight` decimal(10,0) DEFAULT NULL,
+  `height` int DEFAULT NULL,
+  `width` int DEFAULT NULL,
+  `description` longtext NOT NULL,
+  `price` int DEFAULT NULL,
   PRIMARY KEY (`id_service`),
   KEY `user_service_idx` (`id_user`),
   KEY `servicio_usuarioTipo_idx` (`id_shipment_category`),
@@ -96,7 +96,7 @@ CREATE TABLE `Services` (
   CONSTRAINT `servicio_frecuencia` FOREIGN KEY (`id_frequency`) REFERENCES `Frequency` (`id_frequency`),
   CONSTRAINT `servicio_usuario` FOREIGN KEY (`id_user`) REFERENCES `Users` (`id_user`),
   CONSTRAINT `servicio_usuarioTipo` FOREIGN KEY (`id_shipment_category`) REFERENCES `Shipments_type` (`id_shipment_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +105,7 @@ CREATE TABLE `Services` (
 
 LOCK TABLES `Services` WRITE;
 /*!40000 ALTER TABLE `Services` DISABLE KEYS */;
-INSERT INTO `Services` VALUES (5,10,'San Carlos','Maldonado',1,1,100,100,100,'solo de mañana',50),(7,15,'Montevideo ','Buenos Aires',2,3,2,100,100,'Paquete internacional',300),(9,15,'Maldonado','Salto',1,2,5,100,100,'',300);
+INSERT INTO `Services` VALUES (5,10,'San Carlos','Maldonado',1,1,100,100,100,'solo de mañana',50),(7,15,'Montevideo ','Buenos Aires',2,3,2,100,100,'Paquete internacional',300),(9,15,'Maldonado','Salto',1,2,5,100,100,'',300),(11,15,'Buenos Aires','La plata',1,2,10,100,100,'asdad',100),(19,22,'Montevideo','Buenos Aires',2,3,0,0,0,'hola soy una descripcion de 20 caracteres',0),(20,29,'Buenos aires','Salto',1,1,0,0,0,'kjlkhjjkhkjhkjhkhkhjkhkhkjhkhj',0),(21,29,'Montevideo','Maldonado',2,2,20,20,20,'asdasdasdasdasdasdsadasd',100),(22,29,'adad','adad',2,1,0,0,0,'asdasdasdasdasddadsdas',0),(23,29,'sdasdasd','sadasadsad',2,1,0,0,0,'asdsadasdasdsaddsadsd',0);
 /*!40000 ALTER TABLE `Services` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +120,7 @@ CREATE TABLE `Shipments_type` (
   `id_shipment_category` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id_shipment_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -147,13 +147,13 @@ CREATE TABLE `Users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `date` datetime NOT NULL,
-  `gender` varchar(45) DEFAULT NULL,
-  `id_user_category` int DEFAULT NULL,
+  `gender` varchar(45) NOT NULL,
+  `id_user_category` int NOT NULL,
   `image` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_user`),
   KEY `user_category_idx` (`id_user_category`),
   CONSTRAINT `user_category` FOREIGN KEY (`id_user_category`) REFERENCES `Users_type` (`id_user_category`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +162,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (10,'Emiliano','Castellano','emicastellano@gmail.com','12345678','1994-03-11 00:00:00','Masculino',2,'default.png'),(11,'Juan Ignacio','Pereyra Noguez','aaa@gmail.com','nacho48059584','1995-04-08 00:00:00','Femenino',1,'1655250336261_img_.png'),(12,'Ale','Robles','ale@gmail.com','$2a$10$HX3KQezu/bxkOUCAANKJw.RRAG7cb/YSEp8qzmrrWnkIKx3.1iIAW','1901-01-01 00:00:00','Masculino',3,'1655335815766_img_.png'),(13,'Gonzalo','Diaz','hhh@gmail.com','$2a$10$LVycYq52cwe.CZw7Yo3yfexXE.y5W2fWnXT8G./GWKvzrAld2i/6G','2003-03-01 00:00:00','Masculino',2,'default.png'),(14,'Juan Ignacio','Pereyra Noguez','nachopereyranoguez@gmail.com','$2a$10$h/PnBvjQCWuSDxm6oRo.demYCzz52ZYCM1396nprm3vNWK9s9ojLG','1995-04-08 00:00:00','Femenino',1,'1655698506638_img_.JPEG'),(15,'Emiliano','Castellano','ecastellano@gmail.com','$2a$10$ouYHxjF1OReCeL/psL3aEOKyyLKRCmIWCaEee.m8.UwGvmo.P6n.q','1994-03-11 00:00:00','Femenino',2,'1656889963042_img_.png'),(16,'Juan','Perez','juan@gmail.com','$2a$10$lHld6TIl/wAyZwBI/fx/bevYj/qioC3JDBD2ovQvFxCQSZwNSJn4u','1978-05-08 00:00:00','Femenino',2,'1656708474025_img_.png'),(17,'Daniel','Fuentes','daniel@gmail.com','$2a$10$vjVqw4w4JosbXSVFhzAfF.Ct0z/Y03Izcz0xUDPZObLvK1lLiz3T2','1980-01-01 00:00:00','Femenino',2,'default.png');
+INSERT INTO `Users` VALUES (10,'Emiliano','Castellano','emicastellano@gmail.com','12345678','1994-03-11 00:00:00','Masculino',2,'default.png'),(11,'Juan Ignacio','Pereyra Noguez','aaa@gmail.com','nacho48059584','1995-04-08 00:00:00','Femenino',1,'1655250336261_img_.png'),(12,'Ale','Robles','ale@gmail.com','$2a$10$HX3KQezu/bxkOUCAANKJw.RRAG7cb/YSEp8qzmrrWnkIKx3.1iIAW','1901-01-01 00:00:00','Masculino',3,'1655335815766_img_.png'),(13,'Gonzalo','Diaz','hhh@gmail.com','$2a$10$LVycYq52cwe.CZw7Yo3yfexXE.y5W2fWnXT8G./GWKvzrAld2i/6G','2003-03-01 00:00:00','Masculino',2,'default.png'),(14,'Juan Ignacio','Pereyra Noguez','nachopereyranoguez@gmail.com','$2a$10$h/PnBvjQCWuSDxm6oRo.demYCzz52ZYCM1396nprm3vNWK9s9ojLG','1995-04-08 00:00:00','Femenino',1,'1655698506638_img_.JPEG'),(15,'Emiliano','Castellano','ecastellano@gmail.com','$2a$10$ouYHxjF1OReCeL/psL3aEOKyyLKRCmIWCaEee.m8.UwGvmo.P6n.q','1994-03-11 00:00:00','Femenino',2,'1656889963042_img_.png'),(16,'Juan','Perez','juan@gmail.com','$2a$10$lHld6TIl/wAyZwBI/fx/bevYj/qioC3JDBD2ovQvFxCQSZwNSJn4u','1978-05-08 00:00:00','Femenino',2,'1656708474025_img_.png'),(17,'Daniel','Fuentes','daniel@gmail.com','$2a$10$vjVqw4w4JosbXSVFhzAfF.Ct0z/Y03Izcz0xUDPZObLvK1lLiz3T2','1980-01-01 00:00:00','Femenino',2,'default.png'),(18,'Pedro','Perez','pedro@gmail.com','$2a$10$HgZQiVEXmz62OwUwkXePFeKCnPe3LI4sljqkR9EtjZS1Jv7D5.HXm','2001-01-01 00:00:00','Femenino',2,'default.png'),(19,'Juan','perez','juani@gmail.com','$2a$10$dtDb5FLoORmHqEK3DuDclO/iBlZsQGoF95U7vlqHR8y16HN5VHvGC','2004-04-04 00:00:00','Masculino',2,'default.png'),(20,'Facudno','peres','facundo@gmail.com','$2a$10$sgk2MjtIeFRWyKoo19W46.vb/KTix7uEJuAh/KuaPT5fgxxInlCM2','3004-02-01 00:00:00','Femenino',2,'default.png'),(21,'Roberto','Mendez','Rober@gmail.com','$2a$10$yHVX9qHWE5pz6IvweEnis.yacuMwNeGK6apUP7dfxcW1k5yM3owmO','1991-01-01 00:00:00','Masculino',2,'default.png'),(22,'Luis','Lopez','luis@gmail.com','$2a$10$uP.midtrVQnScVtz2PsKVufwUFDzPMZ6d.Qu1kk5I/saLTvvvUTmy','2005-05-05 00:00:00','Femenino',2,'default.png'),(23,'Manuel','Pardo','manu@gmail.com','$2a$10$.2LdvYb15eK23N3YwjhVveXWKOZmlMhqrKX882excHYNX7y6eS55K','2005-07-08 00:00:00','Masculino',2,'default.png'),(24,'Patricio','Lopez','patricio@gmail.com','$2a$10$ylXeVO2SUWVHQxwqA2AVM.8k.JYOZVPvmfvmU3d5liQ2U94Qizh8a','1999-09-09 00:00:00','Masculino',3,'default.png'),(25,'Guzman','lopez','guzman@gmail.com','$2a$10$MgvrtPKM0s1jRkZhW16KI.fbEhwpzmFgWql8JEBw4MQBLo.Jk4zvS','2002-03-03 00:00:00','Femenino',3,'default.png'),(26,'Jorge','Mendez','jorge@gmail.com','$2a$10$Uh7UViVD9G2uSyGi9E1oZOyZ8./6UjagIk7ZVq3/L1ET/JrU984la','1995-04-08 00:00:00','Masculino',2,'default.png'),(27,'Gonzalo','Ramirez','gonza@gmail.com','$2a$10$60t9U/QmUwufa8ODnuikVeWh.LUFhBWRwuDCKKWPa.VHJt5Q63BOC','2003-02-01 00:00:00','Femenino',2,'default.png'),(28,'Rodrigo','Alvarez','rodri@gmail.com','$2a$10$V8FCHp6d8FDvaz.AJyhyJOhfNgktcC0/SID2x9DlS7TU6qEAHj3DW','1995-04-08 00:00:00','Masculino',3,'default.png'),(29,'Luciano','Mendez','luciano@gmail.com','$2a$10$seenH0gCl3n0eDlWNq3EguIlD7J3uLbHfThmcmZrUT89KR43Ba4jm','2019-03-28 00:00:00','Femenino',2,'default.png');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,7 +177,7 @@ CREATE TABLE `Users_type` (
   `id_user_category` int NOT NULL,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`id_user_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,4 +199,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-03 20:14:52
+-- Dump completed on 2022-07-15 18:05:07

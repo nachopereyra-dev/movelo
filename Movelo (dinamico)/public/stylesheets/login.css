@@ -119,14 +119,14 @@ main section .registrate:hover {
 
 main section form {
   text-align: center;
-  margin: 40px 0px;
+  padding-top: 17px;
 }
 
 main section form .casilla {
   width: 220px;
   outline: none;
   max-width: 95%;
-  margin: 40px auto 0px auto;
+  margin: 32px auto 0px auto;
   display: block;
   background: none;
   border: none;
@@ -142,23 +142,40 @@ main section form .casilla:focus {
 .is-invalid {
   border-bottom: 1px solid red !important
 }
+.is-invalid:focus {
+  font-weight: bold;
+  border-bottom: 2px solid red !important
+}
 
 .is-valid {
   border-bottom: 1px solid green !important
 }
+.is-valid:focus {
+  font-weight: bold;
+  border-bottom: 2px solid green !important
+}
 
-.alert-warning {
-  list-style: none;
+
+div.alert-warning {
+  font-size: 14px;
+  display: block;
+  height: 19px;
+  margin-top: 5px;
+  margin-left: 20%;
+  text-align: left;
   color: red;
   border-radius: 10px;
 }
-
+.transition {
+  transition: 250ms linear;
+}
 
 form .feedback-danger {
   color: red;
   font-size: 12px;
   margin-top: 5px;
 }
+
 
 main section form .checkbox {
   width: fit-content;
