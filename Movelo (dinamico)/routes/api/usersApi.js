@@ -3,10 +3,10 @@ var router = express.Router();
 var multer = require('multer');
 const path = require('path');
 var { body } = require('express-validator');
-var guestMiddleware = require('../../middlewares/guestMiddleware');
-var authMiddleware = require('../../middlewares/authMiddleware');
-var adminMiddleware = require('../../middlewares/adminMiddleware')
-var userTypeMiddleware = require('../../middlewares/userTypeMiddleware')
+// var guestMiddleware = require('../../middlewares/guestMiddleware');
+// var authMiddleware = require('../../middlewares/authMiddleware');
+// var adminMiddleware = require('../../middlewares/adminMiddleware')
+// var userTypeMiddleware = require('../../middlewares/userTypeMiddleware')
 
 
 
