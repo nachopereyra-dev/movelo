@@ -27,7 +27,6 @@ const userController = {
     perfil: async (req, res) => {
         const usuario = await db.Usuario.findByPk(req.params.id, {attributes: ['id_user', 'first_name', 'last_name', 'email', 'date', 'gender', 'image'] } )
         usuario.image = 'http://localhost:3001/api/users/'+ usuario.image;
-        console.log(usuario.image)
         res.status(200).json({
             id_user: usuario.id_user,
             first_name: usuario.first_name,
