@@ -10,18 +10,10 @@ const Op = db.Sequelize.Op
 const productosController = {
 
 	listar: async (req, res) => {
-        const servicios = await db.Services.findAll({ attributes: ['id_service', 'origen', 'destination', 'description']}
-        )   
+        const servicios = await db.Services.findAll({ attributes: ['id_service', 'origen', 'destination', 'description']})   
         const categoriaEnvio = await db.CategoriaEnvio.findAll() 
-        
         const serviciosLocales = await db.Services.findAll({where: { id_shipment_category: 1}})
         const serviciosInternacionales = await db.Services.findAll({where: { id_shipment_category: 2}})
-
-
-        // for (let i=0; i < servicios.length; i++){
-        //     servicios[i].dataValues.tipo_de_envio = categoriaEnvio
-        //     servicios[i].dataValues.detail = 'http://localhost:3001/api/servicios/'+servicios[i].id_service
-        // };
         for (let servicio of servicios){
             servicio.dataValues.tipo_de_envio = categoriaEnvio
             servicio.dataValues.detail = 'http://localhost:3001/api/servicios/'+servicio.id_service
