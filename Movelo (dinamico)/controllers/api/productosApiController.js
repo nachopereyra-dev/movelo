@@ -16,6 +16,9 @@ const productosController = {
         
         const serviciosLocales = await db.Services.findAll({where: { id_shipment_category: 1}})
         const serviciosInternacionales = await db.Services.findAll({where: { id_shipment_category: 2}})
+        const frecuenciaDiaria = await db.Services.findAll({where: { id_frequency: 1}})
+        const frecuenciaSemanal = await db.Services.findAll({where: { id_frequency: 2}})
+        const frecuenciaMensual = await db.Services.findAll({where: { id_frequency: 3}})
 
 
         for (let i=0; i < servicios.length; i++){
@@ -25,6 +28,7 @@ const productosController = {
         res.status(200).json({
             total: servicios.length,
             countByCategory: { serviciosLocales: serviciosLocales.length , serviciosInternacionales: serviciosInternacionales.length},
+            countByFrequency: { frecuenciaDiaria: frecuenciaDiaria.length, frecuenciaSemanal: frecuenciaSemanal.length, frecuenciaMensual: frecuenciaMensual.length},
             data: servicios,
             status: 200
         })
