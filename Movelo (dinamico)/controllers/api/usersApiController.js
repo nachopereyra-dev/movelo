@@ -13,8 +13,8 @@ const userController = {
 
     usersList: async (req, res) => {
         const usuarios = await db.Usuario.findAll({ attributes: ['id_user', 'first_name', 'last_name', 'email']})
-        for (let i=0; i < usuarios.length; i++){
-            usuarios[i].dataValues.detail = 'http://localhost:3001/api/users/'+usuarios[i].id_user
+        for (let usuario of usuarios){
+            usuario.dataValues.detail = 'http://localhost:3001/api/users/'+usuario.id_user
         };
         res.status(200).json({
             count: usuarios.length,
