@@ -19,10 +19,7 @@ const productosController = {
         for (let i=0; i < servicios.length; i++){
             servicios[i].dataValues.tipo_de_envio = categoriaEnvio
             servicios[i].dataValues.detail = 'http://localhost:3001/api/servicios/'+servicios[i].id_service
-        for (let servicio of servicios){
-            servicio.dataValues.tipo_de_envio = categoriaEnvio
-            servicio.dataValues.detail = 'http://localhost:3001/api/servicios/'+servicio.id_service
-        };
+        }
         res.status(200).json({
             total: servicios.length,
             countByCategory: { serviciosLocales: serviciosLocales.length , serviciosInternacionales: serviciosInternacionales.length},
@@ -30,7 +27,7 @@ const productosController = {
             data: servicios,
             status: 200
         })
-	}},
+	},
 
 	detalle: async (req, res) => {
 		const servicio = await db.Services.findByPk(req.params.id)
