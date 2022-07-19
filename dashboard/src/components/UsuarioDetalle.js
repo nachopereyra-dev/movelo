@@ -6,12 +6,11 @@ import  { useParams } from 'react-router-dom';
 
 
 function UsuarioDetalle(){
-    const [user, setUser] = useState([])
     const { id } = useParams()
-    let url = 'http://localhost:3001/api/users/'+id
+    const [user, setUser] = useState([])
 
     useEffect(() =>{
-        fetch(url)
+        fetch('http://localhost:3001/api/users/'+id)
             .then(respuesta =>{
                 return respuesta.json()
             })
@@ -19,7 +18,7 @@ function UsuarioDetalle(){
                 setUser(usuario)
             })
             .catch(error => console.log(error))
-    }, [])
+    }, [id])
     
     return (    
         <>
