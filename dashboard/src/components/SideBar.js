@@ -4,12 +4,13 @@ import SeccionContenedorPrincipal from './SeccionContenedorPrincipal'
 import UsuarioDetalle from './UsuarioDetalle'
 import TodosLosServicios from './TodosLosServicios'
 import image from '../assets/images/icono-white.png';
+import fondo from '../assets/images/Path 230.svg'
 
 function SideBar(){
     return(
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" style={{ backgroundImage: `url(${fondo})`  }} id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to={"/"}>

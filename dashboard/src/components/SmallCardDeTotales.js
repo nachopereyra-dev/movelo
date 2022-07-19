@@ -1,4 +1,5 @@
 import React from 'react';
+import fondo from '../assets/images/Path 230.svg'
 
 function SmallCard(props){
     return(
