@@ -3,7 +3,7 @@ import  { Routes, Route, Link } from 'react-router-dom'
 import SeccionContenedorPrincipal from './SeccionContenedorPrincipal'
 import UsuarioDetalle from './UsuarioDetalle'
 import TodosLosServicios from './TodosLosServicios'
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/icono-white.png';
 
 function SideBar(){
     return(
