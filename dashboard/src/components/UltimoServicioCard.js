@@ -19,8 +19,8 @@ function UltimoServicioCard(){
             })
             .catch(error => console.log(error))
     }, [])
-    
-    return (    
+    console.log(servicios)
+    return (       
         
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
@@ -30,7 +30,7 @@ function UltimoServicioCard(){
                 <div className="card-body">
                         <h5>Desde - {servicios.origen} Hacia - {servicios.destination} </h5>
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>
+                        {servicios && servicios.usuarios && <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={servicios.usuarios.image} alt={servicios.usuarios.email}/>}
                     </div>
                     <p>{servicios.description}</p>
                     <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
