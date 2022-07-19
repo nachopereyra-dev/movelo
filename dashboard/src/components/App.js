@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import SideBar from './SideBar';
-import SeccionContenedorPrincipal from './SeccionContenedorPrincipal';
+
 
 function App() {
   return (

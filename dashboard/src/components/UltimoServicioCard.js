@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState,useEffect} from 'react';
-import imagenFondo from '../assets/images/mandalorian.jpg';
+
 
 
 
@@ -19,7 +19,6 @@ function UltimoServicioCard(){
             })
             .catch(error => console.log(error))
     }, [])
-    console.log(servicios)
     return (       
         
         <div className="col-lg-6 mb-4">
