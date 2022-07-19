@@ -14,19 +14,21 @@ function SeccionContenidoTotales(){
         color:   "dark",
         titulo: "Servicios Totales",
         valor: 0,
-        icono: "fas fa-award",
+        icono: "fas fa-people-carry",
     })
+    
     const [totalServiciosLocales, setTotalServiciosLocales] = useState({
         color:   "dark",
         titulo: "Servicios Locales",
         valor: 0,
-        icono: "fas fa-user",
+        icono: "fas fa-shipping-fast",
     })
+
     const [totalServiciosInternacionales, setTotalServiciosInternacionales] = useState({
         color:   "dark",
         titulo: "Servicios Internacionales",
         valor: 0,
-        icono: "fas fa-film",
+        icono: "fas fa-globe",
     })
 
     const totales  = [totalUsuarios, totalServicios, totalServiciosLocales, totalServiciosInternacionales]

@@ -5,7 +5,7 @@ import Home from './Home';
 import UsuarioDetalle from './UsuarioDetalle'
 import TodosLosServicios from './TodosLosServicios'
 import Footer from './Footer';
-// style={{backgroundColor: "#ffffff00" }}
+
 function ContentWrapper(){
     return (
         <>

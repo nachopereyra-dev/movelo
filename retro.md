@@ -1,8 +1,7 @@
-## 📰 Breve retrospectiva Sprint 3
+## 📰 Breve retrospectiva Sprint 8
 
 ### 1. Comenzar a hacer.
 
-- Organizar mejor los tiempos
 - Organizar mejor la división de tareas
 - Comenzar a hacer las Daily's
 ### 2. Hacer más.

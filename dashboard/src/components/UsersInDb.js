@@ -20,7 +20,7 @@ function UsersInDb(){
 
     return (
         <>
-            <h1 className="h3 mb-2 text-gray-800">Todos los Usuarios en Base de Datos</h1>
+            <h1 className="h3 mb-2 text-gray-800" style={{padding: "0px 0px 0px 24px"}}>Todos los Usuarios en Base de Datos</h1>
 						
 						{/*<!-- DataTales Example -->*/}
 						<div className="card shadow mb-4">
