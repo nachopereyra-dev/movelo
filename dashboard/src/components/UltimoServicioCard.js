@@ -1,6 +1,6 @@
 import React from 'react';
 import {useState,useEffect} from 'react';
-import imagenFondo from '../assets/images/mandalorian.jpg';
+
 
 
 
