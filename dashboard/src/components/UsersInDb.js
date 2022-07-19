@@ -1,69 +1,66 @@
-import React, {Component} from "react";
+import React, {useState,useEffect} from 'react';
+import User from './User'
 
-class Users extends Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            user: {
-                userId: '',
-                userFirstName: '',
-                userLastName: '',
-                userEmail: '',
-                userDetail: ''
-            }
-        }
-    }
 
-    apiCall(url, consecuencia) {
-        fetch(url)
-        .then( response => response.json())
-        .then( data => consecuencia(data))
-        .catch( error => console.log(error))
-    }
+function UsersInDb(){
+    const [users, setUsers] = useState([]);
 
-    componentDidMount() {
-        this.traerListaUsuarios()
-    }
+    
+    useEffect(() =>{
+        fetch('http://localhost:3001/api/users')
+            .then(respuesta =>{
+                return respuesta.json()
+            })
+            .then(usuarios =>{
+                setUsers(usuarios.data)
+            })
+            .catch(error => console.log(error))
+    }, [])
 
-    traerListaUsuarios() {
-        this.apiCall('http://localhost:3001/api/users', this.mostrarListaUsuarios)
-    }
-
-    mostrarListaUsuarios = (data) => {
-        this.setState(
-            {
-                user: {
-                    userId: data.data.id_user,
-                    userFirstName: data.data.first_name,
-                    userLastName: data.data.last_name,
-                    userEmail: data.data.email,
-                    userDetail: data.data.detail
-                }
-            }
-        )
-    }
-
-    componentDidUpdate() {
-
-    }
-
-    render() {
-
-        let contenido
-
-        if(this.state.user === '') {
-            contenido = <p>Cargando usuarios...</p>
-        } else {
-            contenido = <p>{this.state.user}</p>
-        }
-
-        return (
-            <div>
-                {contenido}
-            </div>
-        )
-    }
+    return (
+        <>
+            <h1 className="h3 mb-2 text-gray-800">Todos los Usuarios en Base de Datos</h1>
+						
+						{/*<!-- DataTales Example -->*/}
+						<div className="card shadow mb-4">
+							<div className="card-body">
+								<div className="table-responsive">
+									<table className="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+										<thead>
+											<tr>
+												<th>Id</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Email</th>
+												<th>Detalle de Usuario</th>
+											</tr>
+										</thead>
+										<tbody>
+											{
+												users.map((user,i) =>{
+													return <User  {...user} key = {i}  />			
+												})
+											}
+																						
+											
+											
+										</tbody>
+										<tfoot>
+											<tr>
+                                                <th>Id</th>
+												<th>Nombre</th>
+												<th>Apellido</th>
+												<th>Email</th>
+												<th>Foto de Perfil</th>
+											</tr>
+										</tfoot>
+										
+									</table>
+								</div>
+							</div>
+						</div> 
+        </>
+    )
 }
-
-export default Users
+export default UsersInDb
