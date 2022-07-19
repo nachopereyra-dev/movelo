@@ -19,6 +19,7 @@ const productosController = {
         for (let i=0; i < servicios.length; i++){
             servicios[i].dataValues.tipo_de_envio = categoriaEnvio
             servicios[i].dataValues.detail = 'http://localhost:3001/api/servicios/'+servicios[i].id_service
+            servicios[i].dataValues.usuarios.image = 'http://localhost:3001/images/avatars/'+servicios[i].dataValues.usuarios.image
         }
         res.status(200).json({
             total: servicios.length,
