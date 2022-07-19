@@ -64,7 +64,7 @@ function SideBar(){
             
             <Routes>
                 <Route estrict path="/" element={<SeccionContenedorPrincipal />}/>
-                <Route estrict path="/usuario/:id" element={<UsuarioDetalle />}/>
+                <Route  path="/usuario/:id" element={<UsuarioDetalle />}/>
                 <Route estrict path="/servicios" element={<TodosLosServicios />}/>
             </Routes>
 
