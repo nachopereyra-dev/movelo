@@ -1,18 +1,24 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import TopBar from './TopBar';
-import SeccionContenidoDeContendios from './SeccionContenidoDeContedores';
-import UsersInDb from './UsersInDb';
+import Home from './Home';
+import UsuarioDetalle from './UsuarioDetalle'
+import TodosLosServicios from './TodosLosServicios'
 import Footer from './Footer';
+// style={{backgroundColor: "#ffffff00" }}
 function ContentWrapper(){
     return (
         <>
-            {/*<!-- Content Wrapper -->*/}
-            <div id="content-wrapper" className="d-flex flex-column">
-                {/*<!-- Main Content -->*/}
+            <div id="content-wrapper" className="d-flex flex-column" >
                 <div id="content">
                     <TopBar />
-                    <SeccionContenidoDeContendios />
-                    <UsersInDb/>
+                    <div style={{minHeight: "calc(100vh - 6.375rem - 76.8px)"}}>
+                        <Routes>
+                            <Route estrict path="/" element={<Home />}/>
+                            <Route  path="/usuario/:id" element={<UsuarioDetalle />}/>
+                            <Route estrict path="/servicios" element={<TodosLosServicios />}/>
+                        </Routes>
+                    </div>                        
                     <Footer />
                 </div>
             </div>    

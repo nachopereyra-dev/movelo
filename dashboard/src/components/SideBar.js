@@ -1,14 +1,12 @@
 import React from 'react';
-import  { Routes, Route, Link } from 'react-router-dom'
-import SeccionContenedorPrincipal from './SeccionContenedorPrincipal'
-import UsuarioDetalle from './UsuarioDetalle'
-import TodosLosServicios from './TodosLosServicios'
+import  { Link } from 'react-router-dom'
+
 import image from '../assets/images/icono-white.png';
 import fondo from '../assets/images/Path 230.svg'
 
 function SideBar(){
     return(
-        <React.Fragment>
+        <>
             {/*<!-- Sidebar -->*/}
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" style={{ backgroundImage: `url(${fondo})`  }} id="accordionSidebar">
 
@@ -61,14 +59,7 @@ function SideBar(){
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
             {/*<!-- End of Sidebar -->*/}
-            
-            <Routes>
-                <Route estrict path="/" element={<SeccionContenedorPrincipal />}/>
-                <Route  path="/usuario/:id" element={<UsuarioDetalle />}/>
-                <Route estrict path="/servicios" element={<TodosLosServicios />}/>
-            </Routes>
-
-        </React.Fragment>
+        </>
     )
 }
 export default SideBar;
