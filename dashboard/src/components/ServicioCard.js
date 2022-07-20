@@ -20,7 +20,7 @@ function UltimoServicioCard(){
                 setServiciosList(servicios)
             })
             .catch(error => console.log(error))
-    }, [])
+    }, [id])
     return (       
         
         <div className="col-lg-6 mb-4">

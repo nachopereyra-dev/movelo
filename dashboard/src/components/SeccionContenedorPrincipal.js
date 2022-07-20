@@ -9,6 +9,7 @@ import ServiciosInDbTotales from './ServiciosInDbTotales'
 import ServiciosInDbFrecuencia from "./ServiciosInDbFrecuencia"
 import ServiciosInDbCategoria from "./ServiciosInDbCategoria"
 import ServicioCard from './ServicioCard'
+import Error404 from "./Error404";
 import Footer from './Footer';
 
 function ContentWrapper(){
@@ -29,6 +30,7 @@ function ContentWrapper(){
                                 <Route path="/servicios/categoria" element={<ServiciosInDbCategoria />}/>
                                 <Route path="/servicios/:id" element={<ServicioCard />}/>
                             </Route>
+                            <Route path="*" element={<Error404 />} />
                         </Routes>
                     </div>                        
                     <Footer />
