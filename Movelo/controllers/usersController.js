@@ -1,5 +1,3 @@
-const fs = require('fs');
-const path = require('path');
 const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
 
@@ -50,7 +48,6 @@ const userController = {
             }
         }
     },
-
 
     login: (req, res) => {
         return res.render("users/login")
@@ -252,19 +249,7 @@ const userController = {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/')
-    },
-
-    
-
-    adminCrear: (req, res) => {
-        res.render("users/crear-servicio", { user: req.session.userLogged})
-    },
-    adminEditar: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productosDataBase.json');
-        const listadoDeProductos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        res.render("users/admin-elegir-editar", {articulos: listadoDeProductos, title: 'Express'})
-    },
+    }
 }
 
 module.exports = userController;

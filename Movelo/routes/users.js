@@ -71,8 +71,6 @@ router.get('/admin', adminMiddleware, userController.admin)
 router.get('/admin/servicios', adminMiddleware, userController.servicesList)
 router.get('/admin/usuarios', adminMiddleware, userController.usersList)
 
-router.get('/admin/crear', authMiddleware, userController.adminCrear);
-router.get('/admin/elegir-editar', authMiddleware, userController.adminEditar);
 router.get('/logout', userController.logout);
 
 

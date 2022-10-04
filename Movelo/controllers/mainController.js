@@ -1,9 +1,3 @@
-
-
-
-
-
-
 const mainController = {
     inicio: (req, res) => {
       res.render("inicio", {
