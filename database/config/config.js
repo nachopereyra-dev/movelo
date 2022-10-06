@@ -16,7 +16,7 @@ module.exports = {
     "operatorsAliases": 0
   },
   "production": {
-"use_env_variable": "DATABASE_URL"
+"use_env_variable": "mysql://b39634dd99f724:386f5c3f@us-cdbr-east-06.cleardb.net/heroku_ac625ad258a6888?reconnect=true"
   }
 }
 
